@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--color-background-default);
+}
+
+body {
+  height: 100%;
+  color: var(--color-foreground-default) !important;
+}
+
+body,
+p,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+input,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+button:hover,
+a:hover {
+  cursor: pointer;
+}
