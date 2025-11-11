@@ -9,7 +9,6 @@ body {
 
 body {
   height: 100%;
-  color: var(--color-foreground-default) !important;
 }
 
 body,

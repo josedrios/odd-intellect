@@ -1,7 +1,12 @@
+import Nav from '@/components/nav.jsx';
+
 function App() {
   return (
     <>
-      <p className="test">This is odd intellect</p>
+      <div id="content-container">
+        <Nav />
+        <p>This is a regular paragraph</p>
+      </div>
     </>
   );
 }

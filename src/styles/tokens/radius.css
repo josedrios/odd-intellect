@@ -1,1 +1,9 @@
-/* radius */
+:root {
+  --radius-0: 0;
+  --radius-1: 2px;
+  --radius-2: 4px;
+  --radius-3: 6px;
+  --radius-4: 8px;
+  --radius-5: 12px;
+  --radius-full: 9999px;
+}
