@@ -3,6 +3,7 @@
 @import './tokens/colors.css';
 @import './tokens/spacing.css';
 @import './tokens/radius.css';
+@import './tokens/breakpoints.css';
 
 /* base */
 @import './base/base.css';
@@ -10,9 +11,14 @@
 
 /* layout */
 @import './layout/app.css';
-@import './layout/nav.css';
-@import './layout/footer.css';
+@import './layout/forms.css';
 
 /* components */
+@import './components/nav.css';
+@import './components/footer.css';
+@import './components/question.css';
+@import './components/thoughts.css';
+@import './components/inputs.css';
+@import './components/buttons.css';
 
 /* pages */

@@ -1,0 +1,7 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--spacing-3) 0;
+}

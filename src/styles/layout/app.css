@@ -2,11 +2,15 @@
   height: 100vh;
   width: 100vw;
   overflow-y: auto;
+  margin: var(--spacing-2.5);
 }
 
 #content-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2_5);
   margin: auto;
-  border: 1px solid var(--color-border-test);
+  padding: 0 var(--spacing-3);
   width: 100%;
-  max-width: 1000px;
+  max-width: var(--breakpoint-md);
 }

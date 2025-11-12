@@ -31,7 +31,7 @@ body {
 }
 
 h1 {
-  font-size: var(--font-size-3xl);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-normal);
 }
 

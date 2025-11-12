@@ -74,10 +74,17 @@
 
   /* foregrounds */
   --color-foreground-default: hsl(var(--primary-900));
+  --color-foreground-subtle: hsl(var(--primary-700));
+  --color-foreground-default-onEmphasis: hsl(var(--gray-1000));
+  --color-foreground-subtle-onEmphasis: hsl(var(--gray-700));
 
   /* backgrounds */
   --color-background-default: hsl(var(--bg-200));
+  --color-background-primary: hsl(var(--primary-900));
+  --color-background-subtle-onEmphasis: hsl(var(--gray-200));
 
   /* borders */
+  --color-border-default: hsl(var(--primary-900));
+  --color-border-subtle: hsl(var(--primary-700));
   --color-border-test: hsl(var(--bg-300));
 }

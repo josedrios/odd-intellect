@@ -1,1 +1,5 @@
-/* reset */
+button,
+textarea,
+input {
+  outline: none;
+}

@@ -1,0 +1,21 @@
+textarea,
+input {
+  border: 2px solid var(--color-border-default);
+  background: white;
+  box-shadow: inset 3px 3px var(--color-background-subtle-onEmphasis);
+  padding: var(--spacing-2);
+  width: 100%;
+  caret-color: var(--color-foreground-subtle-onEmphasis);
+
+  &::placeholder {
+    color: var(--color-foreground-subtle-onEmphasis);
+  }
+}
+
+textarea {
+  resize: vertical;
+  field-sizing: content;
+  height: calc((var(--spacing-2) * 2) + var(--font-size-md) * 2);
+  min-height: calc(var(--spacing-2) * 2 + var(--font-size-md) * 2);
+  max-height: 400px;
+}

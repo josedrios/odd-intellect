@@ -34,3 +34,8 @@ button:hover,
 a:hover {
   cursor: pointer;
 }
+
+button,
+input {
+  font-family: var(--font-family-default);
+}

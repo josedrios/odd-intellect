@@ -1,0 +1,8 @@
+.question {
+  padding: var(--spacing-10) 0;
+}
+
+.question__text {
+  text-align: center;
+  text-decoration: underline;
+}
