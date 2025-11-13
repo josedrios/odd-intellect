@@ -3,4 +3,5 @@ button {
   background: var(--color-background-primary);
   border: none;
   color: white;
+  border-radius: var(--radius-2);
 }

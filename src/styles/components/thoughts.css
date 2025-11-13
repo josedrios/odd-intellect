@@ -3,7 +3,8 @@
   flex-direction: row;
   gap: var(--spacing-4);
   align-items: baseline;
-  border-bottom: 2px solid var(--color-border-subtle);
+  padding-bottom: var(--spacing-2);
+  border-bottom: 2px solid var(--color-border-default);
 }
 
 .thoughts-header__count {
@@ -22,12 +23,36 @@
 }
 
 .thoughts-form__button {
-  width: fit-content;
+  height: calc(var(--spacing-2) * 2 + var(--font-size-md));
+  aspect-ratio: 1/1;
+  width: auto;
+}
+
+.thoughts-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+}
+
+.thought {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
+.thought__subthoughts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }
 
 .thought-card {
   display: flex;
   flex-direction: column;
+}
+
+.thought-card--subthought {
+  margin-left: var(--spacing-10);
 }
 
 .thought-card__content {
@@ -42,6 +67,10 @@
   justify-content: space-between;
   align-items: baseline;
   gap: var(--spacing-2);
+}
+
+.thought-card__username {
+  color: var(--color-foreground-primary);
 }
 
 .thought-card__date {
@@ -61,7 +90,7 @@
   color: var(--color-foreground-subtle);
 }
 
-.thought-card__responses {
+.thought-card__replies {
   text-align: center;
   font-size: var(--font-size-sm);
   color: var(--color-foreground-subtle);

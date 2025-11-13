@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 :root {
-  --font-family-default: 'Roboto Mono', monospace;
+  --font-family-default: 'JetBrains Mono', monospace;
 
   --font-size-xxs: 0.625rem;
   --font-size-xs: 0.75rem;
@@ -12,9 +12,8 @@
   --font-size-2xl: 1.5rem;
   --font-size-3xl: 2rem;
 
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
+  --font-weight-light: 200;
+  --font-weight-normal: 300;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 }
@@ -32,7 +31,7 @@ body {
 
 h1 {
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }
 
 h2 {
@@ -40,7 +39,8 @@ h2 {
   font-weight: var(--font-weight-normal);
 }
 
-p {
+p,
+a {
   font-size: var(--font-size-md);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-light);
 }

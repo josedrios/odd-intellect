@@ -3,5 +3,9 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  padding: var(--spacing-3) 0;
+  padding: var(--spacing-4) 0;
+}
+
+.minuscule {
+  color: var(--color-foreground-primary);
 }

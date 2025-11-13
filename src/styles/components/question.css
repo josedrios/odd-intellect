@@ -1,8 +1,11 @@
 .question {
-  padding: var(--spacing-10) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  padding: 20vh 0;
 }
 
 .question__text {
   text-align: center;
-  text-decoration: underline;
 }

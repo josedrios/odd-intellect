@@ -1,9 +1,27 @@
+interface ThoughtProps {
+  subthought?: boolean;
+  username: string;
+}
+
 export default function Thought() {
   return (
-    <div className="thought-card">
+    <div className="thought">
+      <ThoughtCard username="SOMEDUDE" />
+      <div className="thought__subthoughts">
+        <ThoughtCard username="OTHERDUDE" subthought />
+      </div>
+    </div>
+  );
+}
+
+function ThoughtCard({ subthought = false, username }: ThoughtProps) {
+  return (
+    <div
+      className={`thought-card ${subthought ? 'thought-card--subthought' : ''}`}
+    >
       <div className="thought-card__content">
         <div className="thought-card__header">
-          <p className="thought-card__username">USERNAME</p>
+          <p className="thought-card__username">{username}</p>
           <p className="thought-card__date">17h ago</p>
           <p>E</p>
         </div>
@@ -13,7 +31,11 @@ export default function Thought() {
           get this sentence as long as possible.
         </p>
         <div className="thought-card__footer">
-          <div className="thought-card__responses">└─── 24 responses</div>
+          {!subthought ? (
+            <div className="thought-card__replies">└─── See Replies</div>
+          ) : (
+            <div />
+          )}
           <p className="thought-card__votes">REPLY 12^ 26^</p>
         </div>
       </div>

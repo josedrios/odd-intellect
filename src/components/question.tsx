@@ -1,7 +1,7 @@
 export default function Question() {
   return (
     <div className="question">
-      <h2 className="question__text">Tell me about someone you deeply love.</h2>
+      <h2 className="question__text">TELL ME ABOUT SOMEONE YOU DEEPLY LOVE.</h2>
     </div>
   );
 }
