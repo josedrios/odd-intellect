@@ -2,6 +2,8 @@ export const ICON = {
   SEND: 'TbSend',
   SORT: 'TbArrowsSort',
   ELLIPSIS: 'TbDotsVertical',
+  UPARROW: 'TbArrowUp',
+  DOWNARROW: 'TbArrowDown',
   USER: 'TbUser',
   COMMENT: 'TbMessage',
   ASCENDING: 'TbSortAscending',

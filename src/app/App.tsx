@@ -1,5 +1,6 @@
 import Nav from '@/components/nav.tsx';
 import Question from '@/components/question.tsx';
+import CommentCard from '@/comments/comment-card';
 import Design from '@/app/pages/design.tsx';
 
 function App() {
@@ -7,8 +8,8 @@ function App() {
     <>
       <div id="content-container">
         <Nav />
-        <Design />
         <MainPage />
+        <Design />
       </div>
     </>
   );
@@ -18,6 +19,8 @@ function MainPage() {
   return (
     <>
       <Question />
+      <CommentCard username="SOMEDUDE" />
+      <CommentCard username="OTHERDUDE" parent />
     </>
   );
 }
