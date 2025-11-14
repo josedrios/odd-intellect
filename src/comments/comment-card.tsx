@@ -26,9 +26,9 @@ function CommentHeader({ username }: Props) {
     <div className="comment-card__header">
       <p className="comment-card__username">{username}</p>
       <p className="comment-card__timestamp">17h ago</p>
-      <p className="comment-card__ellipsis">
+      <button className="comment-card__ellipsis btn-open">
         <Icon name={ICON.ELLIPSIS} />
-      </p>
+      </button>
     </div>
   );
 }
@@ -36,15 +36,15 @@ function CommentHeader({ username }: Props) {
 function CommentFooter() {
   return (
     <div className="comment-card__footer">
-      <button className="comment-card__replies">└── 62 Replies</button>
-      <button className="comment-card__reply">
+      <button className="comment-card__replies btn-open">└── 62 Replies</button>
+      <button className="comment-card__reply btn-open">
         <Icon name={ICON.COMMENT} />
       </button>
-      <button className="comment-card__upvotes">
+      <button className="comment-card__upvotes btn-open">
         <Icon name={ICON.UPARROW} />
         14
       </button>
-      <button className="comment-card__downvotes">
+      <button className="comment-card__downvotes btn-open">
         <Icon name={ICON.DOWNARROW} />2
       </button>
     </div>
