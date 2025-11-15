@@ -1,10 +1,10 @@
 export default function Nav() {
   return (
-    <nav>
-      <h1>
-        <span className="minuscule">Ø</span>DD INTELLECT
+    <nav className="nav">
+      <h1 className="nav__header">
+        <span className="nav__logo">Ø</span>DD INTELLECT
       </h1>
-      <a>BUFFWIZ</a>
+      <a className="nav__account">BUFFWIZ</a>
     </nav>
   );
 }

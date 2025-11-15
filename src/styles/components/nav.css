@@ -1,4 +1,4 @@
-nav {
+.nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -6,6 +6,15 @@ nav {
   padding: var(--spacing-4) 0;
 }
 
-.minuscule {
+.nav__logo {
   color: var(--color-foreground-primary);
+}
+
+.nav__account {
+  color: var(--color-foreground-default);
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-foreground-default-hover);
+  }
 }

@@ -48,6 +48,7 @@
 
   /* foregrounds */
   --color-foreground-default: white;
+  --color-foreground-default-hover: hsl(var(--gray-400));
   --color-foreground-subtle: hsl(var(--gray-400));
   --color-foreground-primary: hsl(var(--green-300));
   --color-foreground-subtle-onEmphasis: hsl(var(--gray-700));

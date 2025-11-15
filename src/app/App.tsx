@@ -19,8 +19,8 @@ function MainPage() {
   return (
     <>
       <Question />
-      <CommentCard username="SOMEDUDE" />
-      <CommentCard username="OTHERDUDE" parent />
+      <CommentCard username="SOMEDUDE" parent />
+      <CommentCard username="OTHERDUDE" />
     </>
   );
 }

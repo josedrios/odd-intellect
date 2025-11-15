@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 
-.comment-card--parent {
+.comment-card--child {
   margin-left: var(--spacing-9);
 }
 
@@ -42,6 +42,7 @@
   }
 }
 
-.comment-card__replies {
+.comment-card__replies,
+.comment-card__footer-spacer {
   margin-right: auto;
 }
