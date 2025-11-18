@@ -8,4 +8,6 @@
 
 .question__text {
   text-align: center;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
 }

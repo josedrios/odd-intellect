@@ -5,7 +5,7 @@ export const ICON = {
   UPARROW: 'TbArrowUp',
   DOWNARROW: 'TbArrowDown',
   USER: 'TbUser',
-  COMMENT: 'TbMessage',
+  REPLY: 'TbArrowBack',
   ASCENDING: 'TbSortAscending',
   DESCENDING: 'TbSortDescending',
   CLOCK: 'TbClock',

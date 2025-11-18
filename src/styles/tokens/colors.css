@@ -50,13 +50,11 @@
   --color-foreground-default: white;
   --color-foreground-default-hover: hsl(var(--gray-400));
   --color-foreground-subtle: hsl(var(--gray-400));
-  --color-foreground-primary: hsl(var(--green-300));
   --color-foreground-subtle-onEmphasis: hsl(var(--gray-700));
 
   /* backgrounds */
   --color-background-default: hsl(var(--gray-1000));
   --color-background-default-hover: hsl(var(--gray-800));
-  --color-background-primary: hsl(var(--green-300));
   --color-background-subtle-onEmphasis: hsl(var(--gray-200));
 
   /* borders */

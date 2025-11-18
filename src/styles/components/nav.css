@@ -6,10 +6,6 @@
   padding: var(--spacing-4) 0;
 }
 
-.nav__logo {
-  color: var(--color-foreground-primary);
-}
-
 .nav__account {
   color: var(--color-foreground-default);
   transition: color var(--transition-fast);

@@ -9,7 +9,6 @@ function App() {
       <div id="content-container">
         <Nav />
         <MainPage />
-        <Design />
       </div>
     </>
   );
@@ -19,8 +18,7 @@ function MainPage() {
   return (
     <>
       <Question />
-      <CommentCard username="SOMEDUDE" parent />
-      <CommentCard username="OTHERDUDE" />
+      <CommentCard username="Some Dude" parent />
     </>
   );
 }

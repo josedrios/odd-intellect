@@ -7,38 +7,25 @@
   margin-left: var(--spacing-9);
 }
 
-.comment-card__header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
 .comment-card__username {
-  color: var(--color-foreground-primary);
-}
-
-.comment-card__timestamp {
-  font-size: var(--font-size-sm);
-  color: var(--color-foreground-subtle);
-  margin-left: var(--spacing-2);
-  margin-right: auto;
+  font-weight: var(--font-weight-semibold);
+  margin-right: var(--spacing-2);
 }
 
 .comment-card__footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: parent;
+  align-items: end;
 }
 
 /* Footer buttons */
 .comment-card__footer button {
+  font-size: var(--font-size-xs);
   color: var(--color-foreground-subtle);
-  font-size: var(--font-size-sm);
 
   svg {
-    color: var(--color-foreground-default);
+    color: var(--color-foreground-subtle);
   }
 }
 
