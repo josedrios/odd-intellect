@@ -1,3 +1,20 @@
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.comment-section__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment-section__sort,
+.comment-section__create-comment {
+  font-size: var(--font-size-xs);
+}
+
 .comment-card {
   display: flex;
   flex-direction: column;
@@ -9,7 +26,7 @@
 
 .comment-card__username {
   font-weight: var(--font-weight-semibold);
-  margin-right: var(--spacing-2);
+  margin-right: var(--spacing-2_5);
 }
 
 .comment-card__footer {
@@ -22,11 +39,10 @@
 /* Footer buttons */
 .comment-card__footer button {
   font-size: var(--font-size-xs);
-  color: var(--color-foreground-subtle);
+}
 
-  svg {
-    color: var(--color-foreground-subtle);
-  }
+.comment-card__replies span {
+  margin-left: var(--spacing-2);
 }
 
 .comment-card__replies,

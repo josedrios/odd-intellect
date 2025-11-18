@@ -51,6 +51,7 @@
   --color-foreground-default-hover: hsl(var(--gray-400));
   --color-foreground-subtle: hsl(var(--gray-400));
   --color-foreground-subtle-onEmphasis: hsl(var(--gray-700));
+  --color-foreground-subtle-hover: hsl(var(--gray-200));
 
   /* backgrounds */
   --color-background-default: hsl(var(--gray-1000));

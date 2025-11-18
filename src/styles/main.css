@@ -4,7 +4,6 @@
 @import './tokens/spacing.css';
 @import './tokens/radius.css';
 @import './tokens/breakpoints.css';
-@import './tokens/transistions.css';
 
 /* base */
 @import './base/base.css';

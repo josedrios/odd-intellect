@@ -8,7 +8,6 @@
 
 .nav__account {
   color: var(--color-foreground-default);
-  transition: color var(--transition-fast);
 
   &:hover {
     color: var(--color-foreground-default-hover);

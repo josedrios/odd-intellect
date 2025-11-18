@@ -28,24 +28,24 @@ function CommentFooter({ parent = false }: FooterProps) {
   return (
     <div className="comment-card__footer">
       {parent ? (
-        <button className="comment-card__replies btn-open">
-          └── 62 Replies
+        <button className="comment-card__replies btn--open">
+          └─<span>62 REPLIES</span>
         </button>
       ) : (
         <div className="comment-card__footer-spacer" />
       )}
-      <button className="comment-card__reply btn-open">
+      <button className="comment-card__reply btn--open">
         <Icon name={ICON.REPLY} />
       </button>
-      <button className="comment-card__upvotes btn-open">
+      <button className="comment-card__upvotes btn--open">
         <Icon name={ICON.UPARROW} />
         <p>14</p>
       </button>
-      <button className="comment-card__downvotes btn-open">
+      <button className="comment-card__downvotes btn--open">
         <Icon name={ICON.DOWNARROW} />
         <p>2</p>
       </button>
-      <button className="comment-card__ellipsis btn-open">
+      <button className="comment-card__ellipsis btn--open">
         <Icon name={ICON.ELLIPSIS} />
       </button>
     </div>
