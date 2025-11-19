@@ -3,6 +3,7 @@
   border-top: 1px solid var(--color-border-default);
   margin: var(--spacing-6) 0;
   padding: var(--spacing-4);
+  margin-top: auto;
 }
 
 .footer__body {

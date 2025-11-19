@@ -4,6 +4,8 @@ export const ICON = {
   ELLIPSIS: 'TbDotsVertical',
   UPARROW: 'TbArrowUp',
   DOWNARROW: 'TbArrowDown',
+  RIGHTARROW: 'TbArrowRight',
+  LEFTARROW: 'TbArrowLeft',
   USER: 'TbUser',
   REPLY: 'TbArrowBack',
   ASCENDING: 'TbSortAscending',

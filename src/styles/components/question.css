@@ -24,6 +24,19 @@
   color: var(--color-foreground-subtle);
 }
 
+.question-pagination {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-2);
+  justify-content: center;
+  align-items: center;
+}
+
+.question-pagination__index {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground-subtle);
+}
+
 .question {
   display: flex;
   justify-content: center;
