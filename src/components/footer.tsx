@@ -8,6 +8,8 @@ export default function Footer() {
         <a className="footer__link">FAQS</a>
         <a className="footer__link">CONTACT</a>
         <a className="footer__link">TOS</a>
+        <a className="footer__link">REQUEST</a>
+        <a className="footer__link">HELP</a>
       </div>
       <p className="footer__copyright">Copyright © 2025 Jose D. Rios</p>
     </div>

@@ -7,7 +7,7 @@ export default function CommentSection() {
     <div className="comment-section">
       <CommentSectionHeader />
       <CommentCard username="Some Dude" parent />
-      <CommentCard username="Some Dude" />
+      <CommentCard username="Some Dude" parent />
       <CommentCard username="Some Dude" parent />
       <CommentCard username="Some Dude" />
       <CommentCard username="Some Dude" />

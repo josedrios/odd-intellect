@@ -1,5 +1,6 @@
 import Nav from '@/components/nav.tsx';
-import Question from '@/components/question.tsx';
+import QuestionCard from '@/questions/question-card';
+import Question from '@/questions/question';
 import CommentSection from '@/comments/comment-section';
 import Footer from '@/components/footer';
 
@@ -8,8 +9,13 @@ function App() {
     <>
       <div id="content-container">
         <Nav />
-        <Question />
-        <CommentSection />
+        <QuestionCard />
+        <QuestionCard />
+        <QuestionCard />
+        <QuestionCard />
+        <QuestionCard />
+        {/*       <Question />
+        <CommentSection /> */}
         <Footer />
       </div>
     </>

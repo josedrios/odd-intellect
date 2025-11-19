@@ -60,4 +60,6 @@
 
   /* borders */
   --color-border-default: hsl(var(--gray-600));
+  --color-border-subtle: hsl(var(--gray-800));
+  --color-border-subtle-hover: hsl(var(--gray-500));
 }
