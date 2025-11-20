@@ -26,6 +26,7 @@
 
 .question-pagination {
   display: flex;
+  padding-top: var(--spacing-2);
   flex-direction: row;
   gap: var(--spacing-2);
   justify-content: center;
@@ -37,7 +38,8 @@
   color: var(--color-foreground-subtle);
 }
 
-.question {
+.question-panel,
+.account-header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,7 +47,8 @@
   padding: 20vh 0;
 }
 
-.question__text {
+.question-panel__text,
+.account-header__text {
   text-align: center;
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);

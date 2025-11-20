@@ -1,0 +1,39 @@
+interface StatProps {
+  label: string;
+  value: string;
+}
+
+export default function AccountStatList() {
+  const info = [
+    {
+      label: 'bio',
+      value:
+        'This is my bio for my account on this platform called odd intellect. I am writing nonsense to make this biography longer.',
+    },
+    { label: 'email', value: 'johndoe@mail.com' },
+    { label: 'current streak', value: '2 weeks' },
+    { label: 'longest streak', value: '17 weeks' },
+    { label: 'comments', value: '87' },
+    { label: 'upvotes', value: '1273' },
+    { label: 'downvotes', value: '106' },
+    { label: 'real name', value: 'John Doe' },
+    { label: 'Date of Birth', value: '4/20/2002' },
+  ];
+
+  return (
+    <div className="account-stat-list">
+      {info.map((stat, i) => (
+        <AccountStat label={stat.label} value={stat.value} key={i} />
+      ))}
+    </div>
+  );
+}
+
+function AccountStat({ label, value }: StatProps) {
+  return (
+    <div className="account-stat">
+      <p className="account-stat__key">{label.toUpperCase()}</p>
+      <p className="account-stat__value">{value.toUpperCase()}</p>
+    </div>
+  );
+}
