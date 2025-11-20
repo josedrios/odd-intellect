@@ -1,6 +1,7 @@
 export const ICON = {
   SEND: 'TbSend',
   SORT: 'TbArrowsSort',
+  SEARCH: 'TbSearch',
   ELLIPSIS: 'TbDotsVertical',
   UPARROW: 'TbArrowUp',
   DOWNARROW: 'TbArrowDown',

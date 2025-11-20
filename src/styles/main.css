@@ -19,6 +19,7 @@
 @import './components/comments.css';
 @import './components/inputs.css';
 @import './components/buttons.css';
+@import './components/search.css';
 
 /* pages */
 @import './pages/account.css';

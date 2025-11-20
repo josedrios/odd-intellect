@@ -6,6 +6,7 @@ import CommentSection from '@/comments/comment-section';
 import Footer from '@/components/footer';
 import AccountHeader from '@/components/account/account-header';
 import AccountStatList from '@/components/account/account-stats';
+import SearchBar from '@/components/search';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <div id="content-container">
         <Nav />
         <main>
-          <HomePage />
+          <AccountPage />
         </main>
         <Footer />
       </div>
@@ -24,6 +25,7 @@ function App() {
 function HomePage() {
   return (
     <>
+      <SearchBar />
       <QuestionCard />
       <QuestionCard />
       <QuestionCard />
@@ -51,6 +53,7 @@ function AccountPage() {
     <>
       <AccountHeader />
       <AccountStatList />
+      <SearchBar account />
       <QuestionCard comment />
       <QuestionCard comment />
       <QuestionCard comment />
