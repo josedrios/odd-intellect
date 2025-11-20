@@ -24,6 +24,10 @@
   color: var(--color-foreground-subtle);
 }
 
+.question-card__comment {
+  font-size: var(--font-size-sm);
+}
+
 .question-pagination {
   display: flex;
   padding-top: var(--spacing-2);

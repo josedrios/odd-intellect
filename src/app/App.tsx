@@ -13,7 +13,7 @@ function App() {
       <div id="content-container">
         <Nav />
         <main>
-          <AccountPage />
+          <HomePage />
         </main>
         <Footer />
       </div>
@@ -51,6 +51,13 @@ function AccountPage() {
     <>
       <AccountHeader />
       <AccountStatList />
+      <QuestionCard comment />
+      <QuestionCard comment />
+      <QuestionCard comment />
+      <QuestionCard comment />
+      <QuestionCard comment />
+      <QuestionCard comment />
+      <QuestionCard comment />
     </>
   );
 }

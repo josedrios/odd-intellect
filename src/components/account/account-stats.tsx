@@ -13,11 +13,15 @@ export default function AccountStatList() {
     { label: 'email', value: 'johndoe@mail.com' },
     { label: 'current streak', value: '2 weeks' },
     { label: 'longest streak', value: '17 weeks' },
+    { label: 'user since', value: '4/20/2025' },
     { label: 'comments', value: '87' },
     { label: 'upvotes', value: '1273' },
     { label: 'downvotes', value: '106' },
     { label: 'real name', value: 'John Doe' },
-    { label: 'Date of Birth', value: '4/20/2002' },
+    { label: 'country', value: 'United States of America' },
+    { label: 'date of birth', value: '4/20/2002' },
+    { label: 'age', value: '23' },
+    { label: 'gender', value: 'male' },
   ];
 
   return (
