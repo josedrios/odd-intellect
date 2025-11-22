@@ -6,6 +6,10 @@
   margin: var(--spacing-5) 0;
 }
 
+.nav__header {
+  color: inherit;
+}
+
 .nav__account {
   color: var(--color-foreground-default);
 

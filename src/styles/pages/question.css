@@ -28,7 +28,7 @@
   font-size: var(--font-size-sm);
 }
 
-.question-pagination {
+.pagination {
   display: flex;
   padding-top: var(--spacing-2);
   flex-direction: row;
@@ -37,7 +37,7 @@
   align-items: center;
 }
 
-.question-pagination__index {
+.pagination__index {
   font-size: var(--font-size-sm);
   color: var(--color-foreground-subtle);
 }

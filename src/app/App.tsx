@@ -1,12 +1,9 @@
 import Nav from '@/components/nav.tsx';
-import QuestionCard from '@/questions/question-card';
-import QuestionPagination from '@/questions/question-pagination';
-import QuestionPanel from '@/questions/question-panel';
-import CommentSection from '@/comments/comment-section';
 import Footer from '@/components/footer';
-import AccountHeader from '@/components/account/account-header';
-import AccountStatList from '@/components/account/account-stats';
-import SearchBar from '@/components/search';
+import HomePage from './pages/home';
+import QuestionPage from './pages/question';
+import AccountPage from './pages/account';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
@@ -14,53 +11,14 @@ function App() {
       <div id="content-container">
         <Nav />
         <main>
-          <AccountPage />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/question" element={<QuestionPage />} />
+            <Route path="/account" element={<AccountPage />} />
+          </Routes>
         </main>
         <Footer />
       </div>
-    </>
-  );
-}
-
-function HomePage() {
-  return (
-    <>
-      <SearchBar />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionPagination />
-    </>
-  );
-}
-
-function QuestionPage() {
-  return (
-    <>
-      <QuestionPanel />
-      <CommentSection />
-    </>
-  );
-}
-
-function AccountPage() {
-  return (
-    <>
-      <AccountHeader />
-      <AccountStatList />
-      <SearchBar account />
-      <QuestionCard comment />
-      <QuestionCard comment />
-      <QuestionCard comment />
-      <QuestionCard comment />
-      <QuestionCard comment />
-      <QuestionCard comment />
-      <QuestionCard comment />
     </>
   );
 }

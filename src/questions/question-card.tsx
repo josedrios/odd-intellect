@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
+
 interface QuestionCardProps {
   comment?: boolean;
 }
 
 export default function QuestionCard({ comment = false }: QuestionCardProps) {
   return (
-    <div className="question-card">
+    <Link to="/question" className="question-card">
       <h2 className="question-card__question">
         3. TELL ME ABOUT SOMEONE YOU DEEPLY LOVE.
       </h2>
@@ -22,6 +24,6 @@ export default function QuestionCard({ comment = false }: QuestionCardProps) {
         </>
       )}
       <p className="question-card__info">└─ NOV 16, 2025 </p>
-    </div>
+    </Link>
   );
 }
