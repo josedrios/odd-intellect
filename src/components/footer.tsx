@@ -1,12 +1,29 @@
+import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <div className="footer">
       <div className="footer__body">
-        <a className="footer__link">BACK TO TOP</a>
-        <a className="footer__link">ABOUT</a>
-        <a className="footer__link">DONATE</a>
+        <a
+          className="footer__link"
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            });
+          }}
+        >
+          BACK TO TOP
+        </a>
+        <Link to="/about" className="footer__link">
+          ABOUT
+        </Link>
+        <Link to="/donate" className="footer__link">
+          DONATE
+        </Link>
         <a className="footer__link">FAQS</a>
-        <a className="footer__link">CONTACT</a>
+        <Link to="/contact" className="footer__link">
+          CONTACT
+        </Link>
         <a className="footer__link">TOS</a>
         <a className="footer__link">REQUEST</a>
         <a className="footer__link">HELP</a>

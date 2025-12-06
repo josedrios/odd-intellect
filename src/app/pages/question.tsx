@@ -1,10 +1,10 @@
 import CommentSection from '@/comments/comment-section';
-import QuestionPanel from '@/questions/question-panel';
+import TextPanel from '@/components/text-panel';
 
 export default function QuestionPage() {
   return (
     <>
-      <QuestionPanel />
+      <TextPanel text="tell me about someone you deeply love." />
       <CommentSection />
     </>
   );

@@ -41,19 +41,3 @@
   font-size: var(--font-size-sm);
   color: var(--color-foreground-subtle);
 }
-
-.question-panel,
-.account-header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100px;
-  padding: 20vh 0;
-}
-
-.question-panel__text,
-.account-header__text {
-  text-align: center;
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-wide);
-}

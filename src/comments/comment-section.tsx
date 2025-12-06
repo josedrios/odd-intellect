@@ -18,12 +18,15 @@ export default function CommentSection() {
 function CommentSectionHeader() {
   return (
     <div className="comment-section__header">
-      <button className="comment-section__sort btn--text">
+      <button className="comment-section__sort btn--minimal">
         <p>RELEVANT</p>
         <Icon name={ICON.SORT} />
       </button>
-      <button className="comment-section__create-comment btn--text">
+      <button className="comment-section__create-comment btn--minimal">
         CREATE COMMENT
+      </button>
+      <button className="btn--minimal">
+        <Icon name={ICON.SHARE} />
       </button>
     </div>
   );
