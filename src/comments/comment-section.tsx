@@ -1,7 +1,7 @@
 import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import CommentCard from './comment-card';
-import Select from 'react-select';
+import Select from '@/components/select';
 
 export default function CommentSection() {
   return (
@@ -25,14 +25,7 @@ function CommentSectionHeader() {
 
   return (
     <div className="comment-section__header">
-      <Select
-        options={options}
-        classNamePrefix={'react-select'}
-        unstyled
-        isClearable={false}
-        isSearchable={false}
-        defaultValue={options[0]}
-      />
+      <Select options={options} defaultValue={options[0]} size={'xs'} />
       <button className="comment-section__create-comment btn--minimal">
         <p>CREATE COMMENT</p>
       </button>

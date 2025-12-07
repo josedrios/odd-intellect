@@ -37,3 +37,16 @@
     background: var(--color-background-subtle-hover);
   }
 }
+
+/* Change font size for respective select component sizes */
+.react-select-xs * {
+  font-size: var(--font-size-xs) !important;
+}
+
+.react-select-sm * {
+  font-size: var(--font-size-sm) !important;
+}
+
+.react-select-md * {
+  font-size: var(--font-size-md) !important;
+}
