@@ -25,6 +25,14 @@
   padding-top: var(--spacing-1px);
 }
 
+a.account-stat__key {
+  text-decoration: underline !important;
+
+  &:hover {
+    color: var(--color-foreground-subtle-hover);
+  }
+}
+
 .account-stat__value {
   width: 50%;
   font-weight: var(--font-weight-semibold);

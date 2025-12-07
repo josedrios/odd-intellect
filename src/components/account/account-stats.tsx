@@ -1,6 +1,7 @@
 interface StatProps {
   label: string;
   value: string;
+  edit?: boolean;
 }
 
 export default function AccountStatList() {
@@ -26,6 +27,7 @@ export default function AccountStatList() {
 
   return (
     <div className="account-stat-list">
+      <AccountStat label={'EDIT PROFILE'} value={''} edit />
       {info.map((stat, i) => (
         <AccountStat label={stat.label} value={stat.value} key={i} />
       ))}
@@ -33,10 +35,14 @@ export default function AccountStatList() {
   );
 }
 
-function AccountStat({ label, value }: StatProps) {
+function AccountStat({ label, value, edit = false }: StatProps) {
   return (
     <div className="account-stat">
-      <p className="account-stat__key">{label.toUpperCase()}</p>
+      {edit ? (
+        <a className="account-stat__key">{label.toUpperCase()}</a>
+      ) : (
+        <p className="account-stat__key">{label.toUpperCase()}</p>
+      )}
       <p className="account-stat__value">{value.toUpperCase()}</p>
     </div>
   );

@@ -1,0 +1,45 @@
+.react-select-container {
+}
+
+.react-select__control {
+  min-height: 0px !important;
+  height: 16px;
+  align-items: flex-end !important;
+}
+
+.react-select__value-container {
+}
+
+.react-select__value-container {
+  font-size: var(--font-size-xs);
+  color: var(--color-foreground-subtle);
+  font-weight: var(--font-weight-normal);
+  line-height: normal !important;
+
+  &:hover {
+    color: var(--color-foreground-subtle-hover);
+    cursor: pointer;
+  }
+}
+
+.react-select__indicators {
+  display: none !important;
+}
+
+.react-select__menu-list {
+  width: fit-content;
+  margin-top: var(--spacing-1);
+}
+
+.react-select__option {
+  background: var(--color-background-subtle);
+  padding: var(--spacing-1);
+  padding-right: var(--spacing-1_5);
+  width: fit-content;
+  font-size: var(--font-size-xs) !important;
+
+  &:hover {
+    cursor: pointer;
+    background: var(--color-background-subtle-hover);
+  }
+}

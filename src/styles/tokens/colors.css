@@ -56,6 +56,8 @@
   /* backgrounds */
   --color-background-default: hsl(var(--gray-1000));
   --color-background-default-hover: hsl(var(--gray-800));
+  --color-background-subtle: hsl(var(--gray-800));
+  --color-background-subtle-hover: hsl(var(--gray-600));
 
   /* borders */
   --color-border-default: hsl(var(--gray-600));
