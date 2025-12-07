@@ -1,13 +1,7 @@
-.react-select-container {
-}
-
 .react-select__control {
   min-height: 0px !important;
-  height: 16px;
+  height: 100%;
   align-items: flex-end !important;
-}
-
-.react-select__value-container {
 }
 
 .react-select__value-container {
@@ -28,7 +22,7 @@
 
 .react-select__menu-list {
   width: fit-content;
-  margin-top: var(--spacing-1);
+  margin-top: var(--spacing-2);
 }
 
 .react-select__option {
