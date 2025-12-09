@@ -1,15 +1,20 @@
 .modal {
   width: 100vw;
   height: 100vh;
-  background: hsla(var(--gray-1200), 0.7);
+  background: var(--color-background-modal);
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
+  z-index: var(--z-index-modal);
+  padding: var(--spacing-4);
 }
 
 .modal__content {
-  max-width: 1000px;
+  max-width: calc(var(--breakpoint-md) - 2 * var(--spacing-6));
+  max-height: 80vh;
+  overflow: auto;
+  width: 100%;
   margin: auto !important;
   padding: var(--spacing-3);
   background: var(--color-background-default);

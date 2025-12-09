@@ -1,4 +1,4 @@
-import { useState, useContext, createContext } from 'react';
+import { useState, useContext, createContext, useEffect } from 'react';
 
 interface ModalCtxType {
   isOpen: boolean;
@@ -15,10 +15,14 @@ export default function ModalProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggle = () => setIsOpen((curr) => !curr);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
 
   return (
     <ModalCtx.Provider value={{ isOpen, toggle, open, close }}>

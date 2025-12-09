@@ -16,7 +16,7 @@ export default function Select({ options, defaultValue, size }: SelectProps) {
     <SelectBase
       options={options}
       defaultValue={defaultValue}
-      className={`react-select-${size}`}
+      className={`react-select react-select-${size}`}
       classNamePrefix={'react-select'}
       unstyled
       isClearable={false}

@@ -58,6 +58,7 @@
   --color-background-default-hover: hsl(var(--gray-800));
   --color-background-subtle: hsl(var(--gray-800));
   --color-background-subtle-hover: hsl(var(--gray-600));
+  --color-background-modal: hsla(var(--gray-1200), 0.7);
 
   /* borders */
   --color-border-default: hsl(var(--gray-600));
