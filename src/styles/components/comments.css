@@ -56,3 +56,20 @@
 .comment-card__footer-spacer {
   margin-right: auto;
 }
+
+.comment-form {
+}
+
+.comment-form__prompt {
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  margin: 10vh 0;
+}
+
+.comment-form__textarea {
+  min-height: 100px;
+}
+
+.comment-form__submit {
+  margin-left: auto;
+}

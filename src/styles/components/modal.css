@@ -16,6 +16,7 @@
   overflow: auto;
   width: 100%;
   margin: auto !important;
-  padding: var(--spacing-3);
+  padding: var(--spacing-4);
   background: var(--color-background-default);
+  border-radius: var(--radius-1);
 }

@@ -26,7 +26,7 @@ export default function AccountPage() {
         </>
       ) : (
         <button
-          className="account-view-comments"
+          className="account-view-comments btn--bordered"
           onClick={(e) => {
             e.preventDefault();
             setViewComments(true);

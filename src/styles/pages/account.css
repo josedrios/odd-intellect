@@ -39,11 +39,5 @@ a.account-stat__key {
 }
 
 .account-view-comments {
-  color: var(--color-foreground-subtle);
   margin: auto;
-  border: 1px solid var(--color-border-default);
-
-  &:hover {
-    color: var(--color-foreground-subtle-hover);
-  }
 }

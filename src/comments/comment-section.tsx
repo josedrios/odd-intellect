@@ -4,6 +4,7 @@ import CommentCard from './comment-card';
 import Select from '@/components/select';
 import { useModal } from '@/context/modal-context';
 import Modal from '@/components/modal';
+import CreateComment from './create-comment';
 
 export default function CommentSection() {
   return (
@@ -30,8 +31,7 @@ function CommentSectionHeader() {
   return (
     <div className="comment-section__header">
       <Modal>
-        <p>This is the create comment modal</p>
-        <button onClick={() => close()}>CLOSE</button>
+        <CreateComment />
       </Modal>
       <Select options={options} defaultValue={options[0]} size={'xs'} />
       <button

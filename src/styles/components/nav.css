@@ -8,6 +8,10 @@
 
 .nav__header {
   color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .nav__account {
