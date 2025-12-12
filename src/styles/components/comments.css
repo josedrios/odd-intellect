@@ -70,6 +70,13 @@
   min-height: 100px;
 }
 
+.comment-form__count {
+  color: var(--color-foreground-subtle);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
 .comment-form__submit {
   margin-left: auto;
+  color: var(--color-foreground-default);
 }

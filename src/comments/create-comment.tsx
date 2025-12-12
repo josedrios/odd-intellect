@@ -1,5 +1,4 @@
 import Icon from '@/components/icons';
-import TextPanel from '@/components/text-panel';
 import { ICON } from '@/util/icon-names';
 
 export default function CreateComment() {
@@ -8,6 +7,7 @@ export default function CreateComment() {
       <h2 className="comment-form__prompt">
         TELL ME ABOUT SOMEONE YOU DEEPLY LOVE.
       </h2>
+      <p className="comment-form__count">217/800</p>
       <textarea
         className="comment-form__textarea"
         placeholder="What's on your mind..."

@@ -15,3 +15,7 @@ input {
     border-color: var(--color-border-subtle-hover);
   }
 }
+
+textarea {
+  resize: vertical;
+}

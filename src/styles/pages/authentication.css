@@ -1,0 +1,33 @@
+.authentication-container {
+  min-height: 50vh;
+  max-width: var(--breakpoint-sm);
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+
+  form {
+    width: 100%;
+  }
+}
+
+.login__title {
+  margin: auto;
+}
+
+.login__submit {
+  margin: auto;
+  margin-top: var(--spacing-4);
+}
+
+.login__register-notice,
+.login__link {
+  margin: auto;
+  margin-top: var(--spacing-2);
+  font-size: var(--font-size-xs);
+  color: var(--color-foreground-subtle);
+}
+
+.login__link {
+  text-decoration: underline;
+}

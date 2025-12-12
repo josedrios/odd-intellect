@@ -7,6 +7,7 @@ import AccountPage from './pages/account';
 import { Routes, Route } from 'react-router-dom';
 import DonatePage from './pages/donate';
 import AboutPage from './pages/about';
+import AuthenticationPage from './pages/authentication';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/question" element={<QuestionPage />} />
+            <Route path="/authentication" element={<AuthenticationPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage />} />
             <Route path="/contact" element={<ContactPage />} />
