@@ -1,4 +1,4 @@
-.authentication-container {
+.auth-container {
   min-height: 50vh;
   max-width: var(--breakpoint-sm);
   width: 100%;
@@ -11,23 +11,27 @@
   }
 }
 
-.login__title {
+.auth-form__title {
   margin: auto;
 }
 
-.login__submit {
+.auth-form__submit {
   margin: auto;
   margin-top: var(--spacing-4);
 }
 
-.login__register-notice,
-.login__link {
+.auth-form__note,
+.auth-form__link {
   margin: auto;
   margin-top: var(--spacing-2);
   font-size: var(--font-size-xs);
   color: var(--color-foreground-subtle);
 }
 
-.login__link {
+.auth-form__link {
   text-decoration: underline;
+
+  &:hover {
+    color: var(--color-foreground-default);
+  }
 }

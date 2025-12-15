@@ -7,7 +7,7 @@ import AccountPage from './pages/account';
 import { Routes, Route } from 'react-router-dom';
 import DonatePage from './pages/donate';
 import AboutPage from './pages/about';
-import AuthenticationPage from './pages/authentication';
+import AuthPage from './pages/auth';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/question" element={<QuestionPage />} />
-            <Route path="/authentication" element={<AuthenticationPage />} />
+            <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage />} />
             <Route path="/contact" element={<ContactPage />} />

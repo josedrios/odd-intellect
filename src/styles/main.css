@@ -28,4 +28,4 @@
 /* pages */
 @import './pages/account.css';
 @import './pages/question.css';
-@import './pages/authentication.css';
+@import './pages/auth.css';
