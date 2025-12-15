@@ -9,7 +9,7 @@ export default function AboutPage() {
         family, weight training, and consuming pieces of media that completely
         change the way I think. I am also kind of a bum.
       </p>
-      <TextPanel text="WHY MAKE THIS WEBSITE" />
+      <TextPanel text="WHY THE WEBSITE?" />
       <p>
         When you ask a question to 10 people, you sometimes get 10 different
         responses. When you ask a deep question to everyone on the internet who

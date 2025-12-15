@@ -8,6 +8,9 @@ import { Routes, Route } from 'react-router-dom';
 import DonatePage from './pages/donate';
 import AboutPage from './pages/about';
 import AuthPage from './pages/auth';
+import HelpPage from './pages/help';
+import RequestPage from './pages/request';
+import TermsPage from './pages/terms';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
             <Route path="/account" element={<AccountPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
+            <Route path="/help" element={<HelpPage />} />
+            <Route path="/request" element={<RequestPage />} />
+            <Route path="/terms" element={<TermsPage />} />
           </Routes>
         </main>
         <Footer />

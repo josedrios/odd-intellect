@@ -35,12 +35,12 @@ function CommentSectionHeader() {
       </Modal>
       <Select options={options} defaultValue={options[0]} size={'xs'} />
       <button
-        className="comment-section__create-comment btn--minimal"
+        className="comment-section__create-comment btn--text"
         onClick={() => open()}
       >
         <p>CREATE COMMENT</p>
       </button>
-      <button className="btn--minimal">
+      <button className="btn--text">
         <Icon name={ICON.SHARE} />
       </button>
     </div>

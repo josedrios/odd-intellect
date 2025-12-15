@@ -25,15 +25,7 @@ button {
   }
 }
 
-.btn--emphasis {
-  color: var(--color-foreground-default);
-
-  &:hover {
-    color: var(--color-foreground-default-hover);
-  }
-}
-
-.btn--minimal {
+.btn--text {
   padding: 0;
 
   &:hover {
@@ -44,10 +36,4 @@ button {
 
 .btn--bordered {
   border: 1px solid var(--color-border-default);
-}
-
-.btn--disabled {
-}
-
-.btn--active {
 }

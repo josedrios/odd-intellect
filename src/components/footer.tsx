@@ -7,7 +7,14 @@ export default function Footer() {
     });
   };
 
-  const footerLinks = ['about', 'donate', 'contact', 'tos', 'request', 'help'];
+  const footerLinks = [
+    'about',
+    'donate',
+    'contact',
+    'terms',
+    'request',
+    'help',
+  ];
 
   return (
     <div className="footer">
