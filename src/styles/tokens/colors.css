@@ -52,6 +52,7 @@
   --color-foreground-subtle: hsl(var(--gray-400));
   --color-foreground-subtle-hover: hsl(var(--gray-200));
   --color-foreground-placeholder: hsl(var(--gray-600));
+  --color-foreground-disabled: hsl(var(--gray-400));
 
   /* backgrounds */
   --color-background-default: hsl(var(--gray-1000));
@@ -59,6 +60,7 @@
   --color-background-subtle: hsl(var(--gray-800));
   --color-background-subtle-hover: hsl(var(--gray-600));
   --color-background-modal: hsla(var(--gray-1200), 0.7);
+  --color-background-disabled: hsl(var(--gray-800));
 
   /* borders */
   --color-border-default: hsl(var(--gray-600));

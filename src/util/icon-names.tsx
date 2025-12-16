@@ -14,6 +14,8 @@ export const ICON = {
   CLOCK: 'TbClock',
   SHARE: 'TbShare2',
   CLOSE: 'TbX',
+  EYEOPEN: 'TbEye',
+  EYECLOSE: 'TbEyeClosed',
 } as const;
 
 export type IconValue = (typeof ICON)[keyof typeof ICON];

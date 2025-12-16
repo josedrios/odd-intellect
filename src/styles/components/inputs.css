@@ -19,3 +19,8 @@ input {
 textarea {
   resize: vertical;
 }
+
+input:disabled {
+  background: var(--color-background-disabled);
+  color: var(--color-foreground-disabled);
+}

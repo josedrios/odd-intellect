@@ -35,5 +35,9 @@ button {
 }
 
 .btn--bordered {
-  border: 1px solid var(--color-border-default);
+  border: 1px solid var(--color-border-subtle);
+
+  &:hover {
+    border-color: var(--color-border-subtle-hover);
+  }
 }

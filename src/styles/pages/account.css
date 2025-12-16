@@ -50,3 +50,9 @@ a.account-stat__key {
   margin: auto;
   margin-top: var(--spacing-4);
 }
+
+.account-edit-input {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-2);
+}
