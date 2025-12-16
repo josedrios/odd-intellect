@@ -41,3 +41,12 @@ a.account-stat__key {
 .account-view-comments {
   margin: auto;
 }
+
+.account-edit__title {
+  text-align: center;
+}
+
+.account-edit__submit {
+  margin: auto;
+  margin-top: var(--spacing-4);
+}

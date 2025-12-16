@@ -13,6 +13,7 @@ export const ICON = {
   DESCENDING: 'TbSortDescending',
   CLOCK: 'TbClock',
   SHARE: 'TbShare2',
+  CLOSE: 'TbX',
 } as const;
 
 export type IconValue = (typeof ICON)[keyof typeof ICON];

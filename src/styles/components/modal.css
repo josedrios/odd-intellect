@@ -19,4 +19,15 @@
   padding: var(--spacing-4);
   background: var(--color-background-default);
   border-radius: var(--radius-1);
+  -ms-overflow-style: auto !important;
+  scrollbar-width: thin;
+
+  *::-webkit-scrollbar {
+    display: block !important;
+  }
+}
+
+.modal__close {
+  font-size: var(--font-size-xs);
+  margin-left: auto;
 }
