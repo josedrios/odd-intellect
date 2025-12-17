@@ -1,9 +1,7 @@
 import TextPanel from '@/components/text-panel';
 import AccountStatList from '@/components/account/account-stats';
-import Pagination from '@/components/pagination';
-import SearchBar from '@/components/search';
-import PromptCard from '@/prompts/prompt-card';
 import { useState } from 'react';
+import PromptList from '@/prompts/prompt-list';
 
 export default function AccountPage() {
   const [viewComments, setViewComments] = useState(false);
@@ -14,15 +12,7 @@ export default function AccountPage() {
       <AccountStatList />
       {viewComments ? (
         <>
-          <SearchBar account />
-          <PromptCard comment />
-          <PromptCard comment />
-          <PromptCard comment />
-          <PromptCard comment />
-          <PromptCard comment />
-          <PromptCard comment />
-          <PromptCard comment />
-          <Pagination />
+          <PromptList account />
         </>
       ) : (
         <button

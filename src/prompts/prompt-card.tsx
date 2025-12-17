@@ -19,7 +19,7 @@ export default function PromptCard({ comment = false }: PromptCardProps) {
         </p>
       ) : (
         <>
-          <p className="prompt-card__info">└─ 2.4k COMMENTS</p>
+          <p className="prompt-card__info">└─ 2.4K COMMENTS</p>
         </>
       )}
       <p className="prompt-card__info">└─ NOV 16, 2025 </p>

@@ -1,17 +1,10 @@
 import { ICON } from '@/util/icon-names';
 import Icon from './icons';
 
-interface SearchProps {
-  account?: boolean;
-}
-
-export default function SearchBar({ account = false }: SearchProps) {
+export default function SearchBar() {
   return (
     <form className="search-bar">
-      <input
-        className="search-bar__input"
-        placeholder={`Find a ${account ? 'Comment' : 'Prompt'}`}
-      />
+      <input className="search-bar__input" placeholder={`Find a prompt`} />
       <button type="submit">
         <Icon name={ICON.SEARCH} />
       </button>

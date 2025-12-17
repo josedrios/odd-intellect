@@ -1,20 +1,9 @@
-import Pagination from '@/components/pagination';
-import SearchBar from '@/components/search';
-import PromptCard from '@/prompts/prompt-card';
+import PromptList from '@/prompts/prompt-list';
 
 export default function HomePage() {
   return (
     <>
-      <SearchBar />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <PromptCard />
-      <Pagination />
+      <PromptList />
     </>
   );
 }

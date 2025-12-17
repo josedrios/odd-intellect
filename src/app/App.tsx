@@ -17,6 +17,7 @@ function App() {
     <>
       <div id="content-container">
         <Nav />
+        {/* PUT BANNER HERE? */}
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
