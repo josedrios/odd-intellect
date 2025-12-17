@@ -10,7 +10,7 @@ export default function SearchBar({ account = false }: SearchProps) {
     <form className="search-bar">
       <input
         className="search-bar__input"
-        placeholder={`Find a ${account ? 'Comment' : 'Question'}`}
+        placeholder={`Find a ${account ? 'Comment' : 'Prompt'}`}
       />
       <button type="submit">
         <Icon name={ICON.SEARCH} />

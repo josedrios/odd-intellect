@@ -1,9 +1,3 @@
-/* account-header and account-header__text
-* were styled in question.css to utilize
-* the same styles as question-panel and 
-* question-panel__text
-* */
-
 .account-stat-list {
   display: flex;
   flex-direction: column;

@@ -1,19 +1,19 @@
 import Pagination from '@/components/pagination';
 import SearchBar from '@/components/search';
-import QuestionCard from '@/questions/question-card';
+import PromptCard from '@/prompts/prompt-card';
 
 export default function HomePage() {
   return (
     <>
       <SearchBar />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
-      <QuestionCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
+      <PromptCard />
       <Pagination />
     </>
   );

@@ -2,7 +2,7 @@ import Nav from '@/components/nav.tsx';
 import ContactPage from './pages/contact';
 import Footer from '@/components/footer';
 import HomePage from './pages/home';
-import QuestionPage from './pages/question';
+import PromptPage from './pages/prompt';
 import AccountPage from './pages/account';
 import { Routes, Route } from 'react-router-dom';
 import DonatePage from './pages/donate';
@@ -20,7 +20,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/question" element={<QuestionPage />} />
+            <Route path="/prompt" element={<PromptPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage />} />

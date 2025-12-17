@@ -2,7 +2,7 @@ import TextPanel from '@/components/text-panel';
 import AccountStatList from '@/components/account/account-stats';
 import Pagination from '@/components/pagination';
 import SearchBar from '@/components/search';
-import QuestionCard from '@/questions/question-card';
+import PromptCard from '@/prompts/prompt-card';
 import { useState } from 'react';
 
 export default function AccountPage() {
@@ -15,13 +15,13 @@ export default function AccountPage() {
       {viewComments ? (
         <>
           <SearchBar account />
-          <QuestionCard comment />
-          <QuestionCard comment />
-          <QuestionCard comment />
-          <QuestionCard comment />
-          <QuestionCard comment />
-          <QuestionCard comment />
-          <QuestionCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
+          <PromptCard comment />
           <Pagination />
         </>
       ) : (
