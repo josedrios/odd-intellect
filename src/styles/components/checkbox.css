@@ -1,0 +1,20 @@
+.checkbox {
+  display: inline-block;
+  border: 1px solid var(--color-border-default);
+  width: var(--spacing-2_5);
+  height: var(--spacing-2_5);
+  justify-content: center;
+  align-items: center;
+  padding: calc(2 * var(--spacing-1px));
+  margin: 0 var(--spacing-2);
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.checkbox__center {
+  height: 100%;
+  width: 100%;
+  background: var(--color-foreground-default);
+}

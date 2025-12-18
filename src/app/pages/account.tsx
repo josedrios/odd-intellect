@@ -5,6 +5,7 @@ import AccountList from '@/components/account/account-list';
 import { AccountPreferences } from '@/components/account/account-preferences';
 import Modal from '@/components/modal';
 import { useModal } from '@/context/modal-context';
+import RegisterForm from '@/components/forms/register-form';
 
 export interface Attribute {
   label: string;

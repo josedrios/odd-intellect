@@ -1,3 +1,5 @@
+import CheckBox from '../checkbox';
+
 export default function RegisterForm() {
   return (
     <form className="auth-form">
@@ -10,7 +12,7 @@ export default function RegisterForm() {
       <input placeholder="Confirm Password" />
       {/* Create a checkbox component */}
       <p className="auth-form__note">
-        I have read and agree to the{' '}
+        <CheckBox />I have read and agree to the{' '}
         <a className="auth-form__link">Terms of Service</a> and{' '}
         <a className="auth-form__link">Privacy Policy</a>
       </p>
