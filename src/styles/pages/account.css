@@ -1,17 +1,17 @@
-.account-stat-list {
+.account-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-3);
   margin-bottom: var(--spacing-10);
 }
 
-.account-stat {
+.account-attribute {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-10);
 }
 
-.account-stat__key {
+.account-attribute__key {
   color: var(--color-foreground-subtle);
   font-size: var(--font-size-xs);
   width: 50%;
@@ -19,7 +19,7 @@
   padding-top: var(--spacing-1px);
 }
 
-a.account-stat__key {
+a.account-attribute__key {
   text-decoration: underline !important;
 
   &:hover {
@@ -27,7 +27,7 @@ a.account-stat__key {
   }
 }
 
-.account-stat__value {
+.account-attribute__value {
   width: 50%;
   font-weight: var(--font-weight-semibold);
 }
