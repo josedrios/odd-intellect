@@ -36,16 +36,12 @@ a.account-attribute__key {
   margin: auto;
 }
 
-.account-edit__title {
-  text-align: center;
-}
-
 .account-edit__submit {
   margin: auto;
   margin-top: var(--spacing-4);
 }
 
-.account-edit-input {
+.account-edit__input {
   display: flex;
   flex-direction: row;
   gap: var(--spacing-2);

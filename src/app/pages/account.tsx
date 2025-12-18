@@ -3,6 +3,7 @@ import { useState } from 'react';
 import PromptList from '@/prompts/prompt-list';
 import AccountList from '@/components/account/account-list';
 import { AccountPreferences } from '@/components/account/account-preferences';
+import Modal from '@/components/modal';
 
 export interface Attribute {
   label: string;

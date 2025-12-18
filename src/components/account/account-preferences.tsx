@@ -6,9 +6,13 @@ import type { AttributeListProps, AttributeProps } from '@/app/pages/account';
 
 export function AccountPreferences({ attributes }: AttributeListProps) {
   return (
-    <Modal>
+    <Modal title="preferences">
       <form className="account-edit-form">
-        <h3 className="account-edit__title">EDIT PROFILE</h3>
+        {attributes.map((item) => (
+          <React.Fragment key={item.label}>
+            <AttributeEdit attribute={item} />
+          </React.Fragment>
+        ))}
         {attributes.map((item) => (
           <React.Fragment key={item.label}>
             <AttributeEdit attribute={item} />
@@ -21,13 +25,14 @@ export function AccountPreferences({ attributes }: AttributeListProps) {
 }
 
 function AttributeEdit({ attribute }: AttributeProps) {
+  if (!attribute.editable) return;
   return (
     <>
       <label>
         {attribute.label.charAt(0).toUpperCase() +
           attribute.label.slice(1).toLowerCase()}
       </label>
-      <div className="account-edit-input">
+      <div className="account-edit__input">
         <input
           placeholder={attribute.value}
           value={attribute.value}

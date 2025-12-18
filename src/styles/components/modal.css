@@ -17,6 +17,7 @@
   width: 100%;
   margin: auto !important;
   padding: var(--spacing-4);
+  padding-top: 0;
   background: var(--color-background-default);
   border-radius: var(--radius-1);
   -ms-overflow-style: auto !important;
@@ -25,6 +26,28 @@
   *::-webkit-scrollbar {
     display: block !important;
   }
+}
+
+.modal__header {
+  padding-top: var(--spacing-4);
+  padding-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-4);
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--color-background-default);
+  border-bottom: 2px solid var(--color-border-default);
+  top: 0;
+}
+
+.modal__header--titleless {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.modal__title {
+  margin-top: auto;
 }
 
 .modal__close {
