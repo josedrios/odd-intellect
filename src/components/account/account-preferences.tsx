@@ -6,7 +6,7 @@ import type { AttributeListProps, AttributeProps } from '@/app/pages/account';
 
 export function AccountPreferences({ attributes }: AttributeListProps) {
   return (
-    <Modal title="preferences">
+    <Modal title="preferences" id="account preferences">
       <form className="account-edit-form">
         {attributes.map((item) => (
           <React.Fragment key={item.label}>

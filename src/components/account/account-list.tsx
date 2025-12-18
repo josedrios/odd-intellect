@@ -12,11 +12,14 @@ export default function AccountList({ attributes }: AttributeListProps) {
 }
 
 function AccountAttribute({ attribute }: AttributeProps) {
-  const { open } = useModal();
+  const { openModal } = useModal();
   return (
     <div className="account-attribute">
       {attribute.label.toLowerCase() === 'edit preferences' ? (
-        <a className="account-attribute__key" onClick={() => open()}>
+        <a
+          className="account-attribute__key"
+          onClick={() => openModal('account preferences')}
+        >
           {attribute.label.toUpperCase()}
         </a>
       ) : (

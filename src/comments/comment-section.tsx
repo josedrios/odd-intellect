@@ -26,17 +26,17 @@ function CommentSectionHeader() {
     { value: 'popular', label: 'POPULAR' },
   ];
 
-  const { open, close } = useModal();
+  const { openModal } = useModal();
 
   return (
     <div className="comment-section__header">
-      <Modal>
+      <Modal id="create comment">
         <CreateComment />
       </Modal>
       <Select options={options} defaultValue={options[0]} size={'xs'} />
       <button
         className="comment-section__create-comment btn--text"
-        onClick={() => open()}
+        onClick={() => openModal('create comment')}
       >
         <p>CREATE COMMENT</p>
       </button>

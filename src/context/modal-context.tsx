@@ -1,10 +1,9 @@
 import { useState, useContext, createContext, useEffect } from 'react';
 
 interface ModalCtxType {
-  isOpen: boolean;
-  toggle: () => void;
-  open: () => void;
-  close: () => void;
+  activeModal: string;
+  openModal: (id: string) => void;
+  closeModal: () => void;
 }
 
 const ModalCtx = createContext<ModalCtxType | null>(null);
@@ -15,17 +14,16 @@ export default function ModalProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const toggle = () => setIsOpen((curr) => !curr);
-  const open = () => setIsOpen(true);
-  const close = () => setIsOpen(false);
+  const [activeModal, setActiveModal] = useState<string>('');
+  const openModal = (id: string) => setActiveModal(id);
+  const closeModal = () => setActiveModal('');
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
-  }, [isOpen]);
+    document.body.style.overflow = activeModal === '' ? 'auto' : 'hidden';
+  }, [activeModal]);
 
   return (
-    <ModalCtx.Provider value={{ isOpen, toggle, open, close }}>
+    <ModalCtx.Provider value={{ activeModal, openModal, closeModal }}>
       {children}
     </ModalCtx.Provider>
   );
