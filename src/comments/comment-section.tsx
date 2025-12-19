@@ -3,8 +3,7 @@ import { ICON } from '@/util/icon-names';
 import CommentCard from './comment-card';
 import Select from '@/components/select';
 import { useModal } from '@/context/modal-context';
-import Modal from '@/components/modal';
-import CreateComment from './create-comment';
+import CommentModal from './comment-modal';
 
 export default function CommentSection() {
   return (
@@ -30,13 +29,11 @@ function CommentSectionHeader() {
 
   return (
     <div className="comment-section__header">
-      <Modal id="create comment">
-        <CreateComment />
-      </Modal>
+      <CommentModal />
       <Select options={options} defaultValue={options[0]} size={'xs'} />
       <button
         className="comment-section__create-comment btn--text"
-        onClick={() => openModal('create comment')}
+        onClick={() => openModal('comment create')}
       >
         <p>CREATE COMMENT</p>
       </button>
