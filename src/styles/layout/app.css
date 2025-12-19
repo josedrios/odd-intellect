@@ -1,12 +1,13 @@
 #root {
   height: 100vh;
   /*   width: calc(100vw - 2 * var(--spacing-3)); */
-  padding: 0 var(--spacing-5);
+  padding: 0 0;
   margin: auto;
 }
 
 #content-container {
   min-height: 100vh;
+  padding: 0 var(--spacing-5);
   overflow-y: auto;
   display: flex;
   flex-direction: column;

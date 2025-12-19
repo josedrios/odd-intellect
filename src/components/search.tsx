@@ -1,16 +1,21 @@
 import { ICON } from '@/util/icon-names';
 import Icon from './icons';
+import Select from './select';
 
 export default function SearchBar() {
+  const options = [
+    { value: 'relevant', label: 'RELEVANT' },
+    { value: 'newest', label: 'NEWEST' },
+    { value: 'popular', label: 'POPULAR' },
+  ];
+
   return (
     <form className="search-bar">
-      <input className="search-bar__input" placeholder={`Find a prompt`} />
-      <button type="submit">
+      <button type="submit" className="btn--bordered">
         <Icon name={ICON.SEARCH} />
       </button>
-      <button>
-        <Icon name={ICON.SORT} />
-      </button>
+      <input className="search-bar__input" placeholder={`Find a prompt`} />
+      <Select options={options} defaultValue={options[0]} size={'xs'} />
     </form>
   );
 }

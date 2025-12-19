@@ -1,6 +1,7 @@
 import { useModal } from '@/context/modal-context';
 import Icon from './icons';
 import { ICON } from '@/util/icon-names';
+import { useEffect } from 'react';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -10,6 +11,9 @@ interface ModalProps {
 
 export default function Modal({ children, title, id }: ModalProps) {
   const { activeModal, closeModal } = useModal();
+  useEffect(() => {
+    document.body.style.overflow = activeModal === id ? 'hidden' : 'auto';
+  }, [activeModal, id]);
 
   if (activeModal === id)
     return (

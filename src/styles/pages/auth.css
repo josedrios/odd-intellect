@@ -20,8 +20,8 @@
   margin-top: var(--spacing-4);
 }
 
-.auth-form__note,
-.auth-form__link {
+.auth-form__link,
+.auth-form__note {
   margin: auto;
   margin-top: var(--spacing-2);
   font-size: var(--font-size-xs);
@@ -34,4 +34,8 @@
   &:hover {
     color: var(--color-foreground-default);
   }
+}
+
+.auth-form__note {
+  text-align: center;
 }

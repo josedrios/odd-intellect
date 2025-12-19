@@ -42,5 +42,7 @@ a:hover {
 
 button,
 input {
+  line-height: 1rem;
+  box-sizing: border-box;
   font-family: var(--font-family-default);
 }

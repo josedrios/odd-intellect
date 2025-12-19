@@ -18,10 +18,6 @@ export default function ModalProvider({
   const openModal = (id: string) => setActiveModal(id);
   const closeModal = () => setActiveModal('');
 
-  useEffect(() => {
-    document.body.style.overflow = activeModal === '' ? 'auto' : 'hidden';
-  }, [activeModal]);
-
   return (
     <ModalCtx.Provider value={{ activeModal, openModal, closeModal }}>
       {children}

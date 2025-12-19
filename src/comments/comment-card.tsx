@@ -1,4 +1,5 @@
 import Icon from '@/components/icons';
+import { useModal } from '@/context/modal-context';
 import { ICON } from '@/util/icon-names';
 
 interface CardProps {
@@ -25,6 +26,8 @@ export default function CommentCard({ username, parent = false }: CardProps) {
 }
 
 function CommentFooter({ parent = false }: FooterProps) {
+  const { openModal } = useModal();
+
   return (
     <div className="comment-card__footer">
       {parent ? (
@@ -45,7 +48,10 @@ function CommentFooter({ parent = false }: FooterProps) {
         <Icon name={ICON.DOWNARROW} />
         <p>2</p>
       </button>
-      <button className="comment-card__ellipsis btn--open">
+      <button
+        className="comment-card__ellipsis btn--open"
+        onClick={() => openModal('comment options')}
+      >
         <Icon name={ICON.ELLIPSIS} />
       </button>
     </div>
