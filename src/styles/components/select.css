@@ -2,6 +2,7 @@
   min-height: 0px !important;
   height: 100%;
   align-items: flex-end !important;
+  border: 1px solid transparent;
 }
 
 .react-select__value-container {
@@ -14,6 +15,10 @@
     color: var(--color-foreground-subtle-hover);
     cursor: pointer;
   }
+}
+
+.react-select__single-value {
+  font-weight: var(--font-weight-semibold);
 }
 
 .react-select__indicators {

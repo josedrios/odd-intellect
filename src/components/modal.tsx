@@ -11,8 +11,15 @@ interface ModalProps {
 
 export default function Modal({ children, title, id }: ModalProps) {
   const { activeModal, closeModal } = useModal();
+
   useEffect(() => {
-    document.body.style.overflow = activeModal === id ? 'hidden' : 'auto';
+    if (activeModal === id) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    if (activeModal === '') {
+      document.body.style.overflow = 'auto';
+    }
   }, [activeModal, id]);
 
   if (activeModal === id)

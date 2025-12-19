@@ -6,7 +6,7 @@ interface CreateCommentProps {
   subcomment?: boolean;
 }
 
-export default function CommentModal({
+export default function CommentCreate({
   subcomment = false,
 }: CreateCommentProps) {
   return (

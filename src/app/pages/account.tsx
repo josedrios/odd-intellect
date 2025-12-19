@@ -3,9 +3,6 @@ import { useState } from 'react';
 import PromptList from '@/prompts/prompt-list';
 import AccountList from '@/components/account/account-list';
 import { AccountPreferences } from '@/components/account/account-preferences';
-import Modal from '@/components/modal';
-import { useModal } from '@/context/modal-context';
-import RegisterForm from '@/components/forms/register-form';
 
 export interface Attribute {
   label: string;
@@ -63,8 +60,8 @@ export default function AccountPage() {
 
   return (
     <>
-      <TextPanel text="somedude" />
       <AccountPreferences attributes={attributes} />
+      <TextPanel text="somedude" />
       <AccountList attributes={attributes} />
       {viewComments ? (
         <>

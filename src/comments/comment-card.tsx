@@ -1,7 +1,7 @@
 import Icon from '@/components/icons';
 import { useModal } from '@/context/modal-context';
 import { ICON } from '@/util/icon-names';
-import CommentModal from './comment-modal';
+import CommentCreate from './comment-create';
 
 interface CardProps {
   username: string;
@@ -15,9 +15,10 @@ interface FooterProps {
 export default function CommentCard({ username, parent = false }: CardProps) {
   const content =
     "This is a comment that is suppose to hold real words and real meaning. A comment that will make an individual completely forget about their surroundings and only conscious in the state of the pondering. I don't know what I am talking about, but it made sense in my head a while ago.";
+
   return (
     <div className={`comment-card ${!parent ? 'comment-card--child' : ''}`}>
-      <CommentModal subcomment />
+      <CommentCreate subcomment />
       <p className="comment-card__content">
         <span className="comment-card__username">{username}</span>
         {content}
