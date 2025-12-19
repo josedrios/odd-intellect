@@ -80,3 +80,19 @@
   margin-left: auto;
   color: var(--color-foreground-default);
 }
+
+.comment-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-2);
+}
+
+.comment-options__report {
+  color: var(--color-foreground-report);
+  font-size: var(--font-size-sm);
+
+  &:hover {
+    color: var(--color-foreground-report) !important;
+  }
+}

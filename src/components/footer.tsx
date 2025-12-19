@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom';
+import backToTop from '@/util/back-to-top';
 export default function Footer() {
-  const backToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
-
   const footerLinks = [
     'about',
     'donate',
@@ -23,12 +17,7 @@ export default function Footer() {
           BACK TO TOP
         </a>
         {footerLinks.map((link) => (
-          <Link
-            key={link}
-            to={`/${link}`}
-            onClick={() => backToTop()}
-            className="footer__link"
-          >
+          <Link key={link} to={`/${link}`} className="footer__link">
             {link.toUpperCase()}
           </Link>
         ))}

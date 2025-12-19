@@ -2,6 +2,7 @@ import Icon from '@/components/icons';
 import { useModal } from '@/context/modal-context';
 import { ICON } from '@/util/icon-names';
 import CommentCreate from './comment-create';
+import CommentOptions from './comment-options';
 
 interface CardProps {
   username: string;
@@ -19,6 +20,7 @@ export default function CommentCard({ username, parent = false }: CardProps) {
   return (
     <div className={`comment-card ${!parent ? 'comment-card--child' : ''}`}>
       <CommentCreate subcomment />
+      <CommentOptions />
       <p className="comment-card__content">
         <span className="comment-card__username">{username}</span>
         {content}

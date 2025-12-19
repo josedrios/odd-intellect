@@ -11,8 +11,18 @@ import AuthPage from './pages/auth';
 import HelpPage from './pages/help';
 import RequestPage from './pages/request';
 import TermsPage from './pages/terms';
+import backToTop from '@/util/back-to-top';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function App() {
+  const location = useLocation();
+  const { pathname } = location;
+
+  useEffect(() => {
+    backToTop();
+  }, [pathname]);
+
   return (
     <>
       <div id="content-container">
