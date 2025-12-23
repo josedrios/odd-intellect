@@ -90,9 +90,8 @@
 
 .comment-options__report {
   color: var(--color-foreground-report);
-  font-size: var(--font-size-sm);
 
   &:hover {
-    color: var(--color-foreground-report) !important;
+    color: var(--color-foreground-report-hover) !important;
   }
 }

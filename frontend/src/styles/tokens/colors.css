@@ -53,7 +53,8 @@
   --color-foreground-subtle-hover: hsl(var(--gray-200));
   --color-foreground-placeholder: hsl(var(--gray-600));
   --color-foreground-disabled: hsl(var(--gray-400));
-  --color-foreground-report: hsl(var(--red-300));
+  --color-foreground-report: hsl(var(--red-400));
+  --color-foreground-report-hover: hsl(var(--red-300));
 
   /* backgrounds */
   --color-background-default: hsl(var(--gray-1000));

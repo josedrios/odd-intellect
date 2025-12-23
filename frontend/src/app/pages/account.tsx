@@ -1,6 +1,6 @@
 import TextPanel from '@/components/text-panel';
 import { useState } from 'react';
-import PromptList from '@/prompts/prompt-list';
+import PromptList from '@/components/prompts/prompt-list';
 import AccountList from '@/components/account/account-list';
 import { AccountPreferences } from '@/components/account/account-preferences';
 

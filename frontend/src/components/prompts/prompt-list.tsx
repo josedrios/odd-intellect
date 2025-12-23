@@ -1,5 +1,5 @@
 import Pagination from '@/components/pagination';
-import PromptCard from './prompt-card';
+import PromptCard from '@/components/prompts/prompt-card';
 import SearchBar from '@/components/search';
 
 interface PromptListProps {
