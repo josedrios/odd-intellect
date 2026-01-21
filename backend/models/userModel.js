@@ -1,3 +1,9 @@
 import { query } from "../database.js";
 
 export const getAllUsers = () => query("SELECT * FROM users;");
+
+export const getUser = (userId) =>
+  query("SELECT * FROM users where user_id = $1", [userId]);
+
+export const getUserComments = (userId) =>
+  query("SELECT * FROM comments WHERE user_id = $1", [userId]);

@@ -11,10 +11,8 @@ const db = new Pool({
 export async function query(text, params) {
   const start = Date.now();
   const res = await db.query(text, params);
-  const duration = Date.now() - start;
-  console.log();
-  console.log("executed query", { text, duration, rows: res.rowCount });
-  console.log(res.rows);
-  console.log();
+  const duration = ((Date.now() - start) / 1000).toFixed(2) + " seconds";
+  console.log("executed query", { text, params, duration, rows: res.rowCount });
+  // console.log(res.rows);
   return res;
 }
