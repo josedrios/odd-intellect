@@ -53,3 +53,21 @@ export const createUser = async (req, res) => {
     res.status(500).json({ error: "Failed to create user" });
   }
 };
+
+export const deleteUser = async (req, res) => {
+  const userId = req.params.userId;
+  try {
+    const { rows: userRows } = await User.getUser(userId);
+    if (userRows.length === 0) {
+      return res
+        .status(404)
+        .json({ error: "No user found with user id of " + userId });
+    }
+    const { result } = await User.deleteUser(userId);
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(500).json({
+      error: "Failed to delete user with user id of " + userId,
+    });
+  }
+};

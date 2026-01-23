@@ -10,3 +10,6 @@ export const getUserComments = (userId) =>
 
 export const createUser = (userName) =>
   query("INSERT INTO users (username) VALUES ($1)", [userName]);
+
+export const deleteUser = (userId) =>
+  query("DELETE FROM users WHERE user_id = $1", [userId]);
