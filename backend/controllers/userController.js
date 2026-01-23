@@ -43,3 +43,13 @@ export const getUserComments = async (req, res) => {
     });
   }
 };
+
+export const createUser = async (req, res) => {
+  const { username } = req.body;
+  try {
+    const results = await User.createUser(username);
+    res.status(200).json(results);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to create user" });
+  }
+};

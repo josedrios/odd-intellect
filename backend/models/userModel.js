@@ -7,3 +7,6 @@ export const getUser = (userId) =>
 
 export const getUserComments = (userId) =>
   query("SELECT * FROM comments WHERE user_id = $1", [userId]);
+
+export const createUser = (userName) =>
+  query("INSERT INTO users (username) VALUES ($1)", [userName]);
