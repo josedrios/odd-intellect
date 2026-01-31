@@ -5,8 +5,6 @@ import '../styles/main.css';
 import { BrowserRouter } from 'react-router-dom';
 import ModalProvider from '@/context/modal-context';
 
-console.log('test');
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>

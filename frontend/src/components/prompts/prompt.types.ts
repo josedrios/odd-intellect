@@ -1,6 +1,9 @@
 export type Prompt = {
-  id: number;
+  // Need to make an api type and plug it to a "pretier" type
+  // id: number;
+  prompt_id: number;
   text: string;
-  createdAt: Date;
-  commentCount: number;
+  // createdAt: Date;
+  start_date: Date;
+  // commentCount: number;
 };
