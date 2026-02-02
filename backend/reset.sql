@@ -1,31 +1,34 @@
+-- TODO:
+-- change field names to be consistent and simply intuitive
+
 -- My DB reset script
 
 -- NOTE: SCRIPT/TABLES ARE STILL IN DEVELOPMENT
 
 -- 1. drop any tables if already there
 
-DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS prompts CASCADE;
 DROP TABLE IF EXISTS comments CASCADE;
+DROP TABLE IF EXISTS prompts CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
 
 -- 2. create tables
 
 CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     username VARCHAR(20) UNIQUE NOT NULL
 );
 
 CREATE TABLE prompts (
-    prompt_id SERIAL PRIMARY KEY,
-    start_date DATE NOT NULL,
-    text VARCHAR(200) NOT NULL
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(200) NOT NULL,
+    created_at DATE NOT NULL
 );
 
 CREATE TABLE comments (
-    comment_id SERIAL PRIMARY KEY,
-    prompt_id INT NOT NULL REFERENCES prompts(prompt_id),
-    user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
-    parent_id INT REFERENCES comments(comment_id) ON DELETE CASCADE,
+    id SERIAL PRIMARY KEY,
+    prompt_id INT NOT NULL REFERENCES prompts(id),
+    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    parent_id INT REFERENCES comments(id) ON DELETE CASCADE,
     text VARCHAR(300) NOT NULL,
     created_at TIMESTAMP DEFAULT now()
 );
@@ -45,7 +48,7 @@ INSERT INTO users (username) VALUES
 ('fiona_dreamer');
 
 -- Insert prompts
-INSERT INTO prompts (start_date, text) VALUES
+INSERT INTO prompts (created_at, text) VALUES
 ('2023-10-01', 'Write about a mysterious door that appears in your neighborhood. Where does it lead?'),
 ('2023-10-02', 'Describe a world where colors have sounds and sounds have colors.'),
 ('2023-10-03', 'You find a device that can show you one minute from any day in your future. What do you see?'),

@@ -13,7 +13,7 @@ export default function PromptList({ account = false }: PromptListProps) {
   const [prompts, setPrompts] = useState<Prompt[]>([]);
   useEffect(() => {
     async function loadPrompts() {
-      const data = await getPrompts();
+      const data: Prompt[] = await getPrompts();
       setPrompts(data);
     }
     loadPrompts();
@@ -25,9 +25,9 @@ export default function PromptList({ account = false }: PromptListProps) {
       {!account &&
         prompts.map((prompt) => (
           <PromptCard
-            key={prompt.prompt_id}
+            key={prompt.id}
             prompt={prompt.text}
-            createdAt={prompt.start_date}
+            createdAt={prompt.createdAt}
           />
         ))}
       {/* {account ? <PromptCard comment /> : <PromptCard />} */}
