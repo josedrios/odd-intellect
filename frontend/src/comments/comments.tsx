@@ -22,14 +22,19 @@ export default function Comments() {
     fetchData();
   }, [id]);
 
+  if (comments === null) return <p>Loading...</p>;
+  if (comments.length === 0) return <p>No comments :(</p>;
+
   return (
     <div className="comment-section">
       <CommentSectionHeader />
-      <CommentCard username="Some Dude" parent />
-      <CommentCard username="Some Dude" parent />
-      <CommentCard username="Some Dude" parent />
-      <CommentCard username="Some Dude" />
-      <CommentCard username="Some Dude" />
+      {comments.map((comment) => (
+        <CommentCard
+          username={comment.userId.toString()}
+          parent={!comment.parentId}
+          text={comment.text}
+        />
+      ))}
     </div>
   );
 }
