@@ -19,3 +19,16 @@ export async function getPrompts(): Promise<Prompt[]> {
   console.log(prompts);
   return prompts;
 }
+
+export async function getPrompt(promptId: string): Promise<Prompt> {
+  const fetchedPrompt: PromptApi = await apiFetch<PromptApi>(
+    `/prompts/${promptId}`,
+    {
+      method: 'GET',
+    },
+  );
+  const prompt: Prompt = mapPrompt(fetchedPrompt);
+  console.log('Fetched Prompt:');
+  console.log(prompt);
+  return prompt;
+}

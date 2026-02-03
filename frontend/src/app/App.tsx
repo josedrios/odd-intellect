@@ -31,7 +31,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/prompt" element={<PromptPage />} />
+            <Route path="/prompt/:id" element={<PromptPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage />} />

@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom';
+import type { Prompt } from './prompt.types';
 
 interface PromptCardProps {
-  prompt: string;
-  // comments: number;
-  createdAt: Date;
+  prompt: Prompt;
   comment?: boolean;
 }
 
 export default function PromptCard({
   prompt,
-  createdAt,
   comment = false,
 }: PromptCardProps) {
   return (
-    <Link to="/prompt" className="prompt-card">
-      <h2 className="prompt-card__prompt">{prompt.toUpperCase()}</h2>
+    <Link to={`/prompt/${prompt.id}`} className="prompt-card">
+      <h2 className="prompt-card__prompt">{prompt.text.toUpperCase()}</h2>
       {comment ? (
         <p className="prompt-card__info prompt-card__comment">
           This is test comment to see how the UI under a prompt card would look
@@ -27,7 +25,7 @@ export default function PromptCard({
           <p className="prompt-card__info">└─ 2.4K COMMENTS</p>
         </>
       )}
-      <p className="prompt-card__info">└─ {createdAt.toString()}</p>
+      <p className="prompt-card__info">└─ {prompt.createdAt.toString()}</p>
     </Link>
   );
 }

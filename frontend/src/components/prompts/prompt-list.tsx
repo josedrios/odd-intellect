@@ -10,7 +10,7 @@ interface PromptListProps {
 }
 
 export default function PromptList({ account = false }: PromptListProps) {
-  const [prompts, setPrompts] = useState<Prompt[]>([]);
+  const [prompts, setPrompts] = useState<Prompt[] | null>(null);
   useEffect(() => {
     async function loadPrompts() {
       const data: Prompt[] = await getPrompts();
@@ -19,21 +19,14 @@ export default function PromptList({ account = false }: PromptListProps) {
     loadPrompts();
   }, []);
 
+  if (prompts === null) return <p>loading ...</p>;
+  if (prompts.length === 0) return <p>no results :(</p>;
+
   return (
     <div className="prompt-list">
       <SearchBar />
       {!account &&
-        prompts.map((prompt) => (
-          <PromptCard
-            key={prompt.id}
-            prompt={prompt.text}
-            createdAt={prompt.createdAt}
-          />
-        ))}
-      {/* {account ? <PromptCard comment /> : <PromptCard />} */}
-      {/* {account ? <PromptCard comment /> : <PromptCard />} */}
-      {/* {account ? <PromptCard comment /> : <PromptCard />} */}
-      {/* {account ? <PromptCard comment /> : <PromptCard />} */}
+        prompts.map((prompt) => <PromptCard key={prompt.id} prompt={prompt} />)}
       {/* {account ? <PromptCard comment /> : <PromptCard />} */}
       {/* {account ? <PromptCard comment /> : <PromptCard />} */}
       {/* {account ? <PromptCard comment /> : <PromptCard />} */}
