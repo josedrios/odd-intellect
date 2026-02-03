@@ -11,16 +11,12 @@ function mapComment(comment: CommentApi): Comment {
   };
 }
 
-export async function getComments({
-  commentId,
-}: {
-  commentId: number;
-}): Promise<Comment[]> {
+export async function getComments(promptId: string): Promise<Comment[]> {
   const fetchedComments: CommentApi[] = await apiFetch<CommentApi[]>(
-    `/comments/${commentId}`,
+    `/prompts/${promptId}/comments`,
     { method: 'GET' },
   );
-  const comments = fetchedComments.map(mapComment);
+  const comments: Comment[] = fetchedComments.map(mapComment);
   console.log('Fetched Comments:');
   console.log(comments);
   return comments;

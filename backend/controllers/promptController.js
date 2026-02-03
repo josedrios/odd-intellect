@@ -1,4 +1,5 @@
 import * as Prompt from "../models/promptModel.js";
+import * as Comment from "../models/commentModel.js";
 
 export const getAllPrompts = async (req, res) => {
   try {
@@ -36,7 +37,7 @@ export const getPromptComments = async (req, res) => {
         error: "Prompt with promptId " + promptId + " does not exist",
       });
     }
-    const { rows: comments } = await Prompt.getPromptComments(promptId);
+    const { rows: comments } = await Comment.getPromptComments(promptId);
     res.status(200).json(comments);
   } catch (err) {
     res.status(500).json({

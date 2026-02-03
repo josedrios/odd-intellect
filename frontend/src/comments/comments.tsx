@@ -4,8 +4,24 @@ import CommentCard from './comment-card';
 import Select from '@/components/select';
 import { useModal } from '@/context/modal-context';
 import CommentCreate from './comment-create';
+import { useEffect, useState } from 'react';
+import { getComments } from './comment.api';
+import type { Comment } from './comment.types';
+import { useParams } from 'react-router-dom';
 
 export default function Comments() {
+  const { id } = useParams<{ id: string }>();
+  const [comments, setComments] = useState<Comment[] | null>(null);
+
+  useEffect(() => {
+    async function fetchData() {
+      if (!id) return;
+      const data: Comment[] = await getComments(id);
+      setComments(data);
+    }
+    fetchData();
+  }, [id]);
+
   return (
     <div className="comment-section">
       <CommentSectionHeader />
