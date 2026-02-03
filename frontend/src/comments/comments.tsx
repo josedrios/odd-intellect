@@ -29,11 +29,7 @@ export default function Comments() {
     <div className="comment-section">
       <CommentSectionHeader />
       {comments.map((comment) => (
-        <CommentCard
-          username={comment.userId.toString()}
-          parent={!comment.parentId}
-          text={comment.text}
-        />
+        <CommentCard comment={comment} />
       ))}
     </div>
   );

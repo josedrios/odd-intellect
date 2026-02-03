@@ -3,34 +3,23 @@ import { useModal } from '@/context/modal-context';
 import { ICON } from '@/util/icon-names';
 import CommentCreate from './comment-create';
 import CommentOptions from './comment-options';
+import type { Comment } from './comment.types';
 
-interface FooterProps {
-  parent: boolean;
-}
-
-export default function CommentCard({
-  username,
-  parent = false,
-  text,
-}: {
-  username: string;
-  parent: boolean;
-  text: string;
-}) {
+export default function CommentCard({ comment }: { comment: Comment }) {
   return (
     <div className={`comment-card ${!parent ? 'comment-card--child' : ''}`}>
       <CommentCreate subcomment />
       <CommentOptions />
       <p className="comment-card__content">
-        <span className="comment-card__username">{username}</span>
-        {text}
+        <span className="comment-card__username">{comment.username}</span>
+        {comment.text}
       </p>
-      <CommentFooter parent={parent} />
+      <CommentFooter parent={!!comment.parentId} />
     </div>
   );
 }
 
-function CommentFooter({ parent = false }: FooterProps) {
+function CommentFooter({ parent }: { parent?: boolean }) {
   const { openModal } = useModal();
 
   return (

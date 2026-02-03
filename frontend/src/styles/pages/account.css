@@ -29,7 +29,6 @@ a.account-attribute__key {
 
 .account-attribute__value {
   width: 50%;
-  font-weight: var(--font-weight-semibold);
 }
 
 .account-view-comments {

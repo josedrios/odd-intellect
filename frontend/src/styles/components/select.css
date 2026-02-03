@@ -17,10 +17,6 @@
   }
 }
 
-.react-select__single-value {
-  font-weight: var(--font-weight-semibold);
-}
-
 .react-select__indicators {
   display: none !important;
 }

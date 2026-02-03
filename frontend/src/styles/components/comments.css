@@ -32,7 +32,7 @@
 }
 
 .comment-card__username {
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   margin-right: var(--spacing-2_5);
 }
 
@@ -73,7 +73,6 @@
 .comment-form__count {
   color: var(--color-foreground-subtle);
   font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-semibold);
 }
 
 .comment-form__submit {

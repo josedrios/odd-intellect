@@ -4,6 +4,7 @@ import { apiFetch } from '@/util/apiFetch';
 function mapComment(comment: CommentApi): Comment {
   return {
     id: comment.id,
+    username: comment.username,
     userId: comment.user_id,
     parentId: comment.parent_id,
     text: comment.text,
