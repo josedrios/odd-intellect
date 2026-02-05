@@ -7,26 +7,28 @@ import type { Comment } from './comment.types';
 
 export default function CommentCard({ comment }: { comment: Comment }) {
   return (
-    <div className={`comment-card ${!parent ? 'comment-card--child' : ''}`}>
+    <div
+      className={`comment-card ${comment.parentId ? 'comment-card--child' : ''}`}
+    >
       <CommentCreate subcomment />
       <CommentOptions />
       <p className="comment-card__content">
         <span className="comment-card__username">{comment.username}</span>
         {comment.text}
       </p>
-      <CommentFooter parent={!!comment.parentId} />
+      <CommentFooter parent={!comment.parentId} />
     </div>
   );
 }
 
-function CommentFooter({ parent }: { parent?: boolean }) {
+function CommentFooter({ parent }: { parent: boolean }) {
   const { openModal } = useModal();
 
   return (
     <div className="comment-card__footer">
       {parent ? (
         <button className="comment-card__replies btn--open">
-          └─<span>62 REPLIES</span>
+          └─<span>VIEW REPLIES</span>
         </button>
       ) : (
         <div className="comment-card__footer-spacer" />

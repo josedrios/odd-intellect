@@ -37,7 +37,8 @@ export const getPromptComments = async (req, res) => {
         error: "Prompt with promptId " + promptId + " does not exist",
       });
     }
-    const { rows: comments } = await Comment.getPromptComments(promptId);
+    // const { rows: comments } = await Comment.getPromptComments(promptId);
+    const { rows: comments } = await Comment.getPromptParentComments(promptId);
     res.status(200).json(comments);
   } catch (err) {
     res.status(500).json({
