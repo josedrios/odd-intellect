@@ -5,11 +5,7 @@ import { useEffect, useState } from 'react';
 import { getPrompts } from './prompt.api';
 import type { Prompt } from './prompt.types';
 
-interface PromptListProps {
-  account?: boolean;
-}
-
-export default function PromptList({ account = false }: PromptListProps) {
+export default function PromptList({ account = false }: { account?: boolean }) {
   const [prompts, setPrompts] = useState<Prompt[] | null>(null);
   useEffect(() => {
     async function loadPrompts() {

@@ -2,13 +2,11 @@ import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import Modal from '@/components/modal';
 
-interface CreateCommentProps {
-  subcomment?: boolean;
-}
-
 export default function CommentCreate({
   subcomment = false,
-}: CreateCommentProps) {
+}: {
+  subcomment?: boolean;
+}) {
   return (
     <Modal id={subcomment ? 'comment reply' : 'comment create'}>
       <form className="comment-form">

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Prompt } from './prompt.types';
+import dateFormatter from '@/util/date-formatter';
 
 interface PromptCardProps {
   prompt: Prompt;
@@ -25,7 +26,7 @@ export default function PromptCard({
           <p className="prompt-card__info">└─ {prompt.commentCount} COMMENTS</p>
         </>
       )}
-      <p className="prompt-card__info">└─ {prompt.createdAt.toString()}</p>
+      <p className="prompt-card__info">└─ {dateFormatter(prompt.createdAt)}</p>
     </Link>
   );
 }
