@@ -22,7 +22,7 @@ export default function PromptCard({
         </p>
       ) : (
         <>
-          <p className="prompt-card__info">└─ 2.4K COMMENTS</p>
+          <p className="prompt-card__info">└─ {prompt.commentCount} COMMENTS</p>
         </>
       )}
       <p className="prompt-card__info">└─ {prompt.createdAt.toString()}</p>

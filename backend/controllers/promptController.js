@@ -4,6 +4,7 @@ import * as Comment from "../models/commentModel.js";
 export const getAllPrompts = async (req, res) => {
   try {
     const { rows } = await Prompt.getAllPrompts();
+    console.log(rows);
     res.status(200).json(rows);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch all prompts" });

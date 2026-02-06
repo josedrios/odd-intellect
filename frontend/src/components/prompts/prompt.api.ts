@@ -7,6 +7,7 @@ function mapPrompt(prompt: PromptApi): Prompt {
     id: prompt.id,
     text: prompt.text,
     createdAt: prompt.created_at,
+    commentCount: prompt.comment_count,
   };
 }
 
