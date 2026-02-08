@@ -2,15 +2,13 @@ import { Link } from 'react-router-dom';
 import type { Prompt } from './prompt.types';
 import dateFormatter from '@/util/date-formatter';
 
-interface PromptCardProps {
-  prompt: Prompt;
-  comment?: boolean;
-}
-
 export default function PromptCard({
   prompt,
   comment = false,
-}: PromptCardProps) {
+}: {
+  prompt: Prompt;
+  comment?: boolean;
+}) {
   return (
     <Link to={`/prompt/${prompt.id}`} className="prompt-card">
       <h2 className="prompt-card__prompt">{prompt.text.toUpperCase()}</h2>

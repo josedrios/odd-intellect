@@ -8,7 +8,7 @@ function mapComment(comment: CommentApi): Comment {
     userId: comment.user_id,
     parentId: comment.parent_id,
     text: comment.text,
-    createdAt: comment.created_at,
+    createdAt: new Date(comment.created_at),
   };
 }
 

@@ -5,7 +5,7 @@ function mapPrompt(prompt: PromptApi): Prompt {
   return {
     id: prompt.id,
     text: prompt.text,
-    createdAt: prompt.created_at,
+    createdAt: new Date(prompt.created_at),
     commentCount: prompt.comment_count,
   };
 }
