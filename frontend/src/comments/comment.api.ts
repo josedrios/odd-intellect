@@ -22,3 +22,14 @@ export async function getComments(promptId: string): Promise<Comment[]> {
   console.log(comments);
   return comments;
 }
+
+export async function getSubcomments(commentId: number): Promise<Comment[]> {
+  const fetchedComments: CommentApi[] = await apiFetch<CommentApi[]>(
+    `/comments/${commentId}/subcomments`,
+    { method: 'GET' },
+  );
+  const comments: Comment[] = fetchedComments.map(mapComment);
+  console.log('Fetched Subcomments:');
+  console.log(comments);
+  return comments;
+}

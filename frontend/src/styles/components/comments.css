@@ -31,6 +31,10 @@
   margin-left: var(--spacing-9);
 }
 
+.comment-card__content {
+  padding-bottom: var(--spacing-1);
+}
+
 .comment-card__username {
   font-weight: var(--font-weight-bold);
   margin-right: var(--spacing-2_5);

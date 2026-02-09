@@ -5,7 +5,13 @@ import CommentCreate from './comment-create';
 import CommentOptions from './comment-options';
 import type { Comment } from './comment.types';
 
-export default function CommentCard({ comment }: { comment: Comment }) {
+export default function CommentCard({
+  comment,
+  loadReplies,
+}: {
+  comment: Comment;
+  loadReplies: (commentId: number) => void;
+}) {
   return (
     <div
       className={`comment-card ${comment.parentId ? 'comment-card--child' : ''}`}
@@ -16,18 +22,33 @@ export default function CommentCard({ comment }: { comment: Comment }) {
         <span className="comment-card__username">{comment.username}</span>
         {comment.text}
       </p>
-      <CommentFooter parent={!comment.parentId} />
+      <CommentFooter
+        parent={!comment.parentId}
+        loadReplies={loadReplies}
+        commentId={comment.id}
+      />
     </div>
   );
 }
 
-function CommentFooter({ parent }: { parent: boolean }) {
+function CommentFooter({
+  parent,
+  commentId,
+  loadReplies,
+}: {
+  parent: boolean;
+  commentId: number;
+  loadReplies: (commentId: number) => void;
+}) {
   const { openModal } = useModal();
 
   return (
     <div className="comment-card__footer">
       {parent ? (
-        <button className="comment-card__replies btn--open">
+        <button
+          className="comment-card__replies btn--open"
+          onClick={() => loadReplies(commentId)}
+        >
           └─<span>VIEW REPLIES</span>
         </button>
       ) : (
