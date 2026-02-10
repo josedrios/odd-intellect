@@ -1,9 +1,9 @@
-import Pagination from '@/components/pagination';
-import PromptCard from '@/components/prompts/prompt-card';
-import SearchBar from '@/components/search';
 import { useEffect, useState } from 'react';
-import { getPrompts } from './prompt.api';
-import type { Prompt } from './prompt.types';
+import Pagination from '@/components/pagination';
+import PromptCard from '@/prompts/prompt-card';
+import SearchBar from '@/components/search';
+import { getPrompts } from '@/prompts/prompt.api';
+import type { Prompt } from '@/prompts/prompt.types';
 
 export default function PromptList({ account = false }: { account?: boolean }) {
   const [prompts, setPrompts] = useState<Prompt[] | null>(null);

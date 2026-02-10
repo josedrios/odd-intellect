@@ -3,11 +3,11 @@ import Icon from './icons';
 import { ICON } from '@/util/icon-names';
 import { useEffect } from 'react';
 
-interface ModalProps {
+type ModalProps = {
   children: React.ReactNode;
   id: string;
   title?: string;
-}
+};
 
 export default function Modal({ children, title, id }: ModalProps) {
   const { activeModal, closeModal } = useModal();

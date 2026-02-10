@@ -1,6 +1,6 @@
 import React from 'react';
-import Modal from '../modal';
-import Icon from '../icons';
+import Modal from '@/components/modal';
+import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import type { AttributeListProps, AttributeProps } from '@/app/pages/account';
 

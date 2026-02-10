@@ -1,4 +1,4 @@
-import PromptList from '@/components/prompts/prompt-list';
+import PromptList from '@/prompts/prompt-list';
 
 export default function HomePage() {
   return (

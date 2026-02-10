@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { Prompt } from './prompt.types';
+import type { Prompt } from '@/prompts/prompt.types';
 import dateFormatter from '@/util/date-formatter';
 
 export default function PromptCard({

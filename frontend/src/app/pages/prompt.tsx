@@ -1,6 +1,6 @@
 import Comments from '@/comments/comments';
-import { getPrompt } from '@/components/prompts/prompt.api';
-import type { Prompt } from '@/components/prompts/prompt.types';
+import { getPrompt } from '@/prompts/prompt.api';
+import type { Prompt } from '@/prompts/prompt.types';
 import TextPanel from '@/components/text-panel';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';

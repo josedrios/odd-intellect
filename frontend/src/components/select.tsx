@@ -1,15 +1,15 @@
 import SelectBase from 'react-select';
 
-interface Option {
+type Option = {
   value: string;
   label: string;
-}
+};
 
-interface SelectProps {
+type SelectProps = {
   options: Option[];
   defaultValue: Option;
   size: string;
-}
+};
 
 export default function Select({ options, defaultValue, size }: SelectProps) {
   return (

@@ -1,23 +1,23 @@
 import TextPanel from '@/components/text-panel';
 import { useState } from 'react';
-import PromptList from '@/components/prompts/prompt-list';
-import AccountList from '@/components/account/account-list';
-import { AccountPreferences } from '@/components/account/account-preferences';
+import PromptList from '@/prompts/prompt-list';
+import AccountList from '@/account/account-list';
+import { AccountPreferences } from '@/account/account-preferences';
 
-export interface Attribute {
+export type Attribute = {
   label: string;
   value: string;
   editable: boolean;
   hidden: boolean;
-}
+};
 
-export interface AttributeProps {
+export type AttributeProps = {
   attribute: Attribute;
-}
+};
 
-export interface AttributeListProps {
+export type AttributeListProps = {
   attributes: Attribute[];
-}
+};
 
 export default function AccountPage() {
   const [viewComments, setViewComments] = useState(false);

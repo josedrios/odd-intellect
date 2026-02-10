@@ -1,10 +1,10 @@
-import { useState, useContext, createContext, useEffect } from 'react';
+import { useState, useContext, createContext } from 'react';
 
-interface ModalCtxType {
+type ModalCtxType = {
   activeModal: string;
   openModal: (id: string) => void;
   closeModal: () => void;
-}
+};
 
 const ModalCtx = createContext<ModalCtxType | null>(null);
 export const useModal = () => useContext(ModalCtx)!;

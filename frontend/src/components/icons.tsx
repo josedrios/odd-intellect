@@ -1,11 +1,11 @@
 import * as Tabler from 'react-icons/tb';
 import type { IconValue } from '@/util/icon-names';
 
-interface IconProps {
+type IconProps = {
   name: IconValue;
   size?: number;
   className?: string;
-}
+};
 
 const Icon = ({ name, size = 16, className = '' }: IconProps) => {
   const IconComponent = Tabler[name as keyof typeof Tabler];
