@@ -13,5 +13,7 @@ export type Comment = {
   userId: number;
   parentId?: number;
   text: string;
+  replies?: Comment[];
+  showReplies?: boolean;
   createdAt: Date;
 };

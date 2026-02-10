@@ -10,13 +10,15 @@ export default function CommentCard({
   loadReplies,
 }: {
   comment: Comment;
-  loadReplies: (commentId: number) => void;
+  loadReplies?: (commentId: number) => void;
 }) {
   return (
     <div
       className={`comment-card ${comment.parentId ? 'comment-card--child' : ''}`}
     >
+      {/* This is a modal pop up component btw, just a placeholder for right now*/}
       <CommentCreate subcomment />
+      {/* Modal pop up component for comment options, really need to better place/name these types of things i WILL do later */}
       <CommentOptions />
       <p className="comment-card__content">
         <span className="comment-card__username">{comment.username}</span>
@@ -38,7 +40,7 @@ function CommentFooter({
 }: {
   parent: boolean;
   commentId: number;
-  loadReplies: (commentId: number) => void;
+  loadReplies?: (commentId: number) => void;
 }) {
   const { openModal } = useModal();
 
@@ -47,7 +49,7 @@ function CommentFooter({
       {parent ? (
         <button
           className="comment-card__replies btn--open"
-          onClick={() => loadReplies(commentId)}
+          onClick={() => loadReplies?.(commentId)}
         >
           └─<span>VIEW REPLIES</span>
         </button>

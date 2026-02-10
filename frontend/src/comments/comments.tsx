@@ -24,13 +24,9 @@ export default function Comments() {
 
   const loadReplies = async (commentId: number) => {
     const replies: Comment[] = await getSubcomments(commentId);
-    setComments((prev) => {
-      const i = prev?.findIndex((x) => x.id === commentId);
-      if (i === -1) {
-        return prev;
-      }
-      return [...prev.slice(0, i + 1), ...replies, ...prev.slice(i + 1)];
-    });
+    setComments((prev) =>
+      prev.map((c) => (c.id === commentId ? { ...c, replies } : c)),
+    );
   };
 
   if (comments === null) return <p>Loading...</p>;
@@ -39,12 +35,14 @@ export default function Comments() {
   return (
     <div className="comment-section">
       <CommentSectionHeader />
-      {comments.map((comment) => (
-        <CommentCard
-          key={comment.id}
-          comment={comment}
-          loadReplies={loadReplies}
-        />
+      {comments.map((c) => (
+        <>
+          {/* Parent Comment */}
+          <CommentCard key={c.id} comment={c} loadReplies={loadReplies} />
+          {/* Parent Comment's Replies */}
+          {c.replies &&
+            c.replies?.map((r) => <CommentCard key={r.id} comment={r} />)}
+        </>
       ))}
     </div>
   );

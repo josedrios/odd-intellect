@@ -9,6 +9,7 @@ function mapComment(comment: CommentApi): Comment {
     parentId: comment.parent_id,
     text: comment.text,
     createdAt: new Date(comment.created_at),
+    replies: [],
   };
 }
 
