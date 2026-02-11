@@ -11,17 +11,29 @@ import { useParams } from 'react-router-dom';
 
 export default function Comments() {
   const { id: promptId } = useParams<{ id: string }>();
-  const [comments, setComments] = useState<Comment[] | null>(null);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
+  // Load parent comments on load
   useEffect(() => {
-    async function fetchData() {
+    async function loadComments() {
       if (!promptId) return;
-      const data: Comment[] = await getComments(promptId);
-      setComments(data);
+      try {
+        setLoading(true);
+        setError(null);
+        const data: Comment[] = await getComments(promptId);
+        setComments(data);
+      } catch (error) {
+        setError('Failed to load comments');
+      } finally {
+        setLoading(false);
+      }
     }
-    fetchData();
+    loadComments();
   }, [promptId]);
 
+  // Load parent comments function
   const loadReplies = async (commentId: number) => {
     const replies: Comment[] = await getSubcomments(commentId);
     setComments((prev) =>
@@ -29,7 +41,8 @@ export default function Comments() {
     );
   };
 
-  if (comments === null) return <p>Loading...</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>{error}</p>;
   if (comments.length === 0) return <p>No comments :(</p>;
 
   return (

@@ -7,19 +7,30 @@ import { useParams } from 'react-router-dom';
 
 export default function PromptPage() {
   const { id } = useParams<{ id: string }>();
-  const [prompt, setPrompt] = useState<Prompt | null>(null);
+  const [prompt, setPrompt] = useState<Prompt>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function fetchData() {
+    async function loadPrompt() {
       if (!id) return;
-      const data: Prompt = await getPrompt(id);
-      setPrompt(data);
+      try {
+        setLoading(true);
+        setError(null);
+        const data: Prompt = await getPrompt(id);
+        setPrompt(data);
+      } catch (error) {
+        setError('Failed to get prompt info');
+      } finally {
+        setLoading(false);
+      }
     }
-    fetchData();
+    loadPrompt();
   }, [id]);
 
-  if (prompt === null) return <p>loading...</p>;
-  if (!id) return <p>No ID provided :(</p>;
+  if (loading) return <p>loading...</p>;
+  if (error) return <p>Failed to get prompt info</p>;
+  if (!prompt) return <p>No prompt found :(</p>;
 
   return (
     <>

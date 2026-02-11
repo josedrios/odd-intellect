@@ -14,7 +14,6 @@ export const getAllPrompts = async (req, res) => {
 export const getPrompt = async (req, res) => {
   const promptId = req.params.promptId;
   try {
-    console.log("attempted to get prompt");
     const { rows } = await Prompt.getPrompt(promptId);
     if (rows.length === 0) {
       return res
