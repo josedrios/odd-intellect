@@ -4,7 +4,7 @@ export type CommentApi = {
   user_id: number;
   parent_id?: number;
   text: string;
-  replyCount?: number;
+  reply_count: number;
   created_at: Date;
 };
 
@@ -14,8 +14,8 @@ export type Comment = {
   userId: number;
   parentId?: number;
   text: string;
-  replies?: Comment[];
+  replies: Comment[];
+  replyCount: number;
   showReplies?: boolean;
-  replyCount?: number;
   createdAt: Date;
 };

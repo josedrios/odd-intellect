@@ -5,7 +5,7 @@ export const getComment = (commentId) =>
 
 export const getPromptComments = (promptId) =>
   query(
-    "SELECT comments.*, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.prompt_id = $1 AND comments.parent_id IS NULL ORDER BY comments.created_at;",
+    "SELECT c.*, u.username, COUNT(r.id) AS reply_count FROM comments c JOIN users u ON c.user_id = u.id LEFT JOIN comments r ON c.id = r.parent_id WHERE c.prompt_id = $1 AND c.parent_id IS NULL GROUP BY c.id, u.username ORDER BY c.created_at;",
     [promptId],
   );
 

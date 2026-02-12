@@ -40,8 +40,10 @@ export const getPromptComments = async (req, res) => {
     const { rows: comments } = await Comment.getPromptComments(promptId);
     res.status(200).json(comments);
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({
       error: "Failed to fetch comments for prompt with promptId of " + promptId,
+      details: err.message,
     });
   }
 };

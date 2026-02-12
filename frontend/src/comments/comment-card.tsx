@@ -24,34 +24,33 @@ export default function CommentCard({
         <span className="comment-card__username">{comment.username}</span>
         {comment.text}
       </p>
-      <CommentFooter
-        parent={!comment.parentId}
-        loadReplies={loadReplies}
-        commentId={comment.id}
-      />
+      <CommentFooter comment={comment} loadReplies={loadReplies} />
     </div>
   );
 }
 
 function CommentFooter({
-  parent,
-  commentId,
+  comment,
   loadReplies,
 }: {
-  parent: boolean;
-  commentId: number;
+  comment: Comment;
   loadReplies?: (commentId: number) => void;
 }) {
   const { openModal } = useModal();
+  console.log(comment.replyCount);
 
   return (
     <div className="comment-card__footer">
-      {parent ? (
+      {comment.replyCount > 0 ? (
         <button
           className="comment-card__replies btn--open"
-          onClick={() => loadReplies?.(commentId)}
+          onClick={() => loadReplies?.(comment.id)}
         >
-          └─<span>VIEW REPLIES</span>
+          └─
+          <span>
+            {comment.replyCount}&nbsp;
+            {comment.replyCount === 1 ? 'REPLY' : 'REPLIES'}
+          </span>
         </button>
       ) : (
         <div className="comment-card__footer-spacer" />

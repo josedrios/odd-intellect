@@ -29,7 +29,7 @@ export default function PromptPage() {
   }, [id]);
 
   if (loading) return <p>loading...</p>;
-  if (error) return <p>Failed to get prompt info</p>;
+  if (error) return <p>{error}</p>;
   if (!prompt) return <p>No prompt found :(</p>;
 
   return (
