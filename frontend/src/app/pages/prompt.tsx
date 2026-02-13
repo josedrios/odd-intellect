@@ -4,6 +4,7 @@ import type { Prompt } from '@/prompts/prompt.types';
 import TextPanel from '@/components/text-panel';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from '@/components/loader';
 
 export default function PromptPage() {
   const { id } = useParams<{ id: string }>();
@@ -21,7 +22,7 @@ export default function PromptPage() {
         setPrompt(data);
       } catch (error) {
         console.log(error);
-        setError('Failed to get prompt info');
+        setError('Failed to load prompt info');
       } finally {
         setLoading(false);
       }
@@ -29,7 +30,7 @@ export default function PromptPage() {
     loadPrompt();
   }, [id]);
 
-  if (loading) return <p>loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!prompt) return <p>No prompt found :(</p>;
 

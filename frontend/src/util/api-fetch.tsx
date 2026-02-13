@@ -15,5 +15,7 @@ export async function apiFetch<T>(
     const message = await res.text();
     throw new Error(message || 'request failed');
   }
+  // Used this below to test Loader component
+  // await new Promise((res) => setTimeout(res, 3000));
   return res.json() as Promise<T>;
 }

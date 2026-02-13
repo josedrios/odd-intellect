@@ -18,6 +18,7 @@
 @import './components/nav.css';
 @import './components/footer.css';
 @import './components/comments.css';
+@import './components/loader.css';
 @import './components/select.css';
 @import './components/modal.css';
 @import './components/inputs.css';

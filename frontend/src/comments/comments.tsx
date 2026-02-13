@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { getComments, getSubcomments } from './comment.api';
 import type { Comment } from './comment.types';
 import { useParams } from 'react-router-dom';
+import Loader from '@/components/loader';
 
 export default function Comments() {
   const { id: promptId } = useParams<{ id: string }>();
@@ -25,6 +26,7 @@ export default function Comments() {
         const data: Comment[] = await getComments(promptId);
         setComments(data);
       } catch (error) {
+        console.log(error);
         setError('Failed to load comments');
       } finally {
         setLoading(false);
@@ -41,7 +43,7 @@ export default function Comments() {
     );
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (comments.length === 0) return <p>No comments :(</p>;
 
