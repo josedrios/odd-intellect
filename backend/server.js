@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
-import userRoutes from "./routes/userRoutes.js";
-import promptRoutes from "./routes/promptRoutes.js";
-import commentRoutes from "./routes/commentRoutes.js";
+import userRoutes from "./routes/user-routes.js";
+import promptRoutes from "./routes/prompt-routes.js";
+import commentRoutes from "./routes/comment-routes.js";
 
 // Server Setup
 const app = express();

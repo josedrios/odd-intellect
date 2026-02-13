@@ -1,5 +1,5 @@
-import type { Prompt, PromptApi } from '@/components/prompts/prompt.types';
-import { apiFetch } from '@/util/apiFetch';
+import type { Prompt, PromptApi } from '@/prompts/prompt.types';
+import { apiFetch } from '@/util/api-fetch';
 
 function mapPrompt(prompt: PromptApi): Prompt {
   return {

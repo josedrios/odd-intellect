@@ -1,5 +1,5 @@
-import type { Comment, CommentApi } from './comment.types';
-import { apiFetch } from '@/util/apiFetch';
+import type { Comment, CommentApi } from '@/comments/comment.types';
+import { apiFetch } from '@/util/api-fetch';
 
 function mapComment(comment: CommentApi): Comment {
   return {

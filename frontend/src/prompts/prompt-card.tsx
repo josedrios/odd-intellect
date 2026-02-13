@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Prompt } from '@/prompts/prompt.types';
-import dateFormatter from '@/util/date-formatter';
+import { promptDateFormatter } from '@/util/date-formatter';
 
 export default function PromptCard({
   prompt,
@@ -11,7 +11,9 @@ export default function PromptCard({
 }) {
   return (
     <Link to={`/prompt/${prompt.id}`} className="prompt-card">
-      <h2 className="prompt-card__prompt">{prompt.text.toUpperCase()}</h2>
+      <h2 className="prompt-card__prompt">
+        {prompt.id}. {prompt.text.toUpperCase()}
+      </h2>
       {comment ? (
         <p className="prompt-card__info prompt-card__comment">
           This is test comment to see how the UI under a prompt card would look
@@ -24,7 +26,9 @@ export default function PromptCard({
           <p className="prompt-card__info">└─ {prompt.commentCount} COMMENTS</p>
         </>
       )}
-      <p className="prompt-card__info">└─ {dateFormatter(prompt.createdAt)}</p>
+      <p className="prompt-card__info">
+        └─ {promptDateFormatter(prompt.createdAt)}
+      </p>
     </Link>
   );
 }

@@ -1,5 +1,5 @@
-import * as Prompt from "../models/promptModel.js";
-import * as Comment from "../models/commentModel.js";
+import * as Prompt from "../models/prompt-model.js";
+import * as Comment from "../models/comment-model.js";
 
 export const getAllPrompts = async (req, res) => {
   try {

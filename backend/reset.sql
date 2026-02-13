@@ -330,4 +330,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (29, 11, NULL, 'Walk into a Van Gogh and experience the swirling skies firsthand!', NOW() - INTERVAL '30 days'),
 (29, 12, NULL, 'What if you get trapped in a painting? Become part of the art forever.', NOW() - INTERVAL '29 days 12 hours'),
 (30, 13, NULL, 'Bitter stories are tragedies. Sweet ones are romances. Sour are mysteries.', NOW() - INTERVAL '31 days'),
-(30, 14, NULL, 'Spicy stories are adventures! They leave your mouth burning with excitement.', NOW() - INTERVAL '30 days 12 hours');
+(30, 14, NULL, 'Spicy stories are adventures! They leave your mouth burning with excitement.', NOW() - INTERVAL '12 minutes'),
+(30, 14, NULL, 'Spicy stories are adventures! They leave your mouth burning with excitement.', NOW() - INTERVAL '12 hours'),
+(30, 14, NULL, 'Spicy stories are adventures! They leave your mouth burning with excitement.', NOW() - INTERVAL '12 days'),
+(30, 14, NULL, 'Spicy stories are adventures! They leave your mouth burning with excitement.', NOW() - INTERVAL '40 days');

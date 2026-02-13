@@ -1,5 +1,5 @@
 import express from "express";
-import * as controller from "../controllers/promptController.js";
+import * as controller from "../controllers/prompt-controller.js";
 
 const router = express.Router();
 

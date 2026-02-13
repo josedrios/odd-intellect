@@ -4,6 +4,7 @@ import { ICON } from '@/util/icon-names';
 import CommentCreate from './comment-create';
 import CommentOptions from './comment-options';
 import type { Comment } from './comment.types';
+import { commentDateFormatter } from '@/util/date-formatter';
 
 export default function CommentCard({
   comment,
@@ -20,10 +21,10 @@ export default function CommentCard({
       <CommentCreate subcomment />
       {/* Modal pop up component for comment options, really need to better place/name these types of things i WILL do later */}
       <CommentOptions />
-      <p className="comment-card__content">
-        <span className="comment-card__username">{comment.username}</span>
-        {comment.text}
-      </p>
+      <span className="comment-card__username">{comment.username}</span>
+      {/* CHANGED USERNAME TO BE ON TOP, TEMPORARILY SHOWING CREATION DATE */}
+      <span>{commentDateFormatter(comment.createdAt)}</span>
+      <p className="comment-card__content">{comment.text}</p>
       <CommentFooter comment={comment} loadReplies={loadReplies} />
     </div>
   );
@@ -37,7 +38,6 @@ function CommentFooter({
   loadReplies?: (commentId: number) => void;
 }) {
   const { openModal } = useModal();
-  console.log(comment.replyCount);
 
   return (
     <div className="comment-card__footer">

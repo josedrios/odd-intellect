@@ -20,6 +20,7 @@ export default function PromptPage() {
         const data: Prompt = await getPrompt(id);
         setPrompt(data);
       } catch (error) {
+        console.log(error);
         setError('Failed to get prompt info');
       } finally {
         setLoading(false);
@@ -32,9 +33,11 @@ export default function PromptPage() {
   if (error) return <p>{error}</p>;
   if (!prompt) return <p>No prompt found :(</p>;
 
+  // Formatting prompt text for TextPanel component
+  const promptText = prompt.id + '. ' + prompt.text;
   return (
     <>
-      <TextPanel text={prompt.text} />
+      <TextPanel text={promptText} />
       <Comments />
     </>
   );
