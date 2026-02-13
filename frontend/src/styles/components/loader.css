@@ -1,4 +1,6 @@
 .loader {
   text-align: center;
   color: var(--color-foreground-subtle);
+  padding: var(--spacing-3) 0;
+  width: 100%;
 }
