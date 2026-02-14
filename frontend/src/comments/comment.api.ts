@@ -11,6 +11,7 @@ function mapComment(comment: CommentApi): Comment {
     createdAt: new Date(comment.created_at),
     replies: [],
     replyCount: Number(comment.reply_count ?? '0'),
+    showReplies: false,
   };
 }
 

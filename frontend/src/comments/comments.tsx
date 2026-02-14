@@ -43,6 +43,14 @@ export default function Comments() {
     );
   };
 
+  const showReplies = async (commentId: number) => {
+    setComments((prev) =>
+      prev.map((c) =>
+        c.id === commentId ? { ...c, showReplies: !c.showReplies } : c,
+      ),
+    );
+  };
+
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (comments.length === 0) return <p>No comments :(</p>;
@@ -53,9 +61,14 @@ export default function Comments() {
       {comments.map((c) => (
         <>
           {/* Parent Comment */}
-          <CommentCard key={c.id} comment={c} loadReplies={loadReplies} />
+          <CommentCard
+            key={c.id}
+            comment={c}
+            loadReplies={loadReplies}
+            showReplies={showReplies}
+          />
           {/* Parent Comment's Replies */}
-          {c.replies &&
+          {c.showReplies &&
             c.replies?.map((r) => <CommentCard key={r.id} comment={r} />)}
         </>
       ))}

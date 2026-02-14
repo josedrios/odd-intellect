@@ -11,9 +11,11 @@ import Loader from '@/components/loader';
 export default function CommentCard({
   comment,
   loadReplies,
+  showReplies,
 }: {
   comment: Comment;
   loadReplies?: (commentId: number) => void;
+  showReplies?: (commentId: number) => void;
 }) {
   return (
     <div
@@ -27,7 +29,11 @@ export default function CommentCard({
       {/* CHANGED USERNAME TO BE ON TOP, TEMPORARILY SHOWING CREATION DATE */}
       <span>{commentDateFormatter(comment.createdAt)}</span>
       <p className="comment-card__content">{comment.text}</p>
-      <CommentFooter comment={comment} fetchReplies={loadReplies} />
+      <CommentFooter
+        comment={comment}
+        fetchReplies={loadReplies}
+        showReplies={showReplies}
+      />
     </div>
   );
 }
@@ -35,9 +41,11 @@ export default function CommentCard({
 function CommentFooter({
   comment,
   fetchReplies,
+  showReplies,
 }: {
   comment: Comment;
   fetchReplies?: (commentId: number) => void;
+  showReplies?: (commentId: number) => void;
 }) {
   const { openModal } = useModal();
   const [loading, setLoading] = useState<boolean>(false);
@@ -50,6 +58,9 @@ function CommentFooter({
           className="comment-card__replies btn--open"
           onClick={async () => {
             try {
+              if (showReplies) {
+                showReplies(comment.id);
+              }
               setLoading(true);
               setError('');
               await fetchReplies?.(comment.id);
@@ -63,8 +74,14 @@ function CommentFooter({
         >
           └─
           <span>
-            {comment.replyCount}&nbsp;
-            {comment.replyCount === 1 ? 'REPLY' : 'REPLIES'}
+            {comment.showReplies ? (
+              'HIDE REPLIES'
+            ) : (
+              <>
+                {comment.replyCount}&nbsp;&nbsp;
+                {comment.replyCount === 1 ? 'REPLY' : 'REPLIES'}
+              </>
+            )}
           </span>
         </button>
       ) : comment.replyCount > 0 && loading ? (
