@@ -43,7 +43,7 @@ export default function Comments() {
     );
   };
 
-  const showReplies = async (commentId: number) => {
+  const toggleReplies = async (commentId: number) => {
     setComments((prev) =>
       prev.map((c) =>
         c.id === commentId ? { ...c, showReplies: !c.showReplies } : c,
@@ -65,7 +65,7 @@ export default function Comments() {
             key={c.id}
             comment={c}
             loadReplies={loadReplies}
-            showReplies={showReplies}
+            toggleReplies={toggleReplies}
           />
           {/* Parent Comment's Replies */}
           {c.showReplies &&
