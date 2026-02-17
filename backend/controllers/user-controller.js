@@ -10,19 +10,19 @@ export const getAllUsers = async (req, res) => {
 };
 
 export const getUser = async (req, res) => {
-  const userId = req.params.userId;
+  const username = req.params.username;
   try {
-    const { rows } = await User.getUser(userId);
+    const { rows } = await User.getUser(username);
     if (rows.length === 0) {
       return res
         .status(404)
-        .json({ error: "No user found with userId of " + userId });
+        .json({ error: "No user found with username of " + username });
     }
     res.status(200).json(rows[0]);
   } catch (err) {
     res
       .status(500)
-      .json({ error: "Failed to user with the userId of " + userId });
+      .json({ error: "Failed to get user with the username of " + username });
   }
 };
 

@@ -16,7 +16,7 @@
   font-size: var(--font-size-xs);
   width: 50%;
   text-align: right;
-  padding-top: var(--spacing-1px);
+  margin: auto;
 }
 
 a.account-attribute__key {

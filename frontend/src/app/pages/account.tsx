@@ -1,27 +1,42 @@
 import TextPanel from '@/components/text-panel';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PromptList from '@/prompts/prompt-list';
-import AccountList from '@/account/account-list';
-import { AccountPreferences } from '@/account/account-preferences';
+import AccountList from '@/users/account-list';
+import { AccountPreferences } from '@/users/account-preferences';
+import { getUser } from '@/users/user.api';
+import type { User } from '@/users/user.types';
 
-export type Attribute = {
+export type AccountAttribute = {
   label: string;
   value: string;
   editable: boolean;
   hidden: boolean;
 };
 
-export type AttributeProps = {
-  attribute: Attribute;
-};
-
-export type AttributeListProps = {
-  attributes: Attribute[];
-};
-
 export default function AccountPage() {
+  const [user, setUser] = useState<User>();
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    async function loadUser() {
+      try {
+        setLoading(true);
+        setError(null);
+        const data: User = await getUser('alice_writer');
+        setUser(data);
+      } catch (error) {
+        console.log(error);
+        setError('Failed to load user data');
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadUser();
+  }, []);
+
   const [viewComments, setViewComments] = useState(false);
-  const attributes = [
+  const attributes: AccountAttribute[] = [
     { label: 'edit preferences', value: '', editable: false, hidden: true },
     {
       label: 'bio',
@@ -52,7 +67,7 @@ export default function AccountPage() {
     { label: 'comments', value: '87', editable: false, hidden: false },
     { label: 'upvotes', value: '1273', editable: false, hidden: false },
     { label: 'downvotes', value: '106', editable: false, hidden: false },
-    { label: 'real name', value: 'John Doe', editable: true, hidden: true },
+    { label: 'name', value: 'John Doe', editable: true, hidden: true },
     { label: 'country', value: 'USA', editable: true, hidden: true },
     { label: 'age', value: '23', editable: true, hidden: false },
     { label: 'gender', value: 'male', editable: true, hidden: false },
