@@ -1,0 +1,49 @@
+INSERT INTO users (username, bio, email, current_streak, longest_streak, name, country, age, gender) VALUES
+-- User 1-10: Diverse international users
+('alex_writes', 'Fantasy writer by night, software engineer by day. Currently working on a 5-book series.', 'alex.chen@email.com', 12, 45, 'Alex Chen', 'Canada', 28, 'Male'),
+('maya_ink', 'Poet and dreamer. Published in 3 literary magazines. I write what I feel.', 'maya.rodriguez@email.com', 3, 67, 'Maya Rodriguez', 'Mexico', 24, 'Female'),
+('sarah_scribe', 'Aspiring novelist. Coffee addict. Cat mom.', NULL, 0, 23, 'Sarah O''Connor', 'Ireland', 31, 'Female'),
+('word_weaver_ken', 'I weave words into worlds. Sci-fi enthusiast.', 'kenji.tanaka@email.com', 45, 45, 'Kenji Tanaka', 'Japan', 35, 'Male'),
+('bella_stories', 'Children''s book author. I believe in magic.', 'bella.dubois@email.com', 8, 56, 'Bella Dubois', 'France', 42, 'Female'),
+('carlos_novelist', 'Writing my first novel. 300 pages and counting!', NULL, 67, 67, 'Carlos Silva', 'Brazil', 29, 'Male'),
+('priya_poems', 'Your favorite poet''s favorite poet. She/her.', 'priya.patel@email.com', 23, 34, 'Priya Patel', 'India', 26, 'Female'),
+('thomas_tome', 'History professor who writes historical fiction. Details matter.', 'thomas.weber@email.com', 14, 52, 'Thomas Weber', 'Germany', 47, 'Male'),
+('layla_letters', 'Travel writer. I''ve visited 34 countries. Each one has a story.', 'layla.mansour@email.com', 89, 89, 'Layla Mansour', 'Egypt', 33, 'Female'),
+('nordic_narrator', 'Saga writer. My ancestors were storytellers, and so am I.', 'erik.johansen@email.com', 5, 19, 'Erik Johansen', 'Norway', 52, 'Male'),
+
+-- Users 11-20: Varied backgrounds with some null fields
+('zola_writes', 'Dystopian fiction is my jam. Also, I bake amazing cookies.', NULL, 34, 34, 'Zola Mbeki', 'South Africa', 30, 'Female'),
+('vlad_verses', 'I write in both English and Russian. Poetry and prose.', 'vlad.volkov@email.com', 12, 45, 'Vlad Volkov', 'Russia', 41, 'Male'),
+('chloe_chapters', 'YA author. My books are for the weird kids. I was one.', 'chloe.wilson@email.com', 67, 89, 'Chloe Wilson', 'Australia', 27, 'Female'),
+('omar_author', 'Working on a novel about time travel and family legacy.', NULL, 3, 12, 'Omar Al-Farsi', 'UAE', 38, 'Male'),
+('luna_scribbles', 'Non-binary writer. Horror and dark fantasy. The monsters are always us.', 'luna.gray@email.com', 23, 67, 'Luna Gray', 'UK', 29, 'Non-binary'),
+('dante_drafts', 'Retired teacher, finally writing that book.', 'dante.ricci@email.com', 156, 156, 'Dante Ricci', 'Italy', 68, 'Male'),
+('sienna_sentences', 'Romance writer. Love wins every time.', NULL, 7, 34, 'Sienna Brown', 'Jamaica', 34, 'Female'),
+('yuki_story', 'Manga writer and illustrator. Stories are 50% words, 50% art.', 'yuki.yamamoto@email.com', 45, 78, 'Yuki Yamamoto', 'Japan', 25, 'Female'),
+('oscar_plots', 'Mystery writer. I plot murders for a living. (In fiction, officer!)', 'oscar.finch@email.com', 23, 45, 'Oscar Finch', 'USA', 44, 'Male'),
+('fatima_fiction', 'Literary fiction writer. Exploring identity and belonging.', 'fatima.khan@email.com', 4, 23, 'Fatima Khan', 'Pakistan', 32, 'Female'),
+
+-- Users 21-30: More variety, more nulls
+('liam_lyricist', 'I write lyrics and poetry. Music is just poetry with wings.', NULL, 56, 67, 'Liam O''Brien', 'Ireland', 23, 'Male'),
+('elsa_edit', 'Developmental editor who also writes on weekends.', 'elsa.anderson@email.com', 0, 45, 'Elsa Anderson', 'Sweden', 39, 'Female'),
+('nadia_novel', 'First-time author. My debut comes out next year!', NULL, 234, 234, 'Nadia Petrova', 'Ukraine', 36, 'Female'),
+('pablo_prose', 'Magical realism is my language. García Márquez is my hero.', 'pablo.hernandez@email.com', 3, 12, 'Pablo Hernandez', 'Colombia', 45, 'Male'),
+('wren_writes', 'Speculative fiction. Building worlds with words.', NULL, 89, 89, 'Wren Sterling', 'New Zealand', 31, 'Non-binary'),
+('hans_horror', 'I write horror that makes you check under your bed. Again.', 'hans.gruber@email.com', 16, 34, 'Hans Gruber', 'Austria', 37, 'Male'),
+('isla_imagine', 'Fantasy writer. Dragons, magic, and morally grey characters.', 'isla.maclean@email.com', 42, 42, 'Isla MacLean', 'Scotland', 29, 'Female'),
+('ravi_reads', 'Book blogger who finally started writing.', NULL, 7, 15, 'Ravi Sharma', 'India', 27, 'Male'),
+('clara_chronicle', 'Journalist by day, novelist by night. Nonfiction pays, fiction feeds.', 'clara.walters@email.com', 234, 234, 'Clara Walters', 'USA', 41, 'Female'),
+('david_drafts', 'Struggling with writer''s block, but still showing up every day.', 'david.cohen@email.com', 12, 89, 'David Cohen', 'Israel', 33, 'Male'),
+
+-- Users 31-40: Complete the set with diverse profiles
+('sofia_scribe', 'I write about food, love, and the spaces between.', 'sofia.martinez@email.com', 5, 23, 'Sofia Martinez', 'Spain', 35, 'Female'),
+('kwame_words', 'Pan-African stories for a global audience.', NULL, 67, 78, 'Kwame Asante', 'Ghana', 42, 'Male'),
+('nora_novella', 'I only write novellas. Long enough for depth, short enough to finish.', 'nora.lynch@email.com', 89, 103, 'Nora Lynch', 'Canada', 48, 'Female'),
+('simon_scribe', 'Science writer who dreams in fiction.', NULL, 4, 56, 'Simon Park', 'South Korea', 34, 'Male'),
+('tessa_tales', 'Fairy tales retold for adults. The original versions were dark anyway.', 'tessa.bergman@email.com', 23, 45, 'Tessa Bergman', 'Netherlands', 30, 'Female'),
+('victor_verse', 'I write poetry about the apocalypse. It''s not as dark as it sounds.', 'victor.laurent@email.com', 2, 34, 'Victor Laurent', 'Belgium', 26, 'Male'),
+('naomi_narrative', 'LGBTQ+ stories for young adults. Everyone deserves to see themselves.', 'naomi.chen@email.com', 56, 67, 'Naomi Chen', 'Taiwan', 28, 'Female'),
+('george_genre', 'I write in every genre. Jack of all trades, master of some.', NULL, 0, 89, 'George King', 'UK', 51, 'Male'),
+('helen_hack', 'Satire and comedy. Laughter is the best medicine.', 'helen.green@email.com', 12, 34, 'Helen Green', 'USA', 43, 'Female'),
+('amir_author', 'Working on a trilogy. Ask me how it''s going. (It''s not.)', 'amir.nasir@email.com', 45, 56, 'Amir Nasir', 'Jordan', 39, 'Male');
+

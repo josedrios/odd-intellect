@@ -1,0 +1,85 @@
+INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
+-- Prompt 1
+(1, 5, NULL, 'A lot of my identity feels shaped by how others respond to me.', '2026-01-04 09:10'),
+(1, 12, NULL, 'Without witnesses, some parts of me feel unreal.', '2026-01-04 10:00'),
+(1, 27, NULL, 'Confidence might be the first thing to disappear.', '2026-01-04 11:20'),
+(1, 3, NULL, 'I’m not sure identity exists in isolation.', '2026-01-04 13:00'),
+(1, 19, NULL, 'Some traits only emerge in social friction.', '2026-01-04 15:10'),
+(1, 8, NULL, 'Being unseen feels like shrinking.', '2026-01-04 17:45'),
+(1, 34, NULL, 'Achievement loses weight without recognition.', '2026-01-05 09:05'),
+(1, 21, NULL, 'Humor dies quickly when I’m alone.', '2026-01-05 11:30'),
+(1, 16, NULL, 'Solitude strips away unnecessary layers.', '2026-01-05 14:20'),
+(1, 40, NULL, 'Maybe identity is relational by nature.', '2026-01-05 18:00'),
+
+-- Prompt 2
+(2, 6, NULL, 'The choices I avoid haunt me more than mistakes.', '2026-01-11 09:15'),
+(2, 14, NULL, 'Avoidance feels safer but costs more long-term.', '2026-01-11 10:40'),
+(2, 22, NULL, 'Indecision shapes life just as much as action.', '2026-01-11 12:00'),
+(2, 31, NULL, 'Regret usually comes from silence, not failure.', '2026-01-11 14:30'),
+(2, 9, NULL, 'Avoided paths linger in the imagination.', '2026-01-11 17:10'),
+(2, 18, NULL, 'Choosing nothing is still choosing something.', '2026-01-12 09:00'),
+(2, 25, NULL, 'Fear drives more decisions than logic.', '2026-01-12 11:45'),
+(2, 2, NULL, 'I remember hesitation more vividly than action.', '2026-01-12 15:20'),
+(2, 37, NULL, 'Avoidance feels invisible until it isn’t.', '2026-01-12 18:40'),
+(2, 11, NULL, 'The unlived life shapes the lived one.', '2026-01-13 20:10'),
+
+-- Prompt 3
+(3, 4, NULL, 'Certainty would remove curiosity.', '2026-01-18 09:05'),
+(3, 17, NULL, 'Meaning relies on not knowing.', '2026-01-18 10:30'),
+(3, 28, NULL, 'Doubt creates motion.', '2026-01-18 12:10'),
+(3, 6, NULL, 'Risk disappears when certainty arrives.', '2026-01-18 14:00'),
+(3, 33, NULL, 'Certainty feels comforting but sterile.', '2026-01-18 16:45'),
+(3, 20, NULL, 'Uncertainty forces engagement.', '2026-01-19 09:30'),
+(3, 1, NULL, 'Growth depends on ambiguity.', '2026-01-19 11:50'),
+(3, 29, NULL, 'Without doubt, effort feels pointless.', '2026-01-19 15:10'),
+(3, 13, NULL, 'Questions create meaning, not answers.', '2026-01-19 18:00'),
+(3, 40, NULL, 'Certainty might end philosophy entirely.', '2026-01-20 21:00'),
+
+-- Prompt 4
+(4, 7, NULL, 'A good life depends on context.', '2026-01-25 09:20'),
+(4, 24, NULL, 'Minimizing harm seems universal.', '2026-01-25 11:10'),
+(4, 15, NULL, 'Intent matters as much as outcome.', '2026-01-25 13:45'),
+(4, 30, NULL, 'Moral certainty feels dangerous.', '2026-01-25 16:00'),
+(4, 11, NULL, 'Goodness changes over time.', '2026-01-25 18:30'),
+(4, 19, NULL, 'Trying honestly counts for something.', '2026-01-26 09:40'),
+(4, 35, NULL, 'A good life might be quietly lived.', '2026-01-26 12:15'),
+(4, 2, NULL, 'Consistency matters more than perfection.', '2026-01-26 15:00'),
+(4, 26, NULL, 'Goodness might be local, not universal.', '2026-01-26 18:50'),
+(4, 9, NULL, 'Moral frameworks shift faster than we admit.', '2026-01-27 21:10'),
+
+-- Prompt 5
+(5, 10, NULL, 'Memory defines selfhood.', '2026-02-01 09:00'),
+(5, 18, NULL, 'Forgetting protects us.', '2026-02-01 10:45'),
+(5, 32, NULL, 'Memory edits reality.', '2026-02-01 13:10'),
+(5, 4, NULL, 'Selective memory shapes personality.', '2026-02-01 15:40'),
+(5, 21, NULL, 'Forgetting creates blind spots.', '2026-02-01 18:20'),
+(5, 27, NULL, 'Some memories are better lost.', '2026-02-02 09:30'),
+(5, 14, NULL, 'We are summaries, not archives.', '2026-02-02 12:00'),
+(5, 35, NULL, 'Memory isn’t truth, it’s narrative.', '2026-02-02 15:50'),
+(5, 6, NULL, 'Forgetting feels like betrayal sometimes.', '2026-02-02 18:40'),
+(5, 40, NULL, 'Identity survives memory loss differently than expected.', '2026-02-03 21:00'),
+
+-- Prompt 6
+(6, 16, NULL, 'Progress always costs something.', '2026-02-08 09:10'),
+(6, 31, NULL, 'The cost is often hidden.', '2026-02-08 10:45'),
+(6, 22, NULL, 'Someone always pays.', '2026-02-08 12:30'),
+(6, 1, NULL, 'Sacrifice feels easier when distant.', '2026-02-08 15:00'),
+(6, 37, NULL, 'Shared cost feels fairer.', '2026-02-08 17:40'),
+(6, 8, NULL, 'Progress narratives ignore loss.', '2026-02-09 09:20'),
+(6, 28, NULL, 'Trade-offs define ethics.', '2026-02-09 11:50'),
+(6, 19, NULL, 'Growth without consent feels wrong.', '2026-02-09 15:10'),
+(6, 33, NULL, 'We rarely measure what we destroy.', '2026-02-09 18:30'),
+(6, 12, NULL, 'Progress needs accountability.', '2026-02-10 21:00'),
+
+-- Prompt 7
+(7, 13, NULL, 'Without expectations, I feel lighter.', '2026-02-15 09:00'),
+(7, 28, NULL, 'Pressure becomes identity.', '2026-02-15 10:30'),
+(7, 6, NULL, 'Expectation gives shape to effort.', '2026-02-15 12:45'),
+(7, 34, NULL, 'Freedom feels disorienting.', '2026-02-15 15:00'),
+(7, 20, NULL, 'Expectation creates momentum.', '2026-02-15 17:20'),
+(7, 1, NULL, 'Without pressure, motivation fades.', '2026-02-16 09:10'),
+(7, 25, NULL, 'Peace replaces performance.', '2026-02-16 11:40'),
+(7, 9, NULL, 'Expectations simplify identity.', '2026-02-16 14:00'),
+(7, 37, NULL, 'Pressure teaches discipline.', '2026-02-16 18:10'),
+(7, 40, NULL, 'Freedom begins where obligation ends.', '2026-02-16 21:30');
+
