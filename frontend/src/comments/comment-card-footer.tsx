@@ -1,7 +1,7 @@
 import Icon from '@/components/icons';
 import { useModal } from '@/context/modal-context';
 import { ICON } from '@/util/icon-names';
-import type { Comment } from './comment.types';
+import type { Comment } from '@/comments/comment.types';
 import { useState } from 'react';
 import Loader from '@/components/loader';
 

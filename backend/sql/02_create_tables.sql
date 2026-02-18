@@ -11,7 +11,7 @@ CREATE TABLE users (
     gender VARCHAR(10)
 );
 
-CREATE TABLE prompts (
+CREATE TABLE posts (
     id SERIAL PRIMARY KEY,
     text VARCHAR(200) NOT NULL,
     created_at DATE NOT NULL
@@ -19,7 +19,7 @@ CREATE TABLE prompts (
 
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
-    prompt_id INT NOT NULL REFERENCES prompts(id),
+    post_id INT NOT NULL REFERENCES posts(id),
     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     parent_id INT REFERENCES comments(id) ON DELETE CASCADE,
     text VARCHAR(300) NOT NULL,

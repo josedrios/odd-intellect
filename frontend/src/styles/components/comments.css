@@ -74,7 +74,7 @@
   margin-right: auto;
 }
 
-.comment-form__prompt {
+.comment-form__post {
   font-weight: var(--font-weight-bold);
   text-align: center;
   margin: 10vh 0;

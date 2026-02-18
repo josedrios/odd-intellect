@@ -1,9 +1,9 @@
-import PromptList from '@/prompts/prompt-list';
+import PostList from '@/posts/post-list';
 
 export default function HomePage() {
   return (
     <>
-      <PromptList />
+      <PostList />
     </>
   );
 }

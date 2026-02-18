@@ -19,7 +19,7 @@ export default function CommentCreate({
             </p>
           </div>
         ) : (
-          <h2 className="comment-form__prompt">
+          <h2 className="comment-form__post">
             TELL ME ABOUT SOMEONE YOU DEEPLY LOVE.
           </h2>
         )}

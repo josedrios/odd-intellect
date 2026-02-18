@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user-routes.js";
-import promptRoutes from "./routes/prompt-routes.js";
+import postRoutes from "./routes/post-routes.js";
 import commentRoutes from "./routes/comment-routes.js";
 
 // Server Setup
@@ -15,7 +15,7 @@ app.use(
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
-app.use("/api/prompts", promptRoutes);
+app.use("/api/posts", postRoutes);
 app.use("/api/comments", commentRoutes);
 
 // Server listening

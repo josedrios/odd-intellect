@@ -1,4 +1,4 @@
-.prompt-card {
+.post-card {
   border: 1px solid var(--color-border-subtle);
   padding: var(--spacing-3);
   display: flex;
@@ -11,20 +11,20 @@
   }
 }
 
-.prompt-card__prompt {
+.post-card__post {
   font-weight: var(--font-weight-bold);
 }
 
-.prompt-card:hover .prompt-card__prompt {
+.post-card:hover .post-card__post {
   text-decoration: underline;
 }
 
-.prompt-card__info {
+.post-card__info {
   font-size: var(--font-size-xs);
   color: var(--color-foreground-subtle);
 }
 
-.prompt-card__comment {
+.post-card__comment {
   font-size: var(--font-size-sm);
 }
 

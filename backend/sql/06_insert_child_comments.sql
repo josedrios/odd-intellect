@@ -1,5 +1,5 @@
-INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
--- Prompt 1 subcomments
+INSERT INTO comments (post_id, user_id, parent_id, text, created_at) VALUES
+-- Post 1 subcomments
 (1, 22, 1, 'Same here. I notice I act differently when no one''s watching.', '2026-01-04 10:30'),
 (1, 31, 1, 'But isn''t that just social adaptation?', '2026-01-04 12:15'),
 (1, 15, 31, 'Maybe, but if it disappears without an audience, was it really "you"?', '2026-01-04 14:20'),
@@ -28,7 +28,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (1, 38, 10, 'Relational makes sense. Identity needs a mirror.', '2026-01-05 19:30'),
 
--- Prompt 2 subcomments
+-- Post 2 subcomments
 (2, 23, 11, 'The path not taken lives rent-free in my mind.', '2026-01-11 10:45'),
 (2, 35, 23, 'Same. I still wonder about jobs I didn''t take.', '2026-01-11 12:30'),
 (2, 7, 35, 'And people I didn''t date.', '2026-01-11 14:15'),
@@ -57,7 +57,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (2, 10, 20, 'The unlived life haunts the lived one.', '2026-01-13 21:30'),
 
--- Prompt 3 subcomments
+-- Post 3 subcomments
 (3, 25, 21, 'Curiosity dies when you already know.', '2026-01-18 10:15'),
 (3, 16, 25, 'That''s why I hate spoilers.', '2026-01-18 11:45'),
 (3, 34, 16, 'Same. Knowing ruins the experience.', '2026-01-18 13:30'),
@@ -85,7 +85,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (3, 1, 30, 'Philosophy would just be facts.', '2026-01-20 22:30'),
 
--- Prompt 4 subcomments
+-- Post 4 subcomments
 (4, 26, 31, 'Context changes everything about morality.', '2026-01-25 10:30'),
 (4, 8, 26, 'What''s good in one situation may not be in another.', '2026-01-25 12:15'),
 
@@ -111,7 +111,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (4, 32, 40, 'Moral frameworks are more fluid than we admit.', '2026-01-27 22:30'),
 
--- Prompt 5 subcomments
+-- Post 5 subcomments
 (5, 23, 41, 'Without memory, there is no self.', '2026-02-01 10:15'),
 (5, 6, 23, 'But memory is just a story we tell ourselves.', '2026-02-01 12:30'),
 
@@ -137,7 +137,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (5, 37, 50, 'Identity persists even when memory fails. That''s interesting.', '2026-02-03 22:30'),
 
--- Prompt 6 subcomments
+-- Post 6 subcomments
 (6, 18, 51, 'Nothing comes free.', '2026-02-08 10:30'),
 (6, 33, 18, 'Someone always pays.', '2026-02-08 12:15'),
 
@@ -163,7 +163,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 
 (6, 24, 60, 'Progress needs to be accountable.', '2026-02-10 22:30'),
 
--- Prompt 7 subcomments
+-- Post 7 subcomments
 (7, 17, 61, 'Lighter but also adrift.', '2026-02-15 10:15'),
 (7, 32, 17, 'Freedom can feel like floating.', '2026-02-15 12:30'),
 

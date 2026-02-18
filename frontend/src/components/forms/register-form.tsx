@@ -1,4 +1,4 @@
-import CheckBox from '../checkbox';
+import CheckBox from '@/components/checkbox';
 
 export default function RegisterForm() {
   return (

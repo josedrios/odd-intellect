@@ -1,17 +1,17 @@
 import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
-import CommentCard from './comment-card';
+import CommentCard from '@/comments/comment-card';
 import Select from '@/components/select';
 import { useModal } from '@/context/modal-context';
-import CommentCreate from './comment-create';
+import CommentCreate from '@/comments/comment-create';
 import { useEffect, useState } from 'react';
-import { getComments, getSubcomments } from './comment.api';
-import type { Comment } from './comment.types';
+import { getComments, getSubcomments } from '@/comments/comment.api';
+import type { Comment } from '@/comments/comment.types';
 import { useParams } from 'react-router-dom';
 import Loader from '@/components/loader';
 
 export default function Comments() {
-  const { id: promptId } = useParams<{ id: string }>();
+  const { id: postId } = useParams<{ id: string }>();
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -19,11 +19,11 @@ export default function Comments() {
   // Load parent comments on load
   useEffect(() => {
     async function loadComments() {
-      if (!promptId) return;
+      if (!postId) return;
       try {
         setLoading(true);
         setError(null);
-        const data: Comment[] = await getComments(promptId);
+        const data: Comment[] = await getComments(postId);
         setComments(data);
       } catch (error) {
         console.log(error);
@@ -33,7 +33,7 @@ export default function Comments() {
       }
     }
     loadComments();
-  }, [promptId]);
+  }, [postId]);
 
   // Load parent comments function
   const loadReplies = async (commentId: number) => {

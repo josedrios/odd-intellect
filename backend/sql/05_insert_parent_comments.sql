@@ -1,5 +1,5 @@
-INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
--- Prompt 1
+INSERT INTO comments (post_id, user_id, parent_id, text, created_at) VALUES
+-- Post 1
 (1, 5, NULL, 'A lot of my identity feels shaped by how others respond to me.', '2026-01-04 09:10'),
 (1, 12, NULL, 'Without witnesses, some parts of me feel unreal.', '2026-01-04 10:00'),
 (1, 27, NULL, 'Confidence might be the first thing to disappear.', '2026-01-04 11:20'),
@@ -11,7 +11,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (1, 16, NULL, 'Solitude strips away unnecessary layers.', '2026-01-05 14:20'),
 (1, 40, NULL, 'Maybe identity is relational by nature.', '2026-01-05 18:00'),
 
--- Prompt 2
+-- Post 2
 (2, 6, NULL, 'The choices I avoid haunt me more than mistakes.', '2026-01-11 09:15'),
 (2, 14, NULL, 'Avoidance feels safer but costs more long-term.', '2026-01-11 10:40'),
 (2, 22, NULL, 'Indecision shapes life just as much as action.', '2026-01-11 12:00'),
@@ -23,7 +23,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (2, 37, NULL, 'Avoidance feels invisible until it isn’t.', '2026-01-12 18:40'),
 (2, 11, NULL, 'The unlived life shapes the lived one.', '2026-01-13 20:10'),
 
--- Prompt 3
+-- Post 3
 (3, 4, NULL, 'Certainty would remove curiosity.', '2026-01-18 09:05'),
 (3, 17, NULL, 'Meaning relies on not knowing.', '2026-01-18 10:30'),
 (3, 28, NULL, 'Doubt creates motion.', '2026-01-18 12:10'),
@@ -35,7 +35,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (3, 13, NULL, 'Questions create meaning, not answers.', '2026-01-19 18:00'),
 (3, 40, NULL, 'Certainty might end philosophy entirely.', '2026-01-20 21:00'),
 
--- Prompt 4
+-- Post 4
 (4, 7, NULL, 'A good life depends on context.', '2026-01-25 09:20'),
 (4, 24, NULL, 'Minimizing harm seems universal.', '2026-01-25 11:10'),
 (4, 15, NULL, 'Intent matters as much as outcome.', '2026-01-25 13:45'),
@@ -47,7 +47,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (4, 26, NULL, 'Goodness might be local, not universal.', '2026-01-26 18:50'),
 (4, 9, NULL, 'Moral frameworks shift faster than we admit.', '2026-01-27 21:10'),
 
--- Prompt 5
+-- Post 5
 (5, 10, NULL, 'Memory defines selfhood.', '2026-02-01 09:00'),
 (5, 18, NULL, 'Forgetting protects us.', '2026-02-01 10:45'),
 (5, 32, NULL, 'Memory edits reality.', '2026-02-01 13:10'),
@@ -59,7 +59,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (5, 6, NULL, 'Forgetting feels like betrayal sometimes.', '2026-02-02 18:40'),
 (5, 40, NULL, 'Identity survives memory loss differently than expected.', '2026-02-03 21:00'),
 
--- Prompt 6
+-- Post 6
 (6, 16, NULL, 'Progress always costs something.', '2026-02-08 09:10'),
 (6, 31, NULL, 'The cost is often hidden.', '2026-02-08 10:45'),
 (6, 22, NULL, 'Someone always pays.', '2026-02-08 12:30'),
@@ -71,7 +71,7 @@ INSERT INTO comments (prompt_id, user_id, parent_id, text, created_at) VALUES
 (6, 33, NULL, 'We rarely measure what we destroy.', '2026-02-09 18:30'),
 (6, 12, NULL, 'Progress needs accountability.', '2026-02-10 21:00'),
 
--- Prompt 7
+-- Post 7
 (7, 13, NULL, 'Without expectations, I feel lighter.', '2026-02-15 09:00'),
 (7, 28, NULL, 'Pressure becomes identity.', '2026-02-15 10:30'),
 (7, 6, NULL, 'Expectation gives shape to effort.', '2026-02-15 12:45'),

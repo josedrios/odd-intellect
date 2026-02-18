@@ -1,6 +1,6 @@
 import dayjs from 'dayjs';
 
-export function promptDateFormatter(date: Date): string {
+export function postDateFormatter(date: Date): string {
   return dayjs(date).format('MM-DD-YYYY');
 }
 

@@ -1,44 +1,44 @@
 import Comments from '@/comments/comments';
-import { getPrompt } from '@/prompts/prompt.api';
-import type { Prompt } from '@/prompts/prompt.types';
+import { getPost } from '@/posts/post.api';
+import type { Post } from '@/posts/post.types';
 import TextPanel from '@/components/text-panel';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Loader from '@/components/loader';
 
-export default function PromptPage() {
+export default function PostPage() {
   const { id } = useParams<{ id: string }>();
-  const [prompt, setPrompt] = useState<Prompt>();
+  const [post, setPost] = useState<Post>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    async function loadPrompt() {
+    async function loadPost() {
       if (!id) return;
       try {
         setLoading(true);
         setError(null);
-        const data: Prompt = await getPrompt(id);
-        setPrompt(data);
+        const data: Post = await getPost(id);
+        setPost(data);
       } catch (error) {
         console.log(error);
-        setError('Failed to load prompt info');
+        setError('Failed to load post info');
       } finally {
         setLoading(false);
       }
     }
-    loadPrompt();
+    loadPost();
   }, [id]);
 
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
-  if (!prompt) return <p>No prompt found :(</p>;
+  if (!post) return <p>No post found :(</p>;
 
-  // Formatting prompt text for TextPanel component
-  const promptText = prompt.id + '. ' + prompt.text;
+  // Formatting post text for TextPanel component
+  const postText = post.id + '. ' + post.text;
   return (
     <>
-      <TextPanel text={promptText} />
+      <TextPanel text={postText} />
       <Comments />
     </>
   );

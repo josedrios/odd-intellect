@@ -1,4 +1,4 @@
-INSERT INTO prompts (created_at, text) VALUES
+INSERT INTO posts (created_at, text) VALUES
 ('2026-01-04', 'What part of your identity would disappear if no one else could see it?'),
 ('2026-01-11', 'Is a life defined more by the choices you make or the ones you avoid?'),
 ('2026-01-18', 'If certainty were possible, would it make life better or meaningless?'),

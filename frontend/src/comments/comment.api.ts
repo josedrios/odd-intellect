@@ -15,9 +15,9 @@ function mapComment(comment: CommentApi): Comment {
   };
 }
 
-export async function getComments(promptId: string): Promise<Comment[]> {
+export async function getComments(postId: string): Promise<Comment[]> {
   const fetchedComments: CommentApi[] = await apiFetch<CommentApi[]>(
-    `/prompts/${promptId}/comments`,
+    `/posts/${postId}/comments`,
     { method: 'GET' },
   );
   const comments: Comment[] = fetchedComments.map(mapComment);

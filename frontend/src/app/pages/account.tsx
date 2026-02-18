@@ -1,6 +1,6 @@
 import TextPanel from '@/components/text-panel';
 import { useEffect, useState } from 'react';
-import PromptList from '@/prompts/prompt-list';
+import PostList from '@/posts/post-list';
 import AccountList from '@/users/account-list';
 import { getUser } from '@/users/user.api';
 import type { User } from '@/users/user.types';
@@ -47,7 +47,7 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
       {user ? <AccountList user={user} isMe={isMe} /> : ''}
       {viewComments ? (
         <>
-          <PromptList account />
+          <PostList account />
         </>
       ) : (
         <button

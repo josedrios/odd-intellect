@@ -6,7 +6,7 @@ export default function ContactPage() {
       <TextPanel text="oddintellect@mail.com" />
       <p>
         Something wrong with the website? Want to suggest a prompt? Just have a
-        general prompt you want to ask? Don't be shy, send an email.
+        general question you want to ask? Don't be shy, send an email.
       </p>
     </div>
   );

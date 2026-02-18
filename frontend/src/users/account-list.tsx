@@ -1,5 +1,5 @@
 import type { AccountAttribute } from '@/app/pages/account';
-import type { User } from './user.types';
+import type { User } from '@/users/user.types';
 
 export default function AccountList({
   user,

@@ -1,5 +1,5 @@
 import { useModal } from '@/context/modal-context';
-import Icon from './icons';
+import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import { useEffect } from 'react';
 

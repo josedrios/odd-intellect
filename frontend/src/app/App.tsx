@@ -1,16 +1,16 @@
 import Nav from '@/components/nav.tsx';
-import ContactPage from './pages/contact';
+import ContactPage from '@/app/pages/contact';
 import Footer from '@/components/footer';
-import HomePage from './pages/home';
-import PromptPage from './pages/prompt';
-import AccountPage from './pages/account';
+import HomePage from '@/app/pages/home';
+import PostPage from '@/app/pages/post';
+import AccountPage from '@/app/pages/account';
 import { Routes, Route } from 'react-router-dom';
-import DonatePage from './pages/donate';
-import AboutPage from './pages/about';
-import AuthPage from './pages/auth';
-import HelpPage from './pages/help';
-import RequestPage from './pages/request';
-import TermsPage from './pages/terms';
+import DonatePage from '@/app/pages/donate';
+import AboutPage from '@/app/pages/about';
+import AuthPage from '@/app/pages/auth';
+import HelpPage from '@/app/pages/help';
+import RequestPage from '@/app/pages/request';
+import TermsPage from '@/app/pages/terms';
 import backToTop from '@/util/back-to-top';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -31,7 +31,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/prompt/:id" element={<PromptPage />} />
+            <Route path="/post/:id" element={<PostPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage isMe />} />

@@ -29,5 +29,5 @@
 
 /* pages */
 @import './pages/account.css';
-@import './pages/prompt.css';
+@import './pages/post.css';
 @import './pages/auth.css';

@@ -11,8 +11,8 @@ export default function AboutPage() {
       </p>
       <TextPanel text="WHY THE WEBSITE?" />
       <p>
-        When you ask a prompt to 10 people, you sometimes get 10 different
-        responses. When you ask a deep prompt to everyone on the internet who is
+        When you ask a post to 10 people, you sometimes get 10 different
+        responses. When you ask a deep post to everyone on the internet who is
         willing to respond, every answer is unique. That was my attempt of
         trying to say something deep about why I made this website. I guess I
         made this website just to see how people of all walks of life actually
