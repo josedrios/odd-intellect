@@ -5,6 +5,14 @@ function mapUser(user: UserApi): User {
   return {
     id: user.id,
     username: user.username,
+    bio: user.bio,
+    email: user.email,
+    currentStreak: user.current_streak,
+    longestStreak: user.longest_streak,
+    name: user.name,
+    country: user.country,
+    age: user.age,
+    gender: user.gender,
   };
 }
 

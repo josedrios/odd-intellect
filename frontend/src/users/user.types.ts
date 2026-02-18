@@ -15,4 +15,12 @@ export type UserApi = {
 export type User = {
   id: number;
   username: string;
+  bio?: string;
+  email?: string;
+  currentStreak?: number;
+  longestStreak?: number;
+  name?: string;
+  country?: string;
+  age?: number;
+  gender?: string;
 };

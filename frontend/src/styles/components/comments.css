@@ -38,6 +38,15 @@
 .comment-card__username {
   font-weight: var(--font-weight-bold);
   margin-right: var(--spacing-2_5);
+  &:hover {
+    cursor: pointer;
+    color: var(--color-foreground-default-hover);
+  }
+}
+
+.comment-card__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground-subtle);
 }
 
 .comment-card__footer {
@@ -63,9 +72,6 @@
 
 .comment-card__replies {
   margin-right: auto;
-}
-
-.comment-form {
 }
 
 .comment-form__prompt {

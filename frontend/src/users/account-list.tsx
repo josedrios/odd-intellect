@@ -1,29 +1,24 @@
 import type { AccountAttribute } from '@/app/pages/account';
-import { useModal } from '@/context/modal-context';
+import type { User } from './user.types';
 
-export default function AccountList({
-  attributes,
-}: {
-  attributes: AccountAttribute[];
-}) {
+export default function AccountList({ user }: { user: User }) {
   return (
     <div className="account-list">
-      {attributes.map((item) => (
-        <AccountAttribute attribute={item} key={item.label} />
+      {Object.entries(user).map(([label, value]) => (
+        <AccountAttribute
+          attribute={{ label, value: String(value ?? 'UNKNOWN') }}
+          key={label}
+        />
       ))}
     </div>
   );
 }
 
 function AccountAttribute({ attribute }: { attribute: AccountAttribute }) {
-  const { openModal } = useModal();
   return (
     <div className="account-attribute">
       {attribute.label.toLowerCase() === 'edit preferences' ? (
-        <a
-          className="account-attribute__key"
-          onClick={() => openModal('account preferences')}
-        >
+        <a className="account-attribute__key">
           {attribute.label.toUpperCase()}
         </a>
       ) : (
@@ -31,9 +26,7 @@ function AccountAttribute({ attribute }: { attribute: AccountAttribute }) {
           {attribute.label.toUpperCase()}
         </p>
       )}
-      <p className="account-attribute__value">
-        {attribute.value.toUpperCase()}
-      </p>
+      <p className="account-attribute__value">{attribute.value}</p>
     </div>
   );
 }

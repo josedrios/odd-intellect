@@ -34,7 +34,8 @@ function App() {
             <Route path="/prompt/:id" element={<PromptPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/account" element={<AccountPage />} />
+            <Route path="/account" element={<AccountPage isMe={true} />} />
+            <Route path="/users/:username" element={<AccountPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />
             <Route path="/help" element={<HelpPage />} />

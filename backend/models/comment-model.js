@@ -11,7 +11,7 @@ export const getPromptComments = (promptId) =>
 
 export const getSubcomments = (commentId) =>
   query(
-    "SELECT comments.*, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.parent_id = $1 ORDER BY comments.created_at DESC;",
+    "SELECT comments.*, users.username FROM comments JOIN users ON comments.user_id = users.id WHERE comments.parent_id = $1 ORDER BY comments.created_at ;",
     [commentId],
   );
 
