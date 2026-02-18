@@ -44,7 +44,7 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
   return (
     <>
       <TextPanel text="somedude" />
-      {user ? <AccountList user={user} /> : ''}
+      {user ? <AccountList user={user} isMe={isMe} /> : ''}
       {viewComments ? (
         <>
           <PromptList account />
