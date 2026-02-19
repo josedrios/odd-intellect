@@ -19,8 +19,8 @@ CREATE TABLE posts (
 
 CREATE TABLE comments (
     id SERIAL PRIMARY KEY,
-    post_id INT NOT NULL REFERENCES posts(id),
     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    post_id INT REFERENCES posts(id),
     parent_id INT REFERENCES comments(id) ON DELETE CASCADE,
     text VARCHAR(300) NOT NULL,
     created_at TIMESTAMP DEFAULT now()

@@ -1,13 +1,13 @@
 export type PostApi = {
   id: number;
   text: string;
-  created_at: Date;
   comment_count: number;
+  created_at: Date;
 };
 
 export type Post = {
   id: number;
   text: string;
-  createdAt: Date;
   commentCount: number;
+  createdAt: Date;
 };

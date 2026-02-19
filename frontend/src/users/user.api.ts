@@ -1,4 +1,5 @@
 import type { User, UserApi } from '@/users/user.types';
+import type { PostComment, PostCommentApi } from '@/comments/comment.types';
 import { apiFetch } from '@/util/api-fetch';
 
 function mapUser(user: UserApi): User {
@@ -21,7 +22,26 @@ export async function getUser(username: string): Promise<User> {
     method: 'GET',
   });
   const user: User = mapUser(fetchedUser);
-  console.log('Fetched User: ');
-  console.log(user);
   return user;
+}
+
+function mapPostComments(comment: PostCommentApi): PostComment {
+  return {
+    commentId: comment.id,
+    commentText: comment.text,
+    createdAt: new Date(comment.created_at),
+    postId: comment.post_id,
+    postText: comment.post_text,
+  };
+}
+
+export async function getUserComments(
+  username: string,
+): Promise<PostComment[]> {
+  const fetchedComments: PostCommentApi[] = await apiFetch<PostCommentApi[]>(
+    `/users/${username}/comments`,
+    { method: 'GET' },
+  );
+  const comments: PostComment[] = fetchedComments.map(mapPostComments);
+  return comments;
 }

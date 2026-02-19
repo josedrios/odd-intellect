@@ -1,5 +1,7 @@
 import dayjs from 'dayjs';
 
+// TODO: if dates do not work or from the future return an empty string
+
 export function postDateFormatter(date: Date): string {
   return dayjs(date).format('MM-DD-YYYY');
 }

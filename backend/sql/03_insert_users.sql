@@ -1,5 +1,6 @@
+-- NOTE: User IDs go from 1-40
+
 INSERT INTO users (username, bio, email, current_streak, longest_streak, name, country, age, gender) VALUES
--- User 1-10: Diverse international users
 ('alex_writes', 'Fantasy writer by night, software engineer by day. Currently working on a 5-book series.', 'alex.chen@email.com', 12, 45, 'Alex Chen', 'Canada', 28, 'Male'),
 ('maya_ink', 'Poet and dreamer. Published in 3 literary magazines. I write what I feel.', 'maya.rodriguez@email.com', 3, 67, 'Maya Rodriguez', 'Mexico', 24, 'Female'),
 ('sarah_scribe', 'Aspiring novelist. Coffee addict. Cat mom.', NULL, 0, 23, 'Sarah O''Connor', 'Ireland', 31, 'Female'),
@@ -10,8 +11,6 @@ INSERT INTO users (username, bio, email, current_streak, longest_streak, name, c
 ('thomas_tome', 'History professor who writes historical fiction. Details matter.', 'thomas.weber@email.com', 14, 52, 'Thomas Weber', 'Germany', 47, 'Male'),
 ('layla_letters', 'Travel writer. I''ve visited 34 countries. Each one has a story.', 'layla.mansour@email.com', 89, 89, 'Layla Mansour', 'Egypt', 33, 'Female'),
 ('nordic_narrator', 'Saga writer. My ancestors were storytellers, and so am I.', 'erik.johansen@email.com', 5, 19, 'Erik Johansen', 'Norway', 52, 'Male'),
-
--- Users 11-20: Varied backgrounds with some null fields
 ('zola_writes', 'Dystopian fiction is my jam. Also, I bake amazing cookies.', NULL, 34, 34, 'Zola Mbeki', 'South Africa', 30, 'Female'),
 ('vlad_verses', 'I write in both English and Russian. Poetry and prose.', 'vlad.volkov@email.com', 12, 45, 'Vlad Volkov', 'Russia', 41, 'Male'),
 ('chloe_chapters', 'YA author. My books are for the weird kids. I was one.', 'chloe.wilson@email.com', 67, 89, 'Chloe Wilson', 'Australia', 27, 'Female'),
@@ -22,8 +21,6 @@ INSERT INTO users (username, bio, email, current_streak, longest_streak, name, c
 ('yuki_story', 'Manga writer and illustrator. Stories are 50% words, 50% art.', 'yuki.yamamoto@email.com', 45, 78, 'Yuki Yamamoto', 'Japan', 25, 'Female'),
 ('oscar_plots', 'Mystery writer. I plot murders for a living. (In fiction, officer!)', 'oscar.finch@email.com', 23, 45, 'Oscar Finch', 'USA', 44, 'Male'),
 ('fatima_fiction', 'Literary fiction writer. Exploring identity and belonging.', 'fatima.khan@email.com', 4, 23, 'Fatima Khan', 'Pakistan', 32, 'Female'),
-
--- Users 21-30: More variety, more nulls
 ('liam_lyricist', 'I write lyrics and poetry. Music is just poetry with wings.', NULL, 56, 67, 'Liam O''Brien', 'Ireland', 23, 'Male'),
 ('elsa_edit', 'Developmental editor who also writes on weekends.', 'elsa.anderson@email.com', 0, 45, 'Elsa Anderson', 'Sweden', 39, 'Female'),
 ('nadia_novel', 'First-time author. My debut comes out next year!', NULL, 234, 234, 'Nadia Petrova', 'Ukraine', 36, 'Female'),
@@ -34,8 +31,6 @@ INSERT INTO users (username, bio, email, current_streak, longest_streak, name, c
 ('ravi_reads', 'Book blogger who finally started writing.', NULL, 7, 15, 'Ravi Sharma', 'India', 27, 'Male'),
 ('clara_chronicle', 'Journalist by day, novelist by night. Nonfiction pays, fiction feeds.', 'clara.walters@email.com', 234, 234, 'Clara Walters', 'USA', 41, 'Female'),
 ('david_drafts', 'Struggling with writer''s block, but still showing up every day.', 'david.cohen@email.com', 12, 89, 'David Cohen', 'Israel', 33, 'Male'),
-
--- Users 31-40: Complete the set with diverse profiles
 ('sofia_scribe', 'I write about food, love, and the spaces between.', 'sofia.martinez@email.com', 5, 23, 'Sofia Martinez', 'Spain', 35, 'Female'),
 ('kwame_words', 'Pan-African stories for a global audience.', NULL, 67, 78, 'Kwame Asante', 'Ghana', 42, 'Male'),
 ('nora_novella', 'I only write novellas. Long enough for depth, short enough to finish.', 'nora.lynch@email.com', 89, 103, 'Nora Lynch', 'Canada', 48, 'Female'),

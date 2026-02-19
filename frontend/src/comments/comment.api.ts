@@ -21,8 +21,6 @@ export async function getComments(postId: string): Promise<Comment[]> {
     { method: 'GET' },
   );
   const comments: Comment[] = fetchedComments.map(mapComment);
-  console.log('Fetched Comments:');
-  console.log(comments);
   return comments;
 }
 

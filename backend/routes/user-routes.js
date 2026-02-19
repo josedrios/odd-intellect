@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", controller.createUser);
 router.get("/", controller.getAllUsers);
-router.get("/:userId/comments", controller.getUserComments);
+router.get("/:username/comments", controller.getUserComments);
 router.get("/:username", controller.getUser);
 router.delete("/:userId", controller.deleteUser);
 

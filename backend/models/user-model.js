@@ -6,7 +6,10 @@ export const getUser = (username) =>
   query("SELECT * FROM users WHERE users.username = $1;", [username]);
 
 export const getUserComments = (userId) =>
-  query("SELECT * FROM comments WHERE user.id = $1", [userId]);
+  query(
+    "SELECT c.id, c.text, c.created_at, p.id as post_id,p.text as post_text FROM comments c JOIN posts p ON c.post_id = p.id WHERE c.user_id = $1;",
+    [userId],
+  );
 
 export const createUser = (userName) =>
   query("INSERT INTO users (username) VALUES ($1)", [userName]);

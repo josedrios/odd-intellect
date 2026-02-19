@@ -15,8 +15,6 @@ export async function getPosts(): Promise<Post[]> {
     method: 'GET',
   });
   const posts: Post[] = fetchedPosts.map(mapPost);
-  console.log('Fetched Posts:');
-  console.log(posts);
   return posts;
 }
 
@@ -25,7 +23,5 @@ export async function getPost(postId: string): Promise<Post> {
     method: 'GET',
   });
   const post: Post = mapPost(fetchedPost);
-  console.log('Fetched Post:');
-  console.log(post);
   return post;
 }

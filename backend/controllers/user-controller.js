@@ -27,19 +27,21 @@ export const getUser = async (req, res) => {
 };
 
 export const getUserComments = async (req, res) => {
-  const userId = req.params.userId;
+  const username = req.params.username;
   try {
-    const { rows: userRows } = await User.getUser(userId);
+    const { rows: userRows } = await User.getUser(username);
     if (userRows === 0) {
       return res
         .status(404)
-        .json({ error: "No user found with userId of " + userId });
+        .json({ error: "No user found with username of " + username });
     }
-    const { rows: commentRows } = await User.getUserComments(userId);
+    console.log(userRows);
+    const { rows: commentRows } = await User.getUserComments(userRows[0].id);
     res.status(200).json(commentRows);
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({
-      error: "Failed to fetch user comments for user of userId " + userId,
+      error: "Failed to fetch user comments for user of username " + username,
     });
   }
 };

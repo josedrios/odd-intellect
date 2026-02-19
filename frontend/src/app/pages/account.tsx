@@ -45,9 +45,9 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     <>
       <TextPanel text="somedude" />
       {user ? <AccountList user={user} isMe={isMe} /> : ''}
-      {viewComments ? (
+      {viewComments && user ? (
         <>
-          <PostList account />
+          <PostList id={user.id} />
         </>
       ) : (
         <button
