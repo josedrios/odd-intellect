@@ -1,8 +1,22 @@
 .search-bar {
   display: flex;
+  flex-direction: column;
+}
+
+.search-bar__header {
+  display: flex;
   flex-direction: row;
-  align-items: center;
   gap: var(--spacing-2);
+}
+
+.search-bar__footer {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-1_5);
+
+  p {
+    font-size: var(--font-size-xs);
+  }
 }
 
 .search-bar__input {
