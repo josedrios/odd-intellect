@@ -9,6 +9,7 @@ export type UserApi = {
   country?: string;
   age?: number;
   gender?: string;
+  comment_count: number;
   // private: boolean;
 };
 
@@ -23,4 +24,5 @@ export type User = {
   country?: string;
   age?: number;
   gender?: string;
+  commentCount: number;
 };

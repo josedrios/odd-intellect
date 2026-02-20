@@ -8,7 +8,6 @@ export default function AccountList({
   user: User;
   isMe?: boolean;
 }) {
-  console.log(isMe + 'from list');
   return (
     <div className="account-list">
       {isMe && (

@@ -14,6 +14,7 @@ function mapUser(user: UserApi): User {
     country: user.country,
     age: user.age,
     gender: user.gender,
+    commentCount: user.comment_count,
   };
 }
 

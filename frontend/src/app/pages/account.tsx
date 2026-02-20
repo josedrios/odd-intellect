@@ -1,10 +1,11 @@
 import TextPanel from '@/components/text-panel';
 import { useEffect, useState } from 'react';
-import PostList from '@/posts/post-list';
 import AccountList from '@/users/account-list';
 import { getUser } from '@/users/user.api';
 import type { User } from '@/users/user.types';
 import { useParams } from 'react-router-dom';
+import UserCommentList from '@/users/user-comments-list';
+import Loader from '@/components/loader';
 
 export type AccountAttribute = {
   label: string;
@@ -41,14 +42,38 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     loadUser();
   }, [isMe, username]);
 
+  if (loading) return <Loader />;
+  if (error) return <p>{error}</p>;
+  if (!user) return null;
+
   return (
     <>
       <TextPanel text="somedude" />
       {user ? <AccountList user={user} isMe={isMe} /> : ''}
-      {viewComments && user ? (
-        <>
-          <PostList id={user.id} />
-        </>
+      {user.commentCount > 0 && (
+        <UserComments
+          user={user}
+          viewComments={viewComments}
+          setViewComments={setViewComments}
+        />
+      )}
+    </>
+  );
+}
+
+function UserComments({
+  user,
+  viewComments,
+  setViewComments,
+}: {
+  user: User;
+  viewComments: boolean;
+  setViewComments: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  return (
+    <>
+      {viewComments ? (
+        <UserCommentList username={user.username} />
       ) : (
         <button
           className="account-view-comments btn--bordered"
