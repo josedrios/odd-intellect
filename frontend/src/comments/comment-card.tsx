@@ -23,7 +23,7 @@ export default function CommentCard({
       <CommentCreate subcomment />
       {/* Modal pop up component for comment options, really need to better place/name these types of things i WILL do later */}
       <CommentOptions />
-      <div>
+      <div className="comment-card__header">
         <span
           className="comment-card__username"
           onClick={() => navigate(`/users/${comment.username}`)}

@@ -46,3 +46,15 @@ export async function getUserComments(
   const comments: PostComment[] = fetchedComments.map(mapPostComments);
   return comments;
 }
+
+export async function searchUsers(query: string): Promise<User[]> {
+  console.log(query);
+  const fetchedUsers: UserApi[] = await apiFetch<UserApi[]>(
+    `/users/search/${query}`,
+    {
+      method: 'GET',
+    },
+  );
+  const users: User[] = fetchedUsers.map(mapUser);
+  return users;
+}

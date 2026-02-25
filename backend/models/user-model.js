@@ -2,6 +2,9 @@ import { query } from "../database.js";
 
 export const getAllUsers = () => query("SELECT * FROM users;");
 
+export const searchUser = (request) =>
+  query("SELECT * FROM users WHERE users.username LIKE $1;", [request]);
+
 export const getUser = (username) =>
   query(
     "SELECT u.*, COUNT(c.id) AS comment_count FROM users u LEFT JOIN comments c ON u.id = c.user_id AND c.post_id IS NOT NULL WHERE u.username = $1 GROUP BY u.id, u.username;",
