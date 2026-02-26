@@ -1,7 +1,7 @@
 import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import CommentCard from '@/comments/comment-card';
-import Select from '@/components/select';
+import { Select } from '@/components/select';
 import { useModal } from '@/context/modal-context';
 import CommentCreate from '@/comments/comment-create';
 import { useEffect, useState } from 'react';

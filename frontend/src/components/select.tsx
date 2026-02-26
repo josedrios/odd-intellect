@@ -1,6 +1,6 @@
 import SelectBase from 'react-select';
 
-type Option = {
+export type Option = {
   value: string;
   label: string;
 };
@@ -9,12 +9,22 @@ type SelectProps = {
   options: Option[];
   defaultValue: Option;
   size: string;
+  value: Option | null;
+  setValue: React.Dispatch<React.SetStateAction<Option | null>>;
 };
 
-export default function Select({ options, defaultValue, size }: SelectProps) {
+export function Select({
+  value,
+  setValue,
+  options,
+  defaultValue,
+  size,
+}: SelectProps) {
   return (
     <SelectBase
       options={options}
+      value={value}
+      onChange={(option) => setValue(option as Option | null)}
       defaultValue={defaultValue}
       className={`react-select react-select-${size}`}
       classNamePrefix={'react-select'}

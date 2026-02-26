@@ -50,14 +50,15 @@ export const getPostComments = async (req, res) => {
 
 export const searchPost = async (req, res) => {
   const text = req.params.text;
+  console.log("The post text query is " + text);
   try {
-    const { rows: postRows } = Post.searchPost(text);
-    if (postRows.length === 0) {
-      res.status(404).json({ error: "No posts found :(" });
+    const { rows: results } = await Post.searchPost(text);
+    if (results.length === 0) {
+      return res.status(404).json({ error: "No posts found :(" });
     }
-    res.status(200).json(postRows);
+    return res.status(200).json(results);
   } catch (error) {
     console.log(error.message);
-    res.status(500).json({ error: "Failed to search for posts" });
+    return res.status(500).json({ error: "Failed to search for posts" });
   }
 };

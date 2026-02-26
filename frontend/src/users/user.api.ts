@@ -56,5 +56,6 @@ export async function searchUsers(query: string): Promise<User[]> {
     },
   );
   const users: User[] = fetchedUsers.map(mapUser);
+  console.log(users);
   return users;
 }

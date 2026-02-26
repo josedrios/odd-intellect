@@ -25,3 +25,16 @@ export async function getPost(postId: string): Promise<Post> {
   const post: Post = mapPost(fetchedPost);
   return post;
 }
+
+export async function searchPosts(query: string): Promise<Post[]> {
+  console.log(query);
+  const fetchedPosts: PostApi[] = await apiFetch<PostApi[]>(
+    `/posts/search/${query}`,
+    {
+      method: 'GET',
+    },
+  );
+  const posts: Post[] = fetchedPosts.map(mapPost);
+  console.log(posts);
+  return posts;
+}

@@ -10,4 +10,4 @@ export const getPost = (postId) =>
   query("SELECT * FROM posts WHERE posts.id = $1;", [postId]);
 
 export const searchPost = (request) =>
-  query("SELECT * FROM posts WHERE posts.text LIKE $1;", [request]);
+  query("SELECT * FROM posts WHERE posts.text LIKE $1;", [`%${request}%`]);

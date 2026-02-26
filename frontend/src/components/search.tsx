@@ -1,12 +1,12 @@
 import { ICON } from '@/util/icon-names';
 import Icon from '@/components/icons';
-import Select from '@/components/select';
+import { Select } from '@/components/select';
 import { useState } from 'react';
 import { searchUsers } from '@/users/user.api';
+import { searchPosts } from '@/posts/post.api';
+import type { Option } from '@/components/select';
 
 export default function SearchBar() {
-  const [query, setQuery] = useState<string>('');
-
   const searchOptions = [
     { value: 'posts', label: 'POSTS' },
     { value: 'users', label: 'USERS' },
@@ -17,6 +17,9 @@ export default function SearchBar() {
     { value: 'popular', label: 'POPULAR' },
   ];
 
+  const [query, setQuery] = useState<string>('');
+  const [searchType, setSearchType] = useState<Option>(searchOptions[0]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     setQuery(e.target.value);
@@ -24,7 +27,14 @@ export default function SearchBar() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    searchUsers(query);
+    console.log('This search type is ' + searchType.value);
+    if (searchType.value === 'posts') {
+      console.log('posts query search');
+      searchPosts(query);
+    } else {
+      console.log('user query search');
+      searchUsers(query);
+    }
   };
 
   return (
@@ -46,6 +56,8 @@ export default function SearchBar() {
           options={searchOptions}
           defaultValue={searchOptions[0]}
           size={'xs'}
+          value={searchType}
+          setValue={setSearchType}
         />
         <p>{'     '} </p>
         <p>SORT:</p>
