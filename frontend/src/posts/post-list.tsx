@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Pagination from '@/components/pagination';
 import PostCard from '@/posts/post-card';
-import SearchBar from '@/components/search';
 import { getPosts } from '@/posts/post.api';
 import type { Post } from '@/posts/post.types';
 import Loader from '@/components/loader';
@@ -34,7 +33,6 @@ export default function PostList() {
 
   return (
     <div className="post-list">
-      <SearchBar />
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
