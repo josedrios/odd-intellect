@@ -1,15 +1,34 @@
-import type { User } from '@/users/user.types';
-import type { Post } from '@/posts/post.types';
+import PostCard from '@/posts/post-card';
+import Pagination from '@/components/pagination';
+import type { SearchQuery } from '@/app/pages/home';
 
 export default function SearchResults({
-  type,
-  results,
+  searchQuery,
 }: {
-  type: string;
-  results: User[] | Post[];
+  searchQuery: SearchQuery;
 }) {
-  console.log(type);
-  if (type.toLowerCase() === 'users') return <p>user results</p>;
-  if (type.toLowerCase() === 'posts') return <p>post results</p>;
+  if (searchQuery.results.length === 0) {
+    return <p>No results found, sorry :(</p>;
+  }
+  if (searchQuery.type.toLowerCase() === 'posts')
+    return (
+      <div className="post-list">
+        {searchQuery.results.map((post) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+        <Pagination />
+      </div>
+    );
+  if (searchQuery.type.toLowerCase() === 'users')
+    return (
+      <div>
+        {searchQuery.results.map((user) => (
+          <>
+            <p>ID: {user.id}</p>
+            <p>USERNAME: {user.username}</p>
+          </>
+        ))}
+      </div>
+    );
   else return <p>error, go back to home page</p>;
 }

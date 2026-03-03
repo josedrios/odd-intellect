@@ -53,9 +53,6 @@ export const searchPost = async (req, res) => {
   console.log("The post text query is " + text);
   try {
     const { rows: results } = await Post.searchPost(text);
-    if (results.length === 0) {
-      return res.status(404).json({ error: "No posts found :(" });
-    }
     return res.status(200).json(results);
   } catch (error) {
     console.log(error.message);

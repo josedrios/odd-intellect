@@ -1,7 +1,7 @@
 import Nav from '@/components/nav.tsx';
 import ContactPage from '@/app/pages/contact';
 import Footer from '@/components/footer';
-import HomePage from '@/app/pages/home';
+import { HomePage } from '@/app/pages/home';
 import PostPage from '@/app/pages/post';
 import AccountPage from '@/app/pages/account';
 import { Routes, Route } from 'react-router-dom';

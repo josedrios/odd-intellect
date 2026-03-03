@@ -79,9 +79,6 @@ export const searchUser = async (req, res) => {
   console.log("The username is " + username);
   try {
     const { rows: results } = await User.searchUser(username);
-    if (results.length === 0) {
-      return res.status(404).json({ error: "No users found :(" });
-    }
     res.status(200).json(results);
   } catch (error) {
     res.status(500).json({
