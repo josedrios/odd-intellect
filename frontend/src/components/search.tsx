@@ -25,17 +25,34 @@ export default function SearchBar({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('This search type is ' + searchType.value);
-    if (searchInput.trim() === '') {
-      setSearchQuery({ results: [], type: '' });
-    } else if (searchType.value === 'posts') {
-      console.log('posts query search');
-      const fetchedPosts: Post[] = await searchPosts(searchInput);
-      setSearchQuery({ results: fetchedPosts, type: searchType.value });
-    } else {
-      console.log('user query search');
-      const fetchedUsers: User[] = await searchUsers(searchInput);
-      setSearchQuery({ results: fetchedUsers, type: searchType.value });
+    setSearchQuery((prev) => ({ ...prev, loading: true }));
+    try {
+      if (searchInput.trim() === '') {
+        setSearchQuery({ results: [], type: '', loading: false, err: '' });
+      } else if (searchType.value === 'posts') {
+        const fetchedPosts: Post[] = await searchPosts(searchInput);
+        setSearchQuery((prev) => ({
+          ...prev,
+          results: fetchedPosts,
+          type: searchType.value,
+        }));
+      } else {
+        const fetchedUsers: User[] = await searchUsers(searchInput);
+        setSearchQuery((prev) => ({
+          ...prev,
+          results: fetchedUsers,
+          type: searchType.value,
+        }));
+      }
+    } catch (error) {
+      console.log(error);
+      setSearchQuery((prev) => ({
+        ...prev,
+        error:
+          'You got an error :(, will go into detail on what the error is when I implement the code',
+      }));
+    } finally {
+      setSearchQuery((prev) => ({ ...prev, loading: false }));
     }
   }
 
