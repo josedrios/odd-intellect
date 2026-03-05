@@ -31,7 +31,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/post/:id" element={<PostPage />} />
+            <Route path="/posts/:id" element={<PostPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage isMe />} />

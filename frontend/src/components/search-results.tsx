@@ -1,17 +1,18 @@
 import PostCard from '@/posts/post-card';
 import Pagination from '@/components/pagination';
 import type { SearchQuery } from '@/app/pages/home';
+import UserCard from '@/users/user-card';
 
 export default function SearchResults({
   searchQuery,
 }: {
   searchQuery: SearchQuery;
 }) {
+  let result;
   if (searchQuery.results.length === 0) {
-    return <p>No results found, sorry :(</p>;
-  }
-  if (searchQuery.type.toLowerCase() === 'posts')
-    return (
+    result = <p>No results found, sorry :(</p>;
+  } else if (searchQuery.type.toLowerCase() === 'posts') {
+    result = (
       <div className="post-list">
         {searchQuery.results.map((post) => (
           <PostCard key={post.id} post={post} />
@@ -19,16 +20,24 @@ export default function SearchResults({
         <Pagination />
       </div>
     );
-  if (searchQuery.type.toLowerCase() === 'users')
-    return (
+  } else if (searchQuery.type.toLowerCase() === 'users') {
+    result = (
       <div>
         {searchQuery.results.map((user) => (
-          <>
-            <p>ID: {user.id}</p>
-            <p>USERNAME: {user.username}</p>
-          </>
+          <UserCard user={user} />
         ))}
       </div>
     );
-  else return <p>error, go back to home page</p>;
+  } else if (searchQuery.err != '') {
+    result = <p>error, go back to home page</p>;
+  } else {
+    result = <p>sorry, we had an issue processing your search</p>;
+  }
+
+  return (
+    <>
+      <button>Clear Search</button>
+      {result}
+    </>
+  );
 }

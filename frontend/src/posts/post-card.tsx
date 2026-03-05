@@ -31,7 +31,7 @@ export default function PostCard({
 
   if (post)
     return (
-      <Link to={`/post/${card.id}`} className="post-card">
+      <Link to={`/posts/${card.id}`} className="card post-card">
         <h2 className="post-card__post">{card.post.toUpperCase()}</h2>
         <p className={`post-card__info`}>└─ {card.info} COMMENTS</p>
         <p className="post-card__info">
@@ -41,7 +41,7 @@ export default function PostCard({
     );
   if (postComment)
     return (
-      <Link to={`/post/${card.id}`} className="post-card">
+      <Link to={`/posts/${card.id}`} className="card post-card">
         <p className={`post-card__info`}>┌─ {card.post}</p>
         <h3 className="post-card__post">{card.info}</h3>
       </Link>

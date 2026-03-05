@@ -44,3 +44,12 @@ a.account-attribute__key {
   flex-direction: row;
   gap: var(--spacing-2);
 }
+
+.user-card__username {
+  font-size: var(--font-size-lg);
+}
+
+.user-card__id {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground-subtle);
+}
