@@ -32,7 +32,12 @@ export function HomePage() {
   } else if (searchQuery.err != '') {
     body = <p>There was an error with your search :(</p>;
   } else if (searchQuery.type != '') {
-    body = <SearchResults searchQuery={searchQuery} />;
+    body = (
+      <SearchResults
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
+    );
   } else {
     body = <PostList />;
   }

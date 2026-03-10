@@ -5,8 +5,10 @@ import UserCard from '@/users/user-card';
 
 export default function SearchResults({
   searchQuery,
+  setSearchQuery,
 }: {
   searchQuery: SearchQuery;
+  setSearchQuery: React.Dispatch<React.SetStateAction<SearchQuery>>;
 }) {
   let result;
   if (searchQuery.results.length === 0) {
@@ -36,7 +38,13 @@ export default function SearchResults({
 
   return (
     <>
-      <button>Clear Search</button>
+      <button
+        onClick={() =>
+          setSearchQuery({ results: [], type: '', loading: false, err: '' })
+        }
+      >
+        Clear Search
+      </button>
       {result}
     </>
   );

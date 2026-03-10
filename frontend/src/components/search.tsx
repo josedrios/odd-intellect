@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ICON } from '@/util/icon-names';
 import Icon from '@/components/icons';
-import { searchOptions, sortOptions } from '@/components/select-options';
+import { searchSorts, searchFilters } from '@/components/select-options';
 import { Select } from '@/components/select';
 import { searchUsers } from '@/users/user.api';
 import { searchPosts } from '@/posts/post.api';
@@ -15,7 +15,7 @@ export default function SearchBar({
 }: {
   setSearchQuery: React.Dispatch<React.SetStateAction<SearchQuery>>;
 }) {
-  const [searchType, setSearchType] = useState<Option>(searchOptions[0]);
+  const [searchType, setSearchType] = useState<Option>(searchFilters[0]);
   const [searchInput, setSearchInput] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,15 +25,21 @@ export default function SearchBar({
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    document.activeElement.blur(); // unfocuses on search bar after submission
+
     setSearchQuery((prev) => ({ ...prev, loading: true }));
     try {
       if (searchInput.trim() === '') {
         setSearchQuery({ results: [], type: '', loading: false, err: '' });
       } else if (searchType.value === 'posts') {
+        // TESTING SORT HERE, NEED TO MAKE STATE FOR SORT TYPE AND APPLY IT TO SEARCH RESULTS AND REGULAR POST HOME PAGE
         const fetchedPosts: Post[] = await searchPosts(searchInput);
+        const sortedPosts = fetchedPosts.sort(
+          (a, b) => b.commentCount - a.commentCount,
+        );
         setSearchQuery((prev) => ({
           ...prev,
-          results: fetchedPosts,
+          results: sortedPosts,
           type: searchType.value,
         }));
       } else {
@@ -72,8 +78,8 @@ export default function SearchBar({
       <div className="search-bar__footer">
         <p>TYPE:</p>
         <Select
-          options={searchOptions}
-          defaultValue={searchOptions[0]}
+          options={searchFilters}
+          defaultValue={searchFilters[0]}
           size={'xs'}
           value={searchType}
           setValue={setSearchType}
@@ -82,8 +88,8 @@ export default function SearchBar({
         <p>SORT:</p>
         {/* NEEDS A STATE AND STATE UPDATER (value and setValue) */}
         <Select
-          options={sortOptions}
-          defaultValue={sortOptions[0]}
+          options={searchSorts}
+          defaultValue={searchSorts[0]}
           size={'xs'}
         />
       </div>
