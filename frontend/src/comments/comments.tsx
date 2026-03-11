@@ -37,17 +37,6 @@ export default function Comments() {
     loadComments();
   }, [postId]);
 
-  useEffect(() => {
-    if (sortType.value === 'newest') {
-      const sorted = [...comments].sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
-      );
-      setComments(sorted);
-    } else if (sortType.value === 'popular') {
-      // compare comments likes
-    }
-  }, [sortType, comments]);
-
   // Load parent comments function
   const loadReplies = async (commentId: number) => {
     const replies: Comment[] = await getSubcomments(commentId);

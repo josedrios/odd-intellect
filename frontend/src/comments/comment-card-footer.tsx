@@ -20,15 +20,6 @@ export function CommentFooter({
 
   return (
     <div className="comment-card__footer">
-      <ShowReplies
-        comment={comment}
-        fetchReplies={fetchReplies}
-        toggleReplies={toggleReplies}
-        setLoading={setLoading}
-        loading={loading}
-        setError={setError}
-        error={error}
-      />
       <div className="comment-card__controls">
         <button
           className="comment-card__reply btn--open"
@@ -51,6 +42,15 @@ export function CommentFooter({
           <Icon name={ICON.ELLIPSIS} />
         </button>
       </div>
+      <ShowReplies
+        comment={comment}
+        fetchReplies={fetchReplies}
+        toggleReplies={toggleReplies}
+        setLoading={setLoading}
+        loading={loading}
+        setError={setError}
+        error={error}
+      />
     </div>
   );
 }

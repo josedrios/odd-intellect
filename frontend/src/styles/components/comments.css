@@ -51,11 +51,10 @@
 
 .comment-card__footer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .comment-card__controls {
-  margin-left: auto;
   display: flex;
   flex-direction: row;
   align-items: end;
@@ -68,10 +67,6 @@
 
 .comment-card__replies span {
   margin-left: var(--spacing-2);
-}
-
-.comment-card__replies {
-  margin-right: auto;
 }
 
 .comment-form__post {

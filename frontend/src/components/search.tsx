@@ -16,6 +16,7 @@ export default function SearchBar({
   setSearchQuery: React.Dispatch<React.SetStateAction<SearchQuery>>;
 }) {
   const [searchType, setSearchType] = useState<Option>(searchFilters[0]);
+  const [searchSort, setSearchSort] = useState<Option>(searchSorts[0]);
   const [searchInput, setSearchInput] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,17 +31,20 @@ export default function SearchBar({
     setSearchQuery((prev) => ({ ...prev, loading: true }));
     try {
       if (searchInput.trim() === '') {
-        setSearchQuery({ results: [], type: '', loading: false, err: '' });
+        setSearchQuery({
+          results: [],
+          type: '',
+          sort: '',
+          loading: false,
+          err: '',
+        });
       } else if (searchType.value === 'posts') {
-        // TESTING SORT HERE, NEED TO MAKE STATE FOR SORT TYPE AND APPLY IT TO SEARCH RESULTS AND REGULAR POST HOME PAGE
         const fetchedPosts: Post[] = await searchPosts(searchInput);
-        const sortedPosts = fetchedPosts.sort(
-          (a, b) => b.commentCount - a.commentCount,
-        );
         setSearchQuery((prev) => ({
           ...prev,
-          results: sortedPosts,
+          results: fetchedPosts,
           type: searchType.value,
+          sort: searchSort.value,
         }));
       } else {
         const fetchedUsers: User[] = await searchUsers(searchInput);
@@ -48,6 +52,7 @@ export default function SearchBar({
           ...prev,
           results: fetchedUsers,
           type: searchType.value,
+          sort: searchSort.value,
         }));
       }
     } catch (error) {
@@ -68,7 +73,7 @@ export default function SearchBar({
         <input
           className="search-bar__input"
           value={searchInput}
-          placeholder={`Find a post`}
+          placeholder={`Search for ${searchType.value}`}
           onChange={handleChange}
         />
         <button type="submit" className="btn--bordered">
@@ -91,6 +96,8 @@ export default function SearchBar({
           options={searchSorts}
           defaultValue={searchSorts[0]}
           size={'xs'}
+          value={searchSort}
+          setValue={setSearchSort}
         />
       </div>
     </form>
