@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { commentSorts } from '@/components/select-options';
 import { Select } from '@/components/select';
 import { searchSorts } from '@/components/select-options';
 import Pagination from '@/components/pagination';
@@ -13,7 +12,7 @@ export default function PostList() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [sortType, setSortType] = useState<Option>(commentSorts[0]);
+  const [sortType, setSortType] = useState<Option>(searchSorts[0]);
 
   useEffect(() => {
     async function loadPosts() {
@@ -21,7 +20,7 @@ export default function PostList() {
         setLoading(true);
         setError(null);
 
-        const data: Post[] = await getPosts();
+        const data: Post[] = await getPosts(sortType.value);
         setPosts(data);
       } catch (error) {
         console.log(error);
@@ -31,7 +30,7 @@ export default function PostList() {
       }
     }
     loadPosts();
-  }, []);
+  }, [sortType]);
 
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;

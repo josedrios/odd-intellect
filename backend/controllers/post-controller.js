@@ -2,11 +2,13 @@ import * as Post from "../models/post-model.js";
 import * as Comment from "../models/comment-model.js";
 
 export const getAllPosts = async (req, res) => {
+  const sort = req.query.sort || "newest";
   try {
-    const { rows } = await Post.getAllPosts();
+    const { rows } = await Post.getAllPosts(sort);
     console.log(rows);
     res.status(200).json(rows);
   } catch (err) {
+    console.log(err.message);
     res.status(500).json({ error: "Failed to fetch all posts" });
   }
 };
