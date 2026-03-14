@@ -16,7 +16,6 @@ export default function SearchBar({
   setSearchQuery: React.Dispatch<React.SetStateAction<SearchQuery>>;
 }) {
   const [searchType, setSearchType] = useState<Option>(searchFilters[0]);
-  const [searchSort, setSearchSort] = useState<Option>(searchSorts[0]);
   const [searchInput, setSearchInput] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +33,6 @@ export default function SearchBar({
         setSearchQuery({
           results: [],
           type: '',
-          sort: '',
           loading: false,
           err: '',
         });
@@ -44,7 +42,6 @@ export default function SearchBar({
           ...prev,
           results: fetchedPosts,
           type: searchType.value,
-          sort: searchSort.value,
         }));
       } else {
         const fetchedUsers: User[] = await searchUsers(searchInput);
@@ -52,7 +49,6 @@ export default function SearchBar({
           ...prev,
           results: fetchedUsers,
           type: searchType.value,
-          sort: searchSort.value,
         }));
       }
     } catch (error) {
@@ -88,16 +84,6 @@ export default function SearchBar({
           size={'xs'}
           value={searchType}
           setValue={setSearchType}
-        />
-        <p>{'     '} </p>
-        <p>SORT:</p>
-        {/* NEEDS A STATE AND STATE UPDATER (value and setValue) */}
-        <Select
-          options={searchSorts}
-          defaultValue={searchSorts[0]}
-          size={'xs'}
-          value={searchSort}
-          setValue={setSearchSort}
         />
       </div>
     </form>

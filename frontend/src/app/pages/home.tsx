@@ -9,18 +9,14 @@ import Loader from '@/components/loader';
 export type SearchQuery = {
   results: Post[] | User[];
   type: string;
-  sort: string;
   loading: boolean;
   err: string;
 };
-
-// TODO: add search sort
 
 export function HomePage() {
   const [searchQuery, setSearchQuery] = useState<SearchQuery>({
     results: [],
     type: '',
-    sort: '',
     loading: false,
     err: '',
   });

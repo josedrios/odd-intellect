@@ -22,3 +22,7 @@
 .search-bar__input {
   flex: 1;
 }
+
+.clear-results-btn {
+  margin-top: var(--spacing-6);
+}

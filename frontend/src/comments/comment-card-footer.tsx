@@ -21,12 +21,6 @@ export function CommentFooter({
   return (
     <div className="comment-card__footer">
       <div className="comment-card__controls">
-        <button
-          className="comment-card__reply btn--open"
-          onClick={() => openModal('comment reply')}
-        >
-          <Icon name={ICON.REPLY} />
-        </button>
         <button className="comment-card__upvotes btn--open">
           <Icon name={ICON.UPARROW} />
           <p>14</p>
@@ -34,6 +28,12 @@ export function CommentFooter({
         <button className="comment-card__downvotes btn--open">
           <Icon name={ICON.DOWNARROW} />
           <p>2</p>
+        </button>
+        <button
+          className="comment-card__reply btn--open"
+          onClick={() => openModal('comment reply')}
+        >
+          <Icon name={ICON.REPLY} />
         </button>
         <button
           className="comment-card__ellipsis btn--open"

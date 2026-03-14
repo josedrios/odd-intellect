@@ -32,6 +32,7 @@ export const getPost = async (req, res) => {
 
 export const getPostComments = async (req, res) => {
   const postId = req.params.postId;
+  const sort = req.query.sort || "popular";
   try {
     const { rows: postRows } = await Post.getPost(postId);
     if (postRows.length === 0) {
@@ -39,7 +40,7 @@ export const getPostComments = async (req, res) => {
         error: "Post with postId " + postId + " does not exist",
       });
     }
-    const { rows: comments } = await Comment.getPostComments(postId);
+    const { rows: comments } = await Comment.getPostComments(postId, sort);
     res.status(200).json(comments);
   } catch (err) {
     console.log(err.message);

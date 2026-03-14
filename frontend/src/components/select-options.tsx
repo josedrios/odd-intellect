@@ -11,7 +11,8 @@ export const searchSorts: Option[] = [
 ];
 
 export const commentSorts: Option[] = [
-  { value: 'relevant', label: 'RELEVANT' },
+  // ADD THIS BACK WHEN I FIND A FORMULA
+  // { value: 'relevant', label: 'RELEVANT' },
   { value: 'newest', label: 'NEWEST' },
   { value: 'popular', label: 'POPULAR' },
 ];

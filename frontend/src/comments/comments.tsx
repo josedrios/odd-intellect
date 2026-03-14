@@ -25,7 +25,7 @@ export default function Comments() {
       try {
         setLoading(true);
         setError(null);
-        const data: Comment[] = await getComments(postId);
+        const data: Comment[] = await getComments(postId, sortType.value);
         setComments(data);
       } catch (error) {
         console.log(error);
@@ -35,7 +35,7 @@ export default function Comments() {
       }
     }
     loadComments();
-  }, [postId]);
+  }, [postId, sortType]);
 
   // Load parent comments function
   const loadReplies = async (commentId: number) => {

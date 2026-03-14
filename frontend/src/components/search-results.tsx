@@ -39,11 +39,12 @@ export default function SearchResults({
   return (
     <>
       <button
+        className="btn--text clear-results-btn"
         onClick={() =>
           setSearchQuery({ results: [], type: '', loading: false, err: '' })
         }
       >
-        Clear Search
+        Clear Results
       </button>
       {result}
     </>

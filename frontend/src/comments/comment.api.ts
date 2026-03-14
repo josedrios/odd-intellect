@@ -15,9 +15,12 @@ function mapComment(comment: CommentApi): Comment {
   };
 }
 
-export async function getComments(postId: string): Promise<Comment[]> {
+export async function getComments(
+  postId: string,
+  sortType: string,
+): Promise<Comment[]> {
   const fetchedComments: CommentApi[] = await apiFetch<CommentApi[]>(
-    `/posts/${postId}/comments`,
+    `/posts/${postId}/comments?sort=${sortType}`,
     { method: 'GET' },
   );
   const comments: Comment[] = fetchedComments.map(mapComment);
