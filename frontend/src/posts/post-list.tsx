@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Select } from '@/components/select';
 import { searchSorts } from '@/components/select-options';
-import Pagination from '@/components/pagination';
 import PostCard from '@/posts/post-card';
 import { getPosts } from '@/posts/post.api';
 import type { Post } from '@/posts/post.types';
@@ -51,7 +50,6 @@ export default function PostList() {
       {posts.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
-      <Pagination />
     </div>
   );
 }

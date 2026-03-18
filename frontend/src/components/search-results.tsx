@@ -1,5 +1,4 @@
 import PostCard from '@/posts/post-card';
-import Pagination from '@/components/pagination';
 import type { SearchQuery } from '@/app/pages/home';
 import UserCard from '@/users/user-card';
 
@@ -19,7 +18,6 @@ export default function SearchResults({
         {searchQuery.results.map((post) => (
           <PostCard key={post.id} post={post} />
         ))}
-        <Pagination />
       </div>
     );
   } else if (searchQuery.type.toLowerCase() === 'users') {
