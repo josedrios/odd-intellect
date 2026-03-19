@@ -1,40 +1,45 @@
 import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
+import type { SetStateAction } from 'react';
 
-export default function Pagination({
-  totalPages,
-  currentPage,
-  setCurrentPage,
-}: {
+export type Paginator = {
   totalPages: number;
   currentPage: number;
-  setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
+  initialized: boolean;
+};
+
+export function Pagination({
+  paginator,
+  setPaginator,
+}: {
+  paginator: Paginator;
+  setPaginator: React.Dispatch<SetStateAction<Paginator>>;
 }) {
   const changePage = (direction: number) => {
-    setCurrentPage((prev) => {
-      if (totalPages < prev) {
-        return totalPages;
-      } else if (prev < 0) {
-        return 1;
-      } else if (prev === totalPages && direction > 0) {
-        return totalPages;
-      } else if (prev === 0 && direction < 0) {
-        return 0;
+    setPaginator((prev) => {
+      if (paginator.totalPages < prev.currentPage) {
+        return { ...prev, currentPage: paginator.totalPages };
+      } else if (prev.currentPage < 0) {
+        return { ...prev, currentPage: 0 };
+      } else if (prev.currentPage === paginator.totalPages && direction > 0) {
+        return prev;
+      } else if (prev.currentPage === 0 && direction < 0) {
+        return prev;
       } else {
-        return prev + direction;
+        return { ...prev, currentPage: prev.currentPage + direction };
       }
     });
   };
 
   return (
     <div className="pagination">
-      <button className="pagination__button" onClick={() => changePage(1)}>
+      <button className="pagination__button" onClick={() => changePage(-1)}>
         <Icon name={ICON.LEFTARROW} />
       </button>
       <p className="pagination__index">
-        {currentPage} / {totalPages}
+        {paginator.currentPage} / {paginator.totalPages}
       </p>
-      <button className="pagination__button" onClick={() => changePage(-1)}>
+      <button className="pagination__button" onClick={() => changePage(1)}>
         <Icon name={ICON.RIGHTARROW} />
       </button>
     </div>

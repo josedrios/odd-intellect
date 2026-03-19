@@ -5,7 +5,7 @@ export const searchFilters: Option[] = [
   { value: 'users', label: 'USERS' },
 ];
 
-export const searchSorts: Option[] = [
+export const postSorts: Option[] = [
   { value: 'newest', label: 'NEWEST' },
   { value: 'popular', label: 'POPULAR' },
 ];

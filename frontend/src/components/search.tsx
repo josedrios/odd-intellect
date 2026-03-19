@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ICON } from '@/util/icon-names';
 import Icon from '@/components/icons';
-import { searchSorts, searchFilters } from '@/components/select-options';
+import { searchFilters } from '@/components/select-options';
 import { Select } from '@/components/select';
 import { searchUsers } from '@/users/user.api';
 import { searchPosts } from '@/posts/post.api';
@@ -77,7 +77,7 @@ export default function SearchBar({
         </button>
       </div>
       <div className="search-bar__footer">
-        <p>TYPE:</p>
+        <p>SEARCH:</p>
         <Select
           options={searchFilters}
           defaultValue={searchFilters[0]}

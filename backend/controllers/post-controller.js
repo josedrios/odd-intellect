@@ -30,6 +30,24 @@ export const getPost = async (req, res) => {
   }
 };
 
+export const getTotalPostCount = async (req, res) => {
+  try {
+    const { rows } = await Post.getPostCount();
+    if (rows.length === 0) {
+      return res.status(500).json({
+        error:
+          "Failed to retrieve post total count, the developer of this website needs to learn to code better",
+      });
+    } else {
+      return res.status(200).json(rows[0].count);
+    }
+  } catch (err) {
+    return res
+      .status(500)
+      .json({ error: "Failed to retrieve post total count" });
+  }
+};
+
 export const getPostComments = async (req, res) => {
   const postId = req.params.postId;
   const sort = req.query.sort || "popular";

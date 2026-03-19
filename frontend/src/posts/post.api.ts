@@ -21,6 +21,13 @@ export async function getPosts(sortType: string): Promise<Post[]> {
   return posts;
 }
 
+export async function getPostCount(): Promise<number> {
+  const fetchedCount: number = await apiFetch<number>(`/posts/totalcount`, {
+    method: 'GET',
+  });
+  return fetchedCount;
+}
+
 export async function getPost(postId: string): Promise<Post> {
   const fetchedPost: PostApi = await apiFetch<PostApi>(`/posts/${postId}`, {
     method: 'GET',
