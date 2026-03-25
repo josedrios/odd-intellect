@@ -10,9 +10,12 @@ function mapPost(post: PostApi): Post {
   };
 }
 
-export async function getPosts(sortType: string): Promise<Post[]> {
+export async function getPosts(
+  sortType: string,
+  page: number,
+): Promise<Post[]> {
   const fetchedPosts: PostApi[] = await apiFetch<PostApi[]>(
-    `/posts?sort=${sortType}`,
+    `/posts?sort=${sortType}&page=${page}`,
     {
       method: 'GET',
     },

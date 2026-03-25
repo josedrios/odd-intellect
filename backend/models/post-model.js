@@ -1,6 +1,7 @@
 import { query } from "../database.js";
 
-export const getAllPosts = (sort) => {
+export const getAllPosts = (sort, page) => {
+  const offset = page - 1;
   let order = "posts.created_at DESC";
 
   if (sort === "newest") {
@@ -10,7 +11,7 @@ export const getAllPosts = (sort) => {
   }
 
   return query(
-    `SELECT posts.*, count(comments.id) AS comment_count FROM posts LEFT JOIN comments ON posts.id = comments.post_id OR comments.parent_id IN (SELECT id FROM comments WHERE comments.post_id = posts.id) GROUP BY posts.id ORDER BY ${order}`,
+    `SELECT posts.*, count(comments.id) AS comment_count FROM posts LEFT JOIN comments ON posts.id = comments.post_id OR comments.parent_id IN (SELECT id FROM comments WHERE comments.post_id = posts.id) GROUP BY posts.id ORDER BY ${order} LIMIT 1 OFFSET ${offset}`,
     [],
   );
 };

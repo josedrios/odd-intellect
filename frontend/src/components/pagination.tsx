@@ -19,11 +19,11 @@ export function Pagination({
     setPaginator((prev) => {
       if (paginator.totalPages < prev.currentPage) {
         return { ...prev, currentPage: paginator.totalPages };
-      } else if (prev.currentPage < 0) {
-        return { ...prev, currentPage: 0 };
+      } else if (prev.currentPage < 1) {
+        return { ...prev, currentPage: 1 };
       } else if (prev.currentPage === paginator.totalPages && direction > 0) {
         return prev;
-      } else if (prev.currentPage === 0 && direction < 0) {
+      } else if (prev.currentPage === 1 && direction < 0) {
         return prev;
       } else {
         return { ...prev, currentPage: prev.currentPage + direction };

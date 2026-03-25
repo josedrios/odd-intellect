@@ -3,8 +3,9 @@ import * as Comment from "../models/comment-model.js";
 
 export const getAllPosts = async (req, res) => {
   const sort = req.query.sort || "newest";
+  const page = req.query.page || 1;
   try {
-    const { rows } = await Post.getAllPosts(sort);
+    const { rows } = await Post.getAllPosts(sort, page);
     console.log(rows);
     res.status(200).json(rows);
   } catch (err) {

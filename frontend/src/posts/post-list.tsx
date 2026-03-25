@@ -34,11 +34,19 @@ export default function PostList() {
       }
     }
     async function loadPosts() {
+      //  TODO:
+      //  clear items when needed / reset
+      //  refetch for post count when needed
+      //  fetch for certain pages
+      // if items already fetched for certain page, dont refetch
       try {
         setLoading(true);
         setError(null);
 
-        const data: Post[] = await getPosts(sortType.value);
+        const data: Post[] = await getPosts(
+          sortType.value,
+          paginator.currentPage,
+        );
         setPosts(data);
       } catch (err) {
         console.log(err);
