@@ -50,13 +50,13 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     <>
       <TextPanel text="somedude" />
       {user ? <AccountList user={user} isMe={isMe} /> : ''}
-      {user.commentCount > 0 && (
-        <UserComments
-          user={user}
-          viewComments={viewComments}
-          setViewComments={setViewComments}
-        />
-      )}
+      {/* {user.commentCount > 0 && ( */}
+      {/*   <UserComments */}
+      {/*     user={user} */}
+      {/*     viewComments={viewComments} */}
+      {/*     setViewComments={setViewComments} */}
+      {/*   /> */}
+      {/* )} */}
     </>
   );
 }

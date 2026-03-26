@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function LoginForm() {
   return (
     <form className="auth-form">
@@ -9,9 +10,9 @@ export default function LoginForm() {
       <button className="auth-form__submit btn--bordered">LOGIN</button>
       <p className="auth-form__note">
         Don't have an account?{' '}
-        <a className="auth-form__link" href="">
+        <Link className="auth-form__link" to="/register">
           Register.
-        </a>
+        </Link>
       </p>
       <a className="auth-form__link" href="">
         Forgot Password?

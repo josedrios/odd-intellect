@@ -1,4 +1,6 @@
 import Nav from '@/components/nav.tsx';
+import LoginForm from '@/components/forms/login-form';
+import RegisterForm from '@/components/forms/register-form';
 import ContactPage from '@/app/pages/contact';
 import Footer from '@/components/footer';
 import { HomePage } from '@/app/pages/home';
@@ -35,6 +37,8 @@ function App() {
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/account" element={<AccountPage isMe />} />
+            <Route path="/login" element={<LoginForm />} />
+            <Route path="/register" element={<RegisterForm />} />
             <Route path="/users/:username" element={<AccountPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/donate" element={<DonatePage />} />

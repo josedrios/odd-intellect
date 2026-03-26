@@ -18,7 +18,12 @@ export const getUserComments = (userId) =>
   );
 
 export const createUser = (userName) =>
-  query("INSERT INTO users (username) VALUES ($1)", [userName]);
+  // TODO: FIX PARAMS IN SQL QUERY AND VALUES SECTION
+  query("INSERT INTO users (email, username, password) VALUES ($1, $2, $3)", [
+    email,
+    userName,
+    password,
+  ]);
 
 export const deleteUser = (userId) =>
   query("DELETE FROM users WHERE user.id = $1", [userId]);

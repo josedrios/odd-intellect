@@ -6,8 +6,8 @@ export default function Nav() {
       <Link to="/">
         <h1 className="nav__header">odd intellect</h1>
       </Link>
-      <Link to="/account" className="nav__account">
-        John Doe
+      <Link to="/login" className="nav__account">
+        Account
       </Link>
     </nav>
   );

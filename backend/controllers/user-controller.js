@@ -47,7 +47,7 @@ export const getUserComments = async (req, res) => {
 };
 
 export const createUser = async (req, res) => {
-  const { username } = req.body;
+  const { username, email, password } = req.body;
   try {
     const results = await User.createUser(username);
     res.status(200).json(results);
