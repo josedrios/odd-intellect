@@ -17,8 +17,7 @@ export const getUserComments = (userId) =>
     [userId],
   );
 
-export const createUser = (userName) =>
-  // TODO: FIX PARAMS IN SQL QUERY AND VALUES SECTION
+export const createUser = (email, userName, password) =>
   query("INSERT INTO users (email, username, password) VALUES ($1, $2, $3)", [
     email,
     userName,

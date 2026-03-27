@@ -1,6 +1,8 @@
 export type UserApi = {
   id: number;
+  email: string;
   username: string;
+  password: string;
   // bio?: string;
   // email?: string;
   // current_streak?: number;
@@ -15,7 +17,9 @@ export type UserApi = {
 
 export type User = {
   id: number;
+  email: string;
   username: string;
+  password: string;
   // bio?: string;
   // email?: string;
   // currentStreak?: number;

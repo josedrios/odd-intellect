@@ -6,6 +6,8 @@ function mapUser(user: UserApi): User {
   return {
     id: user.id,
     username: user.username,
+    email: user.email,
+    password: user.password,
     // bio: user.bio,
     // email: user.email,
     // currentStreak: user.current_streak,
@@ -16,6 +18,18 @@ function mapUser(user: UserApi): User {
     // gender: user.gender,
     // commentCount: user.comment_count,
   };
+}
+
+export async function createUser(user: {
+  email: string;
+  username: string;
+  password: string;
+}) {
+  const createdUser: boolean = await apiFetch<boolean>('/users', {
+    method: 'POST',
+    body: JSON.stringify(user),
+  });
+  console.log('USER CREATION STATUS: ', createdUser);
 }
 
 export async function getUser(username: string): Promise<User> {
