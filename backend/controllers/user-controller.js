@@ -50,9 +50,28 @@ export const createUser = async (req, res) => {
   const { username, email, password } = req.body;
   try {
     const results = await User.createUser(username, email, password);
-    res.status(200).json(results);
+    res.status(200).json(true);
   } catch (err) {
-    res.status(500).json({ error: "Failed to create user" });
+    res.status(500).json(false);
+  }
+};
+
+export const loginUser = async (req, res) => {
+  const { username, password } = req.body;
+  try {
+    const { rows: user } = await User.getUser(username);
+    if (user.length === 0) {
+      return res.status(404).json({ err: "failed to find user" });
+    } else {
+      if (user[0].password === password) {
+        return res.status(200).json("logged in");
+      } else {
+        return res.status(401).json("outa here you in imposture");
+      }
+    }
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json({ err: "failed to login" });
   }
 };
 

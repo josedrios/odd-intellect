@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.get("/", controller.getAllUsers);
 router.post("/", controller.createUser);
+router.post("/login", controller.loginUser);
 router.get("/search/:username", controller.searchUser);
 router.get("/:username/comments", controller.getUserComments);
 router.get("/:username", controller.getUser);

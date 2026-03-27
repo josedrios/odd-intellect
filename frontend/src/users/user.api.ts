@@ -32,6 +32,14 @@ export async function createUser(user: {
   console.log('USER CREATION STATUS: ', createdUser);
 }
 
+export async function loginUser(info: { username: string; password: string }) {
+  const loginAttempt: boolean = await apiFetch<boolean>('/users/login', {
+    method: 'POST',
+    body: JSON.stringify(info),
+  });
+  console.log('USER LOGIN ATTEMPT STATUS: ', loginAttempt);
+}
+
 export async function getUser(username: string): Promise<User> {
   const fetchedUser: UserApi = await apiFetch<UserApi>(`/users/${username}`, {
     method: 'GET',
