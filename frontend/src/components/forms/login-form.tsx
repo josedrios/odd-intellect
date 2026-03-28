@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useAuthCtx } from '@/context/auth-context';
 import { useState } from 'react';
 import { loginUser } from '@/users/user.api';
 
@@ -12,8 +13,10 @@ export default function LoginForm() {
     password: '',
   });
 
+  const { login } = useAuthCtx();
   async function handleSubmit() {
-    await loginUser(loginForm);
+    const loginAttempt = await loginUser(loginForm);
+    login(loginAttempt.username, loginAttempt.id);
   }
 
   return (

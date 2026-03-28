@@ -20,6 +20,14 @@ function mapUser(user: UserApi): User {
   };
 }
 
+type Session = {
+  username: string;
+  id: number;
+};
+export async function getSessionInfo() {
+  // const sessionInfo: sesssion = await apiFetch<Session>('/u
+}
+
 export async function createUser(user: {
   email: string;
   username: string;
@@ -38,6 +46,7 @@ export async function loginUser(info: { username: string; password: string }) {
     body: JSON.stringify(info),
   });
   console.log('USER LOGIN ATTEMPT STATUS: ', loginAttempt);
+  return loginAttempt;
 }
 
 export async function getUser(username: string): Promise<User> {

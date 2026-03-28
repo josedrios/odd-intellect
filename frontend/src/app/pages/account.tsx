@@ -6,6 +6,7 @@ import type { User } from '@/users/user.types';
 import { useParams } from 'react-router-dom';
 import UserCommentList from '@/users/user-comments-list';
 import Loader from '@/components/loader';
+import { useAuthCtx } from '@/context/auth-context';
 
 export type AccountAttribute = {
   label: string;
@@ -42,6 +43,8 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     loadUser();
   }, [isMe, username]);
 
+  const { username: myUsername, logout } = useAuthCtx();
+
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
   if (!user) return null;
@@ -50,6 +53,11 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     <>
       <TextPanel text="somedude" />
       {user ? <AccountList user={user} isMe={isMe} /> : ''}
+      {myUsername === user.username ? (
+        <button onClick={() => logout()}>logout</button>
+      ) : (
+        ''
+      )}
       {/* {user.commentCount > 0 && ( */}
       {/*   <UserComments */}
       {/*     user={user} */}

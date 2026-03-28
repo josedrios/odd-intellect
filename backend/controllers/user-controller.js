@@ -58,13 +58,15 @@ export const createUser = async (req, res) => {
 
 export const loginUser = async (req, res) => {
   const { username, password } = req.body;
+  console.log(req.session);
   try {
     const { rows: user } = await User.getUser(username);
     if (user.length === 0) {
       return res.status(404).json({ err: "failed to find user" });
     } else {
       if (user[0].password === password) {
-        return res.status(200).json("logged in");
+        req.session.userid = user[0].id;
+        return res.status(200).json({ username: username, id: user[0].id });
       } else {
         return res.status(401).json("outa here you in imposture");
       }

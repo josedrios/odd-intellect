@@ -8,6 +8,7 @@ export async function apiFetch<T>(
     headers: {
       'Content-Type': 'application/json',
     },
+    credentials: 'include',
     ...options,
   });
 
