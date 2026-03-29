@@ -1,5 +1,26 @@
 import * as User from "../models/user-model.js";
 
+export const getSession = async (req, res) => {
+  try {
+    console.log(req.session);
+    return res
+      .status(200)
+      .json({ username: req.session.username, id: req.session.userid });
+  } catch (err) {
+    conosle.log("error happened, sorry dude");
+  }
+};
+
+export const endSession = async (req, res) => {
+  try {
+    delete req.session.username;
+    delete req.session.userid;
+    return res.status(200).json(true);
+  } catch (err) {
+    console.log("error happened killing session");
+  }
+};
+
 export const getAllUsers = async (req, res) => {
   try {
     const { rows } = await User.getAllUsers();
@@ -65,6 +86,7 @@ export const loginUser = async (req, res) => {
       return res.status(404).json({ err: "failed to find user" });
     } else {
       if (user[0].password === password) {
+        req.session.username = username;
         req.session.userid = user[0].id;
         return res.status(200).json({ username: username, id: user[0].id });
       } else {

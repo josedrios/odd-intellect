@@ -25,7 +25,17 @@ type Session = {
   id: number;
 };
 export async function getSessionInfo() {
-  // const sessionInfo: sesssion = await apiFetch<Session>('/u
+  const sessionInfo: Session = await apiFetch<Session>('/users/me', {
+    method: 'GET',
+  });
+  return sessionInfo;
+}
+
+export async function endSession() {
+  const endSession: boolean = await apiFetch<boolean>('/users/endsession', {
+    method: 'GET',
+  });
+  return endSession;
 }
 
 export async function createUser(user: {

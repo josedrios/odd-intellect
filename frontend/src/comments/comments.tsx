@@ -52,28 +52,33 @@ export default function Comments() {
       ),
     );
   };
-
-  if (loading) return <Loader />;
-  if (error) return <p>{error}</p>;
-  if (comments.length === 0) return <p>No comments :(</p>;
-
+  let body;
+  if (loading) body = <Loader />;
+  else if (error) body = <p>{error}</p>;
+  else if (comments.length === 0) body = <p>No comments :(</p>;
+  else
+    body = (
+      <>
+        {comments.map((c) => (
+          <>
+            {/* Parent Comment */}
+            <CommentCard
+              key={c.id}
+              comment={c}
+              loadReplies={loadReplies}
+              toggleReplies={toggleReplies}
+            />
+            {/* Parent Comment's Replies */}
+            {c.showReplies &&
+              c.replies?.map((r) => <CommentCard key={r.id} comment={r} />)}
+          </>
+        ))}
+      </>
+    );
   return (
     <div className="comment-section">
       <CommentSectionHeader sortType={sortType} setSortType={setSortType} />
-      {comments.map((c) => (
-        <>
-          {/* Parent Comment */}
-          <CommentCard
-            key={c.id}
-            comment={c}
-            loadReplies={loadReplies}
-            toggleReplies={toggleReplies}
-          />
-          {/* Parent Comment's Replies */}
-          {c.showReplies &&
-            c.replies?.map((r) => <CommentCard key={r.id} comment={r} />)}
-        </>
-      ))}
+      {body}
     </div>
   );
 }

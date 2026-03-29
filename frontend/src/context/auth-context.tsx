@@ -1,3 +1,4 @@
+import { endSession, getSessionInfo } from '@/users/user.api';
 import { useState, useContext, createContext, useEffect } from 'react';
 
 type AuthCtxType = {
@@ -28,14 +29,25 @@ export default function AuthProvider({
     });
   };
   useEffect(() => {
-    console.log(user);
+    async function loadSession() {
+      console.log('attempting to get session info');
+      const info = await getSessionInfo();
+      console.log('retrieved session info', info);
+      login(info.username, info.id);
+    }
+    if (user.username === null) {
+      console.log('user before', user);
+      loadSession();
+    }
+    console.log('session load attempt');
   }, [user]);
-  const logout = () => {
+  async function logout() {
+    await endSession();
     setUser({
       username: null,
       id: null,
     });
-  };
+  }
 
   return (
     <AuthCtx.Provider

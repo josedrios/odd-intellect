@@ -21,10 +21,6 @@ export function HomePage() {
     err: '',
   });
 
-  useEffect(() => {
-    console.log(searchQuery);
-  }, [searchQuery]);
-
   let body;
   if (searchQuery.loading) {
     body = <Loader />;

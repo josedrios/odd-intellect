@@ -43,7 +43,7 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
     loadUser();
   }, [isMe, username]);
 
-  const { username: myUsername, logout } = useAuthCtx();
+  const { username: myUsername, id: myId, logout } = useAuthCtx();
 
   if (loading) return <Loader />;
   if (error) return <p>{error}</p>;
@@ -58,6 +58,14 @@ export default function AccountPage({ isMe = false }: { isMe?: boolean }) {
       ) : (
         ''
       )}
+      <button
+        onClick={() => {
+          console.log('session username: ', myUsername);
+          console.log('session id: ', myId);
+        }}
+      >
+        check session
+      </button>
       {/* {user.commentCount > 0 && ( */}
       {/*   <UserComments */}
       {/*     user={user} */}

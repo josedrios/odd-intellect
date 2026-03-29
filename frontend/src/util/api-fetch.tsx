@@ -3,7 +3,6 @@ export async function apiFetch<T>(
   options: RequestInit,
 ): Promise<T> {
   const baseUrl = 'http://localhost:4000/api';
-  console.log('THESE ARE THE OPTIONS FROM APIFETCH FILE: ', options);
   const res = await fetch(baseUrl + path, {
     headers: {
       'Content-Type': 'application/json',
