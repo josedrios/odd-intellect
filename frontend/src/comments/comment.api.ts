@@ -37,3 +37,10 @@ export async function getSubcomments(commentId: number): Promise<Comment[]> {
   console.log(comments);
   return comments;
 }
+
+export async function createComment() {
+  const createComment: boolean = await apiFetch<boolean>('/comments/create', {
+    method: 'POST',
+  });
+  return createComment;
+}

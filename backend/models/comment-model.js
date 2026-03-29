@@ -25,3 +25,13 @@ export const getSubcomments = (commentId) =>
 
 export const deleteComment = (commentId) =>
   query("DELETE FROM comments WHERE id = $1;", [commentId]);
+
+export const createComment = (postId, userId, text) => {
+  console.log("POSTID", postId);
+  console.log("USERID", userId);
+  console.log("TEXT", text);
+  return query(
+    "INSERT INTO comments (post_id, user_id, parent_id, text) VALUES ($1, $2, NULL, $3);",
+    [postId, userId, text],
+  );
+};

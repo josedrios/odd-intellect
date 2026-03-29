@@ -1,6 +1,7 @@
 import Icon from '@/components/icons';
 import { ICON } from '@/util/icon-names';
 import Modal from '@/components/modal';
+import { createComment } from './comment.api';
 
 export default function CommentCreate({
   subcomment = false,
@@ -28,7 +29,13 @@ export default function CommentCreate({
           className="comment-form__textarea"
           placeholder="What's on your mind..."
         />
-        <button className="comment-form__submit">
+        <button
+          className="comment-form__submit"
+          onClick={(e) => {
+            e.preventDefault();
+            createComment();
+          }}
+        >
           <Icon name={ICON.SEND} />{' '}
         </button>
       </form>

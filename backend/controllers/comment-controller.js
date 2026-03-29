@@ -1,5 +1,17 @@
 import * as Comment from "../models/comment-model.js";
 
+export const createComment = async (req, res) => {
+  const postId = 1;
+  const text = "this is a test comment";
+  try {
+    await Comment.createComment(postId, req.session.userid, text);
+    res.json(true);
+  } catch (err) {
+    console.log("ERROR creating comment");
+    res.json(false);
+  }
+};
+
 export const deleteComment = async (req, res) => {
   const commentId = req.params.commentId;
   try {
